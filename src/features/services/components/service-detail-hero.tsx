@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Calendar, Clock, Sparkles, CheckCircle2, ShieldCheck, ArrowRight } from "lucide-react";
@@ -29,131 +30,47 @@ interface ServiceDetailHeroProps {
 
 export function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
   const reduced = useReducedMotion();
-  const [videoLoaded, setVideoLoaded] = React.useState(false);
-  const videoRef = React.useRef<HTMLVideoElement>(null);
 
-  // Dynamic video selection based on service specialty
-  const videoSrc = React.useMemo(() => {
+  // Dynamic authentic photography selection based on service specialty
+  const heroImageSrc = React.useMemo(() => {
+    if (service.heroImage?.url) return service.heroImage.url;
     switch (service.slug) {
       case "paint-correction":
       case "smart-repairs":
-        return "/videos/hero/04-painting.mp4"; // Automotive spray painting, booth curing & paint finishing
+        return "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?q=80&w=2070&auto=format&fit=crop";
       case "alloy-wheel-refurbishment":
-        return "/videos/hero/05-wheel-refurb.mp4"; // CNC diamond-cut wheel lathe machining
+        return "https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=2070&auto=format&fit=crop";
       case "ceramic-coating":
+        return "https://images.unsplash.com/photo-1617788138017-80ad40651399?q=80&w=2070&auto=format&fit=crop";
       case "full-vehicle-detailing":
-        return "/videos/hero/06-final-reveal.mp4"; // Mirror shine ceramic reflection reveal
+        return "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=2070&auto=format&fit=crop";
       case "mobile-repairs":
-        return "/videos/hero/03-car-drive.mp4"; // Mobile fleet on-location dispatch
-      case "interior-detailing":
       case "maintenance-detailing":
+        return "https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?q=80&w=2070&auto=format&fit=crop";
+      case "interior-detailing":
       default:
-        return "/videos/hero/01-wheel-intro.mp4";
+        return "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2070&auto=format&fit=crop";
     }
-  }, [service.slug]);
-
-  const posterSrc =
-    service.heroImage?.url ||
-    "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=2000&auto=format&fit=crop";
-
-  React.useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    // DOM-level attributes & properties for guaranteed browser autoplay
-    video.muted = true;
-    video.defaultMuted = true;
-    video.playsInline = true;
-    video.setAttribute("muted", "");
-    video.setAttribute("playsinline", "");
-    video.setAttribute("autoplay", "");
-    video.setAttribute("loop", "");
-
-    if (reduced) {
-      video.pause();
-      return;
-    }
-
-    const tryPlay = () => {
-      video.muted = true;
-      const playPromise = video.play();
-      if (playPromise !== undefined) {
-        playPromise
-          .then(() => setVideoLoaded(true))
-          .catch(() => {
-            const onUserInteraction = () => {
-              if (videoRef.current) {
-                videoRef.current.muted = true;
-                videoRef.current
-                  .play()
-                  .then(() => setVideoLoaded(true))
-                  .catch(() => undefined);
-              }
-              window.removeEventListener("click", onUserInteraction);
-              window.removeEventListener("touchstart", onUserInteraction);
-              window.removeEventListener("scroll", onUserInteraction);
-            };
-            window.addEventListener("click", onUserInteraction, { once: true, passive: true });
-            window.addEventListener("touchstart", onUserInteraction, { once: true, passive: true });
-            window.addEventListener("scroll", onUserInteraction, { once: true, passive: true });
-          });
-      }
-    };
-
-    const handlePlaying = () => setVideoLoaded(true);
-    const handleCanPlay = () => {
-      setVideoLoaded(true);
-      tryPlay();
-    };
-
-    video.addEventListener("canplay", handleCanPlay);
-    video.addEventListener("loadeddata", handleCanPlay);
-    video.addEventListener("playing", handlePlaying);
-
-    tryPlay();
-
-    return () => {
-      video.removeEventListener("canplay", handleCanPlay);
-      video.removeEventListener("loadeddata", handleCanPlay);
-      video.removeEventListener("playing", handlePlaying);
-    };
-  }, [reduced, videoSrc]);
+  }, [service.slug, service.heroImage]);
 
   return (
-    <section className="relative min-h-[66vh] md:min-h-[74vh] flex items-center justify-center overflow-hidden bg-[#07080A] border-b border-white/[0.08]">
-      {/* Background Poster Image */}
-      <div
-        className="absolute inset-0 -z-30 bg-cover bg-center transition-opacity duration-700"
-        style={{
-          backgroundImage: `url(${posterSrc})`,
-          opacity: videoLoaded ? 0.2 : 0.6,
-        }}
-        aria-hidden="true"
-      />
+    <section className="relative min-h-[62vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden bg-[#07080A] border-b border-white/[0.08]">
+      {/* Real Automotive Photography Background */}
+      <div className="absolute inset-0 -z-20 overflow-hidden">
+        <Image
+          src={heroImageSrc}
+          alt={`${service.title} - You Scuff We Buff`}
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center filter brightness-[0.78] contrast-[1.08] transition-transform duration-1000 group-hover:scale-105"
+        />
+      </div>
 
-      {/* HTML5 Cinematic Automotive Video Background */}
-      <video
-        ref={videoRef}
-        src={videoSrc}
-        poster={posterSrc}
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="auto"
-        className={cn(
-          "absolute inset-0 -z-20 w-full h-full object-cover object-center transition-opacity duration-700 ease-out",
-          videoLoaded ? "opacity-80 sm:opacity-90" : "opacity-35"
-        )}
-        aria-hidden="true"
-      >
-        <source src={videoSrc} type="video/mp4" />
-      </video>
-
-      {/* Cinematic Contrast Overlays */}
-      <div className="absolute inset-0 -z-10 pointer-events-none bg-gradient-to-t from-[#07080A] via-black/20 to-[#07080A]/70" />
-      <div className="absolute inset-0 -z-10 pointer-events-none bg-gradient-to-r from-[#07080A]/85 via-transparent to-[#07080A]/60" />
-      <div className="absolute inset-0 -z-10 pointer-events-none bg-[radial-gradient(ellipse_at_center,transparent_45%,rgba(7,8,10,0.65)_100%)]" />
+      {/* Cinematic Contrast Overlays for Perfect Readability */}
+      <div className="absolute inset-0 -z-10 pointer-events-none bg-gradient-to-t from-[#07080A] via-[#07080A]/85 to-[#07080A]/60" />
+      <div className="absolute inset-0 -z-10 pointer-events-none bg-gradient-to-r from-[#07080A]/90 via-[#07080A]/40 to-[#07080A]/80" />
+      <div className="absolute inset-0 -z-10 pointer-events-none bg-[radial-gradient(ellipse_at_center,transparent_35%,rgba(7,8,10,0.85)_100%)]" />
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-full max-w-4xl h-80 bg-primary/10 blur-[130px] pointer-events-none -z-10" />
 
       <Container className="relative z-10 py-16 md:py-24">

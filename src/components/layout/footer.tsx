@@ -28,7 +28,7 @@ export function Footer() {
       <Container>
         <div className="py-14 md:py-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           <div className="space-y-4">
-            <BrandLogo size="sm" />
+            <BrandLogo size="md" />
 
             <p className="text-sm text-muted-foreground leading-relaxed">
               {siteConfig.description}

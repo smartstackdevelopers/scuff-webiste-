@@ -17,21 +17,21 @@ interface BrandLogoProps {
 
 const sizeConfig = {
   sm: {
-    fullClass: "h-8 sm:h-9 max-w-[160px]",
+    fullClass: "h-8 sm:h-9 max-w-[170px]",
     box: "w-8 h-8",
     img: 32,
     textMain: "text-xs sm:text-sm",
     textSub: "text-[9px] sm:text-[10px]",
   },
   md: {
-    fullClass: "h-10 sm:h-11 md:h-12 max-w-[210px]",
+    fullClass: "h-10 md:h-12 max-w-[240px]",
     box: "w-10 h-10",
     img: 40,
     textMain: "text-sm sm:text-base",
     textSub: "text-[10px] sm:text-[11px]",
   },
   lg: {
-    fullClass: "h-13 sm:h-15 md:h-16 max-w-[260px]",
+    fullClass: "h-12 md:h-16 max-w-[300px]",
     box: "w-12 h-12",
     img: 48,
     textMain: "text-base sm:text-lg",

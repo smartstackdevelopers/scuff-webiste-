@@ -73,7 +73,7 @@ export default function CarMaintenancePage() {
       {/* 1. Cinematic Video Hero */}
       <CinematicVideoHero
         videoSrc="/videos/hero/05-wheel-refurb.mp4"
-        posterSrc="https://images.unsplash.com/photo-1486006920555-c77dce18193b?q=80&w=2000&auto=format&fit=crop"
+        posterSrc="https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?q=80&w=2070&auto=format&fit=crop"
         badgeText="Preventative Automotive Maintenance & Inspection"
         badgeIcon={<Wrench className="w-3.5 h-3.5" />}
         badgeVariant="electric"

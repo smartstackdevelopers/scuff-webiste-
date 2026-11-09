@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Sparkles, ArrowRight, ChevronRight } from "lucide-react";
 import { Container } from "@/components/ui/container";
@@ -15,7 +16,6 @@ import {
   BreadcrumbSeparator,
   BreadcrumbPage,
 } from "@/components/ui/breadcrumb";
-import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { cn } from "@/lib/utils";
 
 export interface BreadcrumbLinkItem {
@@ -30,8 +30,10 @@ export interface MetricChipItem {
 }
 
 export interface CinematicVideoHeroProps {
-  videoSrc: string;
-  posterSrc: string;
+  imageSrc?: string;
+  posterSrc?: string;
+  videoSrc?: string; // Optional legacy compatibility
+  imageAlt?: string;
   badgeText?: string;
   badgeIcon?: React.ReactNode;
   badgeVariant?: BadgeProps["variant"];
@@ -59,8 +61,9 @@ export interface CinematicVideoHeroProps {
 }
 
 export function CinematicVideoHero({
-  videoSrc,
+  imageSrc,
   posterSrc,
+  imageAlt = "You Scuff We Buff automotive detailing craftsmanship",
   badgeText,
   badgeIcon,
   badgeVariant = "electric",
@@ -71,86 +74,17 @@ export function CinematicVideoHero({
   secondaryCta,
   metrics,
   children,
-  minHeightClass = "min-h-[60vh] sm:min-h-[68vh]",
+  minHeightClass = "min-h-[58vh] sm:min-h-[66vh]",
   overlayGradient,
   align = "center",
   className,
   extraContent,
 }: CinematicVideoHeroProps) {
-  const reduced = useReducedMotion();
-  const [videoLoaded, setVideoLoaded] = React.useState(false);
-  const videoRef = React.useRef<HTMLVideoElement>(null);
-
-  React.useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    // Critical Chromium & Safari autoplay fix:
-    // Attributes and JS DOM properties MUST both be set before calling .play()
-    video.muted = true;
-    video.defaultMuted = true;
-    video.playsInline = true;
-    video.setAttribute("muted", "");
-    video.setAttribute("playsinline", "");
-    video.setAttribute("autoplay", "");
-    video.setAttribute("loop", "");
-
-    if (reduced) {
-      video.pause();
-      return;
-    }
-
-    const tryPlay = () => {
-      video.muted = true;
-      const playPromise = video.play();
-      if (playPromise !== undefined) {
-        playPromise
-          .then(() => {
-            setVideoLoaded(true);
-          })
-          .catch(() => {
-            // Autoplay blocked by browser policy without user gesture:
-            // Listen for first interaction anywhere on page and start immediately
-            const resumeOnInteraction = () => {
-              if (videoRef.current) {
-                videoRef.current.muted = true;
-                videoRef.current
-                  .play()
-                  .then(() => setVideoLoaded(true))
-                  .catch(() => undefined);
-              }
-              window.removeEventListener("click", resumeOnInteraction);
-              window.removeEventListener("touchstart", resumeOnInteraction);
-              window.removeEventListener("scroll", resumeOnInteraction);
-              window.removeEventListener("keydown", resumeOnInteraction);
-            };
-
-            window.addEventListener("click", resumeOnInteraction, { once: true, passive: true });
-            window.addEventListener("touchstart", resumeOnInteraction, { once: true, passive: true });
-            window.addEventListener("scroll", resumeOnInteraction, { once: true, passive: true });
-            window.addEventListener("keydown", resumeOnInteraction, { once: true, passive: true });
-          });
-      }
-    };
-
-    const handlePlaying = () => setVideoLoaded(true);
-    const handleCanPlay = () => {
-      setVideoLoaded(true);
-      tryPlay();
-    };
-
-    video.addEventListener("canplay", handleCanPlay);
-    video.addEventListener("loadeddata", handleCanPlay);
-    video.addEventListener("playing", handlePlaying);
-
-    tryPlay();
-
-    return () => {
-      video.removeEventListener("canplay", handleCanPlay);
-      video.removeEventListener("loadeddata", handleCanPlay);
-      video.removeEventListener("playing", handlePlaying);
-    };
-  }, [reduced, videoSrc]);
+  // Use imageSrc or fallback to posterSrc for authentic real photography background
+  const finalImage =
+    imageSrc ||
+    posterSrc ||
+    "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=2070&auto=format&fit=crop";
 
   return (
     <section
@@ -160,53 +94,36 @@ export function CinematicVideoHero({
         className
       )}
     >
-      {/* Background Poster Image (displayed while video prepares or as fallback) */}
-      <div
-        className="absolute inset-0 -z-30 bg-cover bg-center transition-opacity duration-700"
-        style={{
-          backgroundImage: `url(${posterSrc})`,
-          opacity: videoLoaded ? 0.2 : 0.6,
-        }}
-        aria-hidden="true"
-      />
+      {/* Real High-Resolution Automotive Photograph Background */}
+      <div className="absolute inset-0 -z-30 overflow-hidden select-none" aria-hidden="true">
+        <Image
+          src={finalImage}
+          alt={imageAlt}
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center transition-transform duration-1000 ease-out hover:scale-105"
+        />
+      </div>
 
-      {/* HTML5 Cinematic Automotive Video Background */}
-      <video
-        ref={videoRef}
-        src={videoSrc}
-        poster={posterSrc}
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="auto"
-        className={cn(
-          "absolute inset-0 -z-20 w-full h-full object-cover object-center transition-opacity duration-700 ease-out",
-          videoLoaded ? "opacity-80 sm:opacity-90" : "opacity-35"
-        )}
-        aria-hidden="true"
-      >
-        <source src={videoSrc} type="video/mp4" />
-      </video>
-
-      {/* Cinematic Contrast Overlays: Clear center for dynamic video visibility, subtle dark edges for crisp text contrast */}
+      {/* Professional Cinematic Dark Overlays for Flawless Contrast */}
       <div
         className={cn(
-          "absolute inset-0 -z-10 pointer-events-none bg-gradient-to-t from-[#07080A] via-black/20 to-[#07080A]/70",
+          "absolute inset-0 -z-10 bg-gradient-to-t from-[#07080A] via-[#07080A]/85 to-[#07080A]/60",
           overlayGradient
         )}
       />
-      <div className="absolute inset-0 -z-10 pointer-events-none bg-gradient-to-r from-[#07080A]/85 via-transparent to-[#07080A]/60" />
-      <div className="absolute inset-0 -z-10 pointer-events-none bg-[radial-gradient(ellipse_at_center,transparent_45%,rgba(7,8,10,0.65)_100%)]" />
+      <div className="absolute inset-0 -z-10 bg-black/45" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(7,8,10,0.75)_100%)]" />
 
-      {/* Atmospheric Ambient Glow Orb */}
+      {/* Subtle Atmospheric Ambient Glow Orb */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-full max-w-5xl h-80 bg-primary/10 blur-[140px] pointer-events-none -z-10" />
 
       {/* Content Container */}
       <Container className="relative z-10 py-16 sm:py-20 md:py-24">
         {align === "split" ? (
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
-            {/* Left Column: Heading & CTAs */}
+            {/* Left Column: Heading, Subtitle & CTAs */}
             <div className="lg:col-span-7 space-y-6 text-left">
               {/* Breadcrumbs */}
               <motion.div
@@ -512,3 +429,6 @@ export function CinematicVideoHero({
     </section>
   );
 }
+
+// Export InnerPageHero alias for clarity
+export { CinematicVideoHero as InnerPageHero };

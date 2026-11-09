@@ -101,7 +101,7 @@ export default function FAQPage() {
       {/* Cinematic Video Hero */}
       <CinematicVideoHero
         videoSrc="/videos/hero/04-painting.mp4"
-        posterSrc="https://images.unsplash.com/photo-1486006920555-c77dce18193b?q=80&w=2000&auto=format&fit=crop"
+        posterSrc="https://images.unsplash.com/photo-1507136566006-cfc505b114fc?q=80&w=2070&auto=format&fit=crop"
         badgeText="Master Knowledge Base & Direct Guidance"
         badgeIcon={<HelpCircle className="w-3.5 h-3.5" />}
         badgeVariant="electric"
