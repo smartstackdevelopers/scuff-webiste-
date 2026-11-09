@@ -13,7 +13,7 @@ export const metadata = {
 
 export default function TermsPage() {
   return (
-    <div className="flex flex-col min-h-screen bg-[#07080A]">
+    <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-200">
       <CinematicVideoHero
         videoSrc="/videos/hero/03-car-drive.mp4"
         posterSrc="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?q=80&w=2000&auto=format&fit=crop"
@@ -40,19 +40,19 @@ export default function TermsPage() {
         ]}
       />
 
-      <div className="py-16 sm:py-24 space-y-12 bg-[#0C0F15]">
+      <div className="py-16 sm:py-24 space-y-12 bg-surface-secondary border-t border-border transition-colors duration-200">
         <Container className="max-w-5xl xl:max-w-6xl">
-          <div className="space-y-8 text-sm text-slate-300 leading-relaxed bg-surface-card p-6 sm:p-10 rounded-3xl border border-white/[0.08] shadow-luxury-dark">
+          <div className="space-y-8 text-sm text-muted-foreground leading-relaxed bg-surface-card p-6 sm:p-10 rounded-3xl border border-border shadow-sm">
             <section className="space-y-3">
-              <h2 className="text-xl font-bold text-white font-display uppercase tracking-wider">1. Vehicle Pre-Inspection Protocol</h2>
+              <h2 className="text-xl font-bold text-foreground font-display uppercase tracking-wider">1. Vehicle Pre-Inspection Protocol</h2>
               <p>
                 Prior to commencing any wash, compounding, machine paint correction, or coating procedure, our certified technician conducts a thorough photographic and paint depth assessment. Any pre-existing stone chips, deep clear-coat scratches, bumper scuffs, or repainted panels will be formally documented.
               </p>
             </section>
 
             <section className="space-y-3">
-              <h2 className="text-xl font-bold text-white font-display uppercase tracking-wider">2. Booking, Deposits & Rescheduling</h2>
-              <ul className="list-disc pl-5 space-y-1.5 text-slate-300">
+              <h2 className="text-xl font-bold text-foreground font-display uppercase tracking-wider">2. Booking, Deposits & Rescheduling</h2>
+              <ul className="list-disc pl-5 space-y-1.5 text-muted-foreground">
                 <li>Bookings require an authorized payment card or booking deposit to secure technician bay time.</li>
                 <li>Clients may reschedule without penalty up to 48 hours prior to the scheduled start time.</li>
                 <li>Cancellations within 24 hours of mobile dispatch may incur a late cancellation fee to cover allocated travel and bay preparation costs.</li>
@@ -60,22 +60,22 @@ export default function TermsPage() {
             </section>
 
             <section className="space-y-3">
-              <h2 className="text-xl font-bold text-white font-display uppercase tracking-wider">3. Ceramic & Graphene Coating Warranty</h2>
+              <h2 className="text-xl font-bold text-foreground font-display uppercase tracking-wider">3. Ceramic & Graphene Coating Warranty</h2>
               <p>
                 Our 5-Year Ceramic Guarantee warrants against clear coat oxidation, UV paint fading, and premature degradation of the hydrophobic shield, provided that the vehicle is maintained according to our recommended safe wash procedures and receives an annual inspection check at our studio.
               </p>
             </section>
 
             <section className="space-y-3">
-              <h2 className="text-xl font-bold text-white font-display uppercase tracking-wider">4. Liability & Motor Trade Insurance</h2>
+              <h2 className="text-xl font-bold text-foreground font-display uppercase tracking-wider">4. Liability & Motor Trade Insurance</h2>
               <p>
                 {siteConfig.name} holds £5,000,000 comprehensive public liability and specialized motor trade insurance. In the extraordinary event of mechanical or cosmetic defect caused directly by our equipment or personnel, repairs will be remediated to factory specification by certified coachbuilders.
               </p>
             </section>
 
-            <div className="pt-6 border-t border-white/[0.08] flex items-center justify-between">
+            <div className="pt-6 border-t border-border flex items-center justify-between">
               <Link href="/">
-                <Button variant="outline" size="sm" className="gap-2 border-white/[0.12] text-white">
+                <Button variant="outline" size="sm" className="gap-2 border-border text-foreground">
                   <ArrowLeft className="w-4 h-4" />
                   <span>Return to Homepage</span>
                 </Button>

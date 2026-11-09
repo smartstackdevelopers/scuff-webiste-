@@ -29,16 +29,16 @@ export function WhyChooseUs() {
   const { whyChooseUs } = ABOUT_CONTENT;
 
   return (
-    <section className="py-20 md:py-28 relative overflow-hidden bg-[#07080A] border-t border-white/[0.08]">
+    <section className="py-20 md:py-28 relative overflow-hidden bg-surface-secondary border-t border-border transition-colors duration-200">
       <Container>
         <div className="max-w-4xl xl:max-w-5xl mx-auto text-center mb-16 space-y-3">
           <Badge variant="electric" dot>
             The You Scuff We Buff Distinction
           </Badge>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-white font-display">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-foreground font-display">
             Why Customers Trust Us
           </h2>
-          <p className="text-slate-400 text-sm sm:text-base max-w-2xl xl:max-w-3xl mx-auto">
+          <p className="text-muted-foreground text-sm sm:text-base max-w-2xl xl:max-w-3xl mx-auto">
             From our laboratory chemistry formulations to our digital handover sign-off, we hold every vehicle to an uncompromising standard.
           </p>
         </div>
@@ -55,7 +55,7 @@ export function WhyChooseUs() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.08 }}
               >
-                <Card className="h-full bg-[#0C0F15] border-white/[0.08] hover:border-primary/50 transition-all duration-300 hover:shadow-luxury-dark hover:-translate-y-1 group relative overflow-hidden rounded-3xl">
+                <Card className="h-full bg-surface-card border-border hover:border-primary/50 transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1 group relative overflow-hidden rounded-3xl shadow-sm">
                   <div className="absolute top-0 right-0 w-28 h-28 bg-primary/5 rounded-full blur-2xl group-hover:bg-primary/15 transition-all" />
 
                   <CardContent className="p-6 sm:p-8 space-y-4">
@@ -63,11 +63,11 @@ export function WhyChooseUs() {
                       <Icon className="w-6 h-6" />
                     </div>
 
-                    <h3 className="text-lg sm:text-xl font-bold uppercase tracking-tight text-white font-display group-hover:text-primary transition-colors">
+                    <h3 className="text-lg sm:text-xl font-bold uppercase tracking-tight text-foreground font-display group-hover:text-primary transition-colors">
                       {feature.title}
                     </h3>
 
-                    <p className="text-sm text-slate-300 leading-relaxed">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
                       {feature.description}
                     </p>
                   </CardContent>

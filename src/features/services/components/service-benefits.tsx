@@ -15,13 +15,13 @@ const BENEFIT_ICONS: LucideIcon[] = [Sparkles, Shield, Droplets, Flame, Award];
 
 export function ServiceBenefits({ service }: ServiceBenefitsProps) {
   return (
-    <section className="py-16 md:py-24 bg-surface-tertiary border-t border-border/40 relative">
+    <section className="py-16 md:py-24 bg-background border-t border-border relative transition-colors duration-200">
       <Container>
         <div className="max-w-4xl xl:max-w-5xl mx-auto text-center mb-14 space-y-3">
           <span className="text-xs uppercase tracking-widest font-bold text-primary">
             Key Advantages
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-white font-display">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-foreground font-display">
             Why Choose {service.title}
           </h2>
           <p className="text-muted-foreground text-sm sm:text-base max-w-2xl xl:max-w-3xl mx-auto">
@@ -41,7 +41,7 @@ export function ServiceBenefits({ service }: ServiceBenefitsProps) {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.08 }}
               >
-                <Card className="h-full bg-surface-card border-white/[0.08] hover:border-primary/50 transition-all duration-300 hover:shadow-card-hover group">
+                <Card className="h-full bg-surface-card border-border hover:border-primary/50 transition-all duration-300 hover:shadow-card-hover group shadow-sm">
                   <CardContent className="p-6 space-y-4">
                     <div className="w-11 h-11 rounded-xl bg-electric/10 text-electric flex items-center justify-center group-hover:bg-electric group-hover:text-black transition-colors duration-300">
                       <Icon className="w-5 h-5" />

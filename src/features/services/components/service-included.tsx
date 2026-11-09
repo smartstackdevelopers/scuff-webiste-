@@ -14,13 +14,13 @@ interface ServiceIncludedProps {
 
 export function ServiceIncluded({ service }: ServiceIncludedProps) {
   return (
-    <section className="py-16 md:py-24 bg-surface-secondary border-t border-border/40 relative">
+    <section className="py-16 md:py-24 bg-surface-secondary border-t border-border relative transition-colors duration-200">
       <Container>
         <div className="max-w-3xl mx-auto text-center mb-14 space-y-3">
           <Badge variant="outline" className="text-primary border-primary/40">
             Transparent Scope of Work
           </Badge>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-white font-display">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-foreground font-display">
             What&apos;s Included In This Service
           </h2>
           <p className="text-muted-foreground text-sm sm:text-base max-w-xl mx-auto">
@@ -37,7 +37,7 @@ export function ServiceIncluded({ service }: ServiceIncludedProps) {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: phaseIdx * 0.1 }}
             >
-              <Card className="bg-surface-card border-white/[0.08] shadow-sm">
+              <Card className="bg-surface-card border-border shadow-sm">
                 <CardHeader className="pb-3 border-b border-border/40">
                   <div className="flex items-center gap-3">
                     <span className="w-7 h-7 rounded-lg bg-electric/15 text-electric font-mono text-xs font-bold flex items-center justify-center shrink-0">

@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="flex flex-col min-h-screen bg-[#07080A]">
+    <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-200">
       <AboutHero />
       <StorySection />
       <AboutExpertise />

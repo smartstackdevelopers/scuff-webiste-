@@ -67,7 +67,7 @@ export function ServicesHero() {
             <Link
               key={pill.href}
               href={pill.href}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white/[0.04] hover:bg-primary/10 border border-white/[0.08] hover:border-primary/40 text-xs font-semibold text-slate-300 hover:text-white transition-all backdrop-blur-md group"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-card/90 hover:bg-primary/10 border border-border hover:border-primary/40 text-xs font-semibold text-foreground/80 hover:text-foreground transition-all backdrop-blur-md shadow-sm group"
             >
               <Icon className="w-3.5 h-3.5 text-primary group-hover:scale-110 transition-transform" />
               <span>{pill.label}</span>

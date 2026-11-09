@@ -21,7 +21,7 @@ interface ServiceCardProps {
 
 export function ServiceCard({ service, priority = false }: ServiceCardProps) {
   return (
-    <Card className="flex flex-col h-full bg-surface-card border-white/[0.08] hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-card-hover overflow-hidden group">
+    <Card className="flex flex-col h-full bg-surface-card border-border hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-card-hover overflow-hidden group">
       {/* Service Image Header */}
       <div className="relative aspect-[16/10] overflow-hidden bg-surface-tertiary">
         <Image
@@ -36,7 +36,7 @@ export function ServiceCard({ service, priority = false }: ServiceCardProps) {
 
         {/* Badges Overlay */}
         <div className="absolute top-4 left-4 right-4 flex items-center justify-between gap-2">
-          <Badge variant="outline" className="bg-[#151922]/85 backdrop-blur-md text-white border-white/[0.1] font-mono text-[11px]">
+          <Badge variant="outline" className="bg-card/90 backdrop-blur-md text-foreground border-border font-mono text-[11px] shadow-sm">
             {service.badge}
           </Badge>
           {service.popular && (

@@ -43,7 +43,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#07080A]">
+    <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-200">
       {/* Real Photography Hero */}
       <CinematicVideoHero
         imageSrc="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=2070&auto=format&fit=crop"
@@ -84,12 +84,12 @@ export default function ContactPage() {
         ]}
       />
 
-      <div className="py-16 sm:py-24 space-y-16 bg-[#0C0F15]">
+      <div className="py-16 sm:py-24 space-y-16 bg-surface-secondary transition-colors duration-200">
         <Container>
           {/* 2-Column Grid: Form & Business Details */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1560px] mx-auto">
             {/* Left Column: Interactive Form */}
-            <div className="lg:col-span-7 bg-surface-card border border-white/[0.08] rounded-3xl p-6 sm:p-8 shadow-luxury-dark relative overflow-hidden">
+            <div className="lg:col-span-7 bg-surface-card border border-border rounded-3xl p-6 sm:p-8 shadow-sm relative overflow-hidden">
               {submitted ? (
                 <div className="py-12 text-center space-y-4">
                   <div className="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mx-auto">
@@ -131,7 +131,7 @@ export default function ContactPage() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4 text-xs">
-                  <div className="border-b border-border/40 pb-3 mb-4">
+                  <div className="border-b border-border/60 pb-3 mb-4">
                     <h3 className="text-base font-bold text-foreground font-display uppercase tracking-wide">
                       Request a Free Quote
                     </h3>
@@ -142,58 +142,58 @@ export default function ContactPage() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-white font-semibold mb-1">Your Full Name *</label>
+                      <label className="block text-foreground font-semibold mb-1">Your Full Name *</label>
                       <Input
                         required
                         placeholder="e.g. John Smith"
                         value={form.fullName}
                         onChange={(e) => setForm({ ...form, fullName: e.target.value })}
-                        className="bg-surface-secondary border-white/[0.1] text-xs text-white"
+                        className="bg-background border-border text-xs text-foreground"
                       />
                     </div>
                     <div>
-                      <label className="block text-white font-semibold mb-1">Phone Number *</label>
+                      <label className="block text-foreground font-semibold mb-1">Phone Number *</label>
                       <Input
                         type="tel"
                         required
                         placeholder="e.g. 07123 456 789"
                         value={form.phone}
                         onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                        className="bg-surface-secondary border-white/[0.1] text-xs text-white"
+                        className="bg-background border-border text-xs text-foreground"
                       />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-white font-semibold mb-1">Email Address *</label>
+                      <label className="block text-foreground font-semibold mb-1">Email Address *</label>
                       <Input
                         type="email"
                         required
                         placeholder="e.g. john@example.co.uk"
                         value={form.email}
                         onChange={(e) => setForm({ ...form, email: e.target.value })}
-                        className="bg-surface-secondary border-white/[0.1] text-xs text-white"
+                        className="bg-background border-border text-xs text-foreground"
                       />
                     </div>
                     <div>
-                      <label className="block text-white font-semibold mb-1">Vehicle Make & Model</label>
+                      <label className="block text-foreground font-semibold mb-1">Vehicle Make & Model</label>
                       <Input
                         placeholder="e.g. BMW 3 Series, Audi A4, VW Golf"
                         value={form.vehicle}
                         onChange={(e) => setForm({ ...form, vehicle: e.target.value })}
-                        className="bg-surface-secondary border-white/[0.1] text-xs text-white"
+                        className="bg-background border-border text-xs text-foreground"
                       />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-white font-semibold mb-1">Required Service</label>
+                      <label className="block text-foreground font-semibold mb-1">Required Service</label>
                       <select
                         value={form.service}
                         onChange={(e) => setForm({ ...form, service: e.target.value })}
-                        className="w-full h-10 rounded-xl bg-surface-secondary border border-white/[0.1] px-3 text-xs text-white focus:outline-none focus:border-primary"
+                        className="w-full h-10 rounded-xl bg-background border border-border px-3 text-xs text-foreground focus:outline-none focus:border-primary"
                       >
                         <option value="alloy-wheel-refurbishment">Alloy Wheel Refurbishment</option>
                         <option value="diamond-cutting">Diamond Cutting Repair</option>
@@ -205,11 +205,11 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label className="block text-white font-semibold mb-1">Preferred Contact Method</label>
+                      <label className="block text-foreground font-semibold mb-1">Preferred Contact Method</label>
                       <select
                         value={form.preferredContact}
                         onChange={(e) => setForm({ ...form, preferredContact: e.target.value })}
-                        className="w-full h-10 rounded-xl bg-surface-secondary border border-white/[0.1] px-3 text-xs text-white focus:outline-none focus:border-primary"
+                        className="w-full h-10 rounded-xl bg-background border border-border px-3 text-xs text-foreground focus:outline-none focus:border-primary"
                       >
                         <option value="phone">Phone Call</option>
                         <option value="whatsapp">WhatsApp</option>
@@ -219,7 +219,7 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label className="block text-white font-semibold mb-1">
+                    <label className="block text-foreground font-semibold mb-1">
                       Message / Damage Description
                     </label>
                     <textarea
@@ -227,7 +227,7 @@ export default function ContactPage() {
                       placeholder="Please describe the damage (e.g. kerbed front passenger alloy, bumper corner scuff) or postcodes for mobile visit..."
                       value={form.message}
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
-                      className="w-full rounded-2xl bg-surface-secondary border border-white/[0.1] p-3 text-xs text-white placeholder:text-muted-foreground focus:outline-none focus:border-primary resize-none"
+                      className="w-full rounded-2xl bg-background border border-border p-3 text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary resize-none"
                     />
                   </div>
 
@@ -235,7 +235,7 @@ export default function ContactPage() {
                     type="submit"
                     disabled={submitting}
                     variant="amber"
-                    className="w-full py-6 text-sm rounded-xl gap-2 font-bold shadow-lg"
+                    className="w-full py-6 text-sm rounded-xl gap-2 font-bold shadow-md"
                   >
                     <Send className="w-4 h-4" />
                     <span>{submitting ? "Sending Your Request..." : "Request a Free Quote"}</span>
@@ -247,8 +247,8 @@ export default function ContactPage() {
             {/* Right Column: Business Contact & Hours */}
             <div className="lg:col-span-5 space-y-6">
               {/* Quick Contact Card */}
-              <div className="bg-surface-card border border-white/[0.08] rounded-3xl p-6 space-y-6 shadow-luxury-dark">
-                <h3 className="text-base font-bold text-white flex items-center gap-2 border-b border-white/[0.08] pb-3 font-display uppercase tracking-wider">
+              <div className="bg-surface-card border border-border rounded-3xl p-6 space-y-6 shadow-sm">
+                <h3 className="text-base font-bold text-foreground flex items-center gap-2 border-b border-border pb-3 font-display uppercase tracking-wider">
                   <Phone className="w-4 h-4 text-primary" />
                   Business Contact Details
                 </h3>
@@ -262,7 +262,7 @@ export default function ContactPage() {
                       <p className="font-semibold text-foreground">Direct Telephone</p>
                       <a
                         href={`tel:${siteConfig.contact.phoneRaw}`}
-                        className="text-white hover:text-primary font-bold text-sm block mt-0.5"
+                        className="text-foreground hover:text-primary font-bold text-sm block mt-0.5"
                       >
                         {siteConfig.contact.phone}
                       </a>
@@ -278,7 +278,7 @@ export default function ContactPage() {
                       <p className="font-semibold text-foreground">Email Enquiry</p>
                       <a
                         href={`mailto:${siteConfig.contact.email}`}
-                        className="text-white hover:text-primary font-bold block mt-0.5"
+                        className="text-foreground hover:text-primary font-bold block mt-0.5"
                       >
                         {siteConfig.contact.email}
                       </a>
@@ -292,10 +292,10 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="font-semibold text-foreground">Service Coverage</p>
-                      <p className="text-white font-medium mt-0.5">
+                      <p className="text-foreground font-medium mt-0.5">
                         Mobile service across Birmingham, Solihull, Wolverhampton, Walsall, Dudley, Sandwell, Coventry & The Black Country.
                       </p>
-                      <p className="text-[11px] text-emerald-400 font-semibold mt-0.5">
+                      <p className="text-[11px] text-emerald-600 dark:text-emerald-400 font-semibold mt-0.5">
                         We travel directly to your home or workplace.
                       </p>
                     </div>
@@ -307,7 +307,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="font-semibold text-foreground">Opening Hours</p>
-                      <p className="text-white font-medium mt-0.5">
+                      <p className="text-foreground font-medium mt-0.5">
                         Monday – Friday: 8:00 AM – 6:00 PM<br />
                         Saturday: 8:00 AM – 4:00 PM<br />
                         Sunday: Closed / By appointment only
@@ -318,20 +318,20 @@ export default function ContactPage() {
               </div>
 
               {/* Instant WhatsApp Photo Estimate */}
-              <div className="bg-gradient-to-br from-emerald-950/40 via-surface-card to-surface-card border border-emerald-500/30 rounded-3xl p-6 space-y-4 shadow-luxury-dark">
+              <div className="bg-surface-card border border-emerald-500/30 rounded-3xl p-6 space-y-4 shadow-sm">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-2xl bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
                     <MessageSquare className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-white font-display uppercase tracking-wider">
+                    <h4 className="text-sm font-bold text-foreground font-display uppercase tracking-wider">
                       Instant WhatsApp Photo Quote
                     </h4>
-                    <p className="text-[11px] text-slate-400">Send damage photos for a fast, free estimate</p>
+                    <p className="text-[11px] text-muted-foreground">Send damage photos for a fast, free estimate</p>
                   </div>
                 </div>
 
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="text-xs text-muted-foreground leading-relaxed">
                   Snap clear photos of your damaged alloy wheels or bodywork scuffs and message them directly to us on WhatsApp for a quick price quote.
                 </p>
 
@@ -351,7 +351,7 @@ export default function ContactPage() {
               </div>
 
               {/* Family-run guarantee */}
-              <div className="p-4 rounded-2xl bg-surface-card border border-white/[0.08] flex items-center gap-3 text-xs text-slate-300">
+              <div className="p-4 rounded-2xl bg-surface-card border border-border flex items-center gap-3 text-xs text-muted-foreground shadow-sm">
                 <ShieldCheck className="w-5 h-5 text-primary shrink-0" />
                 <span>Family-run pride with skilled technicians, honest pricing, and high-quality finishes guaranteed.</span>
               </div>

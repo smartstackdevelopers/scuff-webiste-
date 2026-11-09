@@ -37,7 +37,7 @@ export function BookingHero() {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.3 }}
-        className="pt-2 flex items-center justify-center gap-4 text-xs text-slate-400 font-medium"
+        className="pt-2 flex items-center justify-center gap-4 text-xs text-muted-foreground font-medium"
       >
         <span className="flex items-center gap-1.5 text-primary">
           <CheckCircle2 className="w-3.5 h-3.5" />

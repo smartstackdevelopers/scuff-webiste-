@@ -97,12 +97,12 @@ const config: Config = {
           950: "#060709",
         },
         surface: {
-          primary: "#07080A",
-          secondary: "#0C0F15",
-          tertiary: "#11151E",
-          card: "#151922",
-          "card-hover": "#1A202C",
-          "card-subtle": "#10141D",
+          primary: "hsl(var(--surface-primary) / <alpha-value>)",
+          secondary: "hsl(var(--surface-secondary) / <alpha-value>)",
+          tertiary: "hsl(var(--surface-tertiary) / <alpha-value>)",
+          card: "hsl(var(--surface-card) / <alpha-value>)",
+          "card-hover": "hsl(var(--surface-card-hover) / <alpha-value>)",
+          "card-subtle": "hsl(var(--surface-card-subtle) / <alpha-value>)",
         },
         amber: {
           accent: "#F59E0B",

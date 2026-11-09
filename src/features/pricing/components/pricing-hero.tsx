@@ -62,14 +62,14 @@ export function PricingHero() {
           <a
             key={tier.name}
             href={`#packages`}
-            className={`p-3 rounded-xl border text-center transition-all backdrop-blur-md ${
+            className={`p-3 rounded-xl border text-center transition-all backdrop-blur-md shadow-sm ${
               tier.popular
                 ? "bg-primary/10 border-primary/50 shadow-glow-sm hover:border-primary"
-                : "bg-surface-card/80 border-white/[0.08] hover:border-white/20"
+                : "bg-card/90 border-border hover:border-primary/40"
             }`}
           >
             <div className="flex items-center justify-center gap-1.5">
-              <span className="text-xs font-bold text-white uppercase tracking-wider font-display">
+              <span className="text-xs font-bold text-foreground uppercase tracking-wider font-display">
                 {tier.name}
               </span>
               {tier.popular && (
@@ -78,10 +78,10 @@ export function PricingHero() {
                 </span>
               )}
             </div>
-            <div className="text-lg font-black text-white font-display mt-0.5">
+            <div className="text-lg font-black text-foreground font-display mt-0.5">
               {tier.price}
             </div>
-            <div className="text-[10px] text-slate-400 truncate">
+            <div className="text-[10px] text-muted-foreground truncate">
               {tier.desc}
             </div>
           </a>

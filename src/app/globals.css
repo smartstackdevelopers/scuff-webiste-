@@ -9,26 +9,26 @@
 
 @layer base {
   :root {
-    /* Base Surfaces - Light Theme */
-    --background: 210 20% 98%;
-    --foreground: 222 47% 11%;
-    --card: 0 0% 100%;
+    /* Base Surfaces - Light Theme (Clean Off-White / Pure White Surfaces) */
+    --background: 210 20% 98%; /* #F8FAFC */
+    --foreground: 222 47% 11%; /* #0F172A deep readable charcoal */
+    --card: 0 0% 100%; /* #FFFFFF crisp white */
     --card-foreground: 222 47% 11%;
-    --card-subtle: 210 40% 96.1%;
+    --card-subtle: 210 25% 96%;
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
 
-    /* Brand Primary - Neon Green #48C84D */
-    --primary: 122 54% 53%;
+    /* Brand Primary - Balanced Green for Light Mode (Strong Contrast) */
+    --primary: 122 54% 42%; /* #319B35 */
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 122 54% 42%;
+    --primary-hover: 122 54% 36%;
 
     /* Secondary Surfaces & Borders */
-    --secondary: 210 40% 96.1%;
+    --secondary: 210 25% 94%; /* #EDF2F7 */
     --secondary-foreground: 222 47% 11%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215 16% 47%;
-    --accent: 210 40% 96.1%;
+    --muted: 210 20% 93%;
+    --muted-foreground: 215 16% 40%; /* #556275 readable dark grey paragraphs */
+    --accent: 210 25% 94%;
     --accent-foreground: 222 47% 11%;
 
     /* Semantic Status Tokens */
@@ -40,29 +40,37 @@
     --destructive-foreground: 0 0% 100%;
 
     /* Form & Interaction Controls */
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 122 54% 53%;
+    --border: 214 20% 86%; /* Clean subtle light grey border */
+    --input: 214 20% 86%;
+    --ring: 122 54% 42%;
     --radius: 0.75rem;
 
+    /* Semantic Surface Hierarchy - Light Mode */
+    --surface-primary: 210 20% 98%; /* #F8FAFC */
+    --surface-secondary: 210 25% 95%; /* #F1F5F9 */
+    --surface-tertiary: 210 20% 91%; /* #E2E8F0 */
+    --surface-card: 0 0% 100%; /* #FFFFFF */
+    --surface-card-hover: 210 30% 98%;
+    --surface-card-subtle: 210 25% 96%;
+
     /* Brand tokens */
-    --neon: 122 54% 53%;
-    --neon-soft: 123 100% 75%;
-    --metallic: 210 8% 72%;
-    --deep-black: 0 0% 2%;
+    --neon: 122 54% 42%;
+    --neon-soft: 123 75% 55%;
+    --metallic: 215 16% 45%;
+    --deep-black: 222 47% 11%;
   }
 
   .dark {
     /* Base Surfaces - Dark Theme (Cinematic Luxury Workshop) */
-    --background: 220 20% 4%; /* #07090D */
-    --foreground: 210 40% 98%;
-    --card: 220 18% 9%; /* #121620 */
+    --background: 220 20% 4%; /* #07090D deep obsidian */
+    --foreground: 210 40% 98%; /* Crisp white headings */
+    --card: 220 18% 10%; /* #121620 lighter card surface */
     --card-foreground: 210 40% 98%;
     --card-subtle: 220 16% 12%; /* #191E2A */
-    --popover: 220 18% 9%;
+    --popover: 220 18% 10%;
     --popover-foreground: 210 40% 98%;
 
-    /* Brand Primary - Refined Professional Green #48C84D */
+    /* Brand Primary - Refined Professional Neon Green #48C84D */
     --primary: 122 54% 53%;
     --primary-foreground: 0 0% 100%;
     --primary-hover: 122 54% 45%;
@@ -71,7 +79,7 @@
     --secondary: 220 16% 13%; /* #1B212D */
     --secondary-foreground: 210 40% 98%;
     --muted: 220 16% 13%;
-    --muted-foreground: 215 15% 65%;
+    --muted-foreground: 215 15% 65%; /* Soft grey paragraphs */
     --accent: 220 16% 13%;
     --accent-foreground: 210 40% 98%;
 
@@ -84,9 +92,23 @@
     --destructive-foreground: 0 0% 100%;
 
     /* Form & Interaction Controls */
-    --border: 220 14% 16%; /* #222938 */
+    --border: 220 14% 16%; /* #222938 clearly visible borders */
     --input: 220 14% 16%;
     --ring: 122 54% 53%;
+
+    /* Semantic Surface Hierarchy - Dark Mode */
+    --surface-primary: 220 20% 4%; /* #07080A */
+    --surface-secondary: 220 18% 7%; /* #0C0F15 */
+    --surface-tertiary: 220 16% 10%; /* #11151E */
+    --surface-card: 220 18% 11%; /* #151922 */
+    --surface-card-hover: 220 18% 15%; /* #1A202C */
+    --surface-card-subtle: 220 16% 9%; /* #10141D */
+
+    /* Brand tokens */
+    --neon: 122 54% 53%;
+    --neon-soft: 123 100% 75%;
+    --metallic: 210 8% 72%;
+    --deep-black: 0 0% 2%;
   }
 
   * {
@@ -249,32 +271,29 @@
     will-change: transform, opacity;
   }
 
-  /* Alternating Section Background Surfaces (Visual Depth Architecture) */
+  /* Alternating Section Background Surfaces (Visual Depth Architecture - Theme Adaptive) */
   .section-surface-obsidian {
-    background-color: #07080a;
+    @apply bg-background text-foreground;
   }
 
   .section-surface-charcoal {
-    background-color: #0c0f15;
+    @apply bg-surface-secondary text-foreground;
   }
 
   .section-surface-midnight {
-    background-color: #10141d;
+    @apply bg-surface-tertiary text-foreground;
   }
 
   .section-surface-slate {
-    background-color: #141924;
+    @apply bg-secondary text-foreground;
   }
 
   .card-surface-luxury {
-    background-color: rgba(21, 25, 34, 0.85);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(12px);
+    @apply bg-surface-card text-card-foreground border border-border/80 backdrop-blur-md shadow-sm;
   }
 
   .card-surface-luxury:hover {
-    border-color: rgba(72, 200, 77, 0.4);
-    box-shadow: 0 10px 30px -10px rgba(72, 200, 77, 0.15);
+    @apply border-primary/50 shadow-card-hover;
   }
 
   .btn-amber-priority {

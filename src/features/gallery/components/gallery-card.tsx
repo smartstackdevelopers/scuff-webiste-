@@ -17,7 +17,7 @@ export function GalleryCard({ item, onOpenLightbox, priority = false }: GalleryC
   return (
     <Card
       onClick={() => onOpenLightbox(item)}
-      className="cursor-pointer group relative overflow-hidden rounded-2xl bg-surface-card border border-white/[0.08] hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-card-hover flex flex-col h-full"
+      className="cursor-pointer group relative overflow-hidden rounded-2xl bg-surface-card border border-border hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-card-hover flex flex-col h-full"
     >
       {/* Image Container with Aspect Ratio */}
       <div className="relative aspect-[16/10] sm:aspect-[4/3] w-full overflow-hidden bg-muted">

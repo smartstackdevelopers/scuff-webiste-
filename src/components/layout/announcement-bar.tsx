@@ -26,7 +26,7 @@ export function AnnouncementBar() {
           animate={{ height: "auto", opacity: 1 }}
           exit={{ height: 0, opacity: 0 }}
           transition={{ duration: 0.25, ease: "easeInOut" }}
-          className="relative bg-gradient-to-r from-charcoal-900 via-primary/20 to-charcoal-900 border-b border-primary/25 text-foreground py-2 text-xs overflow-hidden z-40 select-none"
+          className="relative bg-surface-secondary dark:bg-gradient-to-r dark:from-[#0B0E14] dark:via-primary/20 dark:to-[#0B0E14] border-b border-border text-foreground py-2 text-xs overflow-hidden z-40 select-none transition-colors duration-200"
         >
           <Container>
             <div className="flex items-center justify-between gap-4">

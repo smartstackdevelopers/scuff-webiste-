@@ -89,7 +89,7 @@ export function CinematicVideoHero({
   return (
     <section
       className={cn(
-        "relative flex items-center justify-center overflow-hidden bg-[#07080A] border-b border-white/[0.08]",
+        "relative flex items-center justify-center overflow-hidden bg-background border-b border-border text-foreground transition-colors duration-200",
         minHeightClass,
         className
       )}
@@ -106,15 +106,15 @@ export function CinematicVideoHero({
         />
       </div>
 
-      {/* Professional Cinematic Dark Overlays for Flawless Contrast */}
+      {/* Professional Cinematic Overlays - Adaptive to Dark and Light Modes */}
       <div
         className={cn(
-          "absolute inset-0 -z-10 bg-gradient-to-t from-[#07080A] via-[#07080A]/85 to-[#07080A]/60",
+          "absolute inset-0 -z-10 bg-gradient-to-t from-background via-background/90 to-background/60 dark:from-[#07080A] dark:via-[#07080A]/85 dark:to-[#07080A]/60",
           overlayGradient
         )}
       />
-      <div className="absolute inset-0 -z-10 bg-black/45" />
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(7,8,10,0.75)_100%)]" />
+      <div className="absolute inset-0 -z-10 bg-background/50 dark:bg-black/45" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,transparent_30%,hsl(var(--background)/0.8)_100%)] dark:bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(7,8,10,0.75)_100%)]" />
 
       {/* Subtle Atmospheric Ambient Glow Orb */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-full max-w-5xl h-80 bg-primary/10 blur-[140px] pointer-events-none -z-10" />
@@ -140,12 +140,12 @@ export function CinematicVideoHero({
                           {bc.href ? (
                             <BreadcrumbLink
                               href={bc.href}
-                              className="text-muted-foreground hover:text-white transition-colors text-xs uppercase tracking-wider"
+                              className="text-muted-foreground hover:text-foreground transition-colors text-xs uppercase tracking-wider"
                             >
                               {bc.label}
                             </BreadcrumbLink>
                           ) : (
-                            <BreadcrumbPage className="text-white font-medium text-xs uppercase tracking-wider">
+                            <BreadcrumbPage className="text-foreground font-medium text-xs uppercase tracking-wider">
                               {bc.label}
                             </BreadcrumbPage>
                           )}
@@ -167,7 +167,7 @@ export function CinematicVideoHero({
                   <Badge
                     variant={badgeVariant}
                     dot
-                    className="bg-[#0C0F15]/90 border-white/[0.12] text-xs py-1 px-3 shadow-luxury-dark backdrop-blur-md"
+                    className="bg-card/90 border-border text-foreground text-xs py-1 px-3 shadow-sm backdrop-blur-md"
                   >
                     {badgeIcon || <Sparkles className="w-3.5 h-3.5" />}
                     <span>{badgeText}</span>
@@ -180,7 +180,7 @@ export function CinematicVideoHero({
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-3xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-white font-display leading-[0.95]"
+                className="text-2xl xs:text-3xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-foreground font-display leading-[0.98] break-words"
               >
                 {title}
               </motion.h1>
@@ -190,7 +190,7 @@ export function CinematicVideoHero({
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.15 }}
-                className="text-sm sm:text-base md:text-lg text-slate-300 max-w-2xl leading-relaxed"
+                className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl leading-relaxed"
               >
                 {subtitle}
               </motion.p>
@@ -201,7 +201,7 @@ export function CinematicVideoHero({
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
-                  className="flex flex-wrap items-center gap-3.5 pt-2"
+                  className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2 w-full sm:w-auto"
                 >
                   {primaryCta && (
                     <Link
@@ -211,7 +211,7 @@ export function CinematicVideoHero({
                           variant: (primaryCta.variant as any) || "glow",
                           size: "lg",
                         }),
-                        "shadow-glow-sm"
+                        "w-full sm:w-auto justify-center shadow-glow-sm"
                       )}
                     >
                       {primaryCta.icon}
@@ -224,7 +224,7 @@ export function CinematicVideoHero({
                       href={secondaryCta.href}
                       className={cn(
                         buttonVariants({ variant: "outline", size: "lg" }),
-                        "border-white/[0.14] hover:bg-white/[0.05] text-white"
+                        "w-full sm:w-auto justify-center border-border hover:bg-secondary text-foreground"
                       )}
                     >
                       {secondaryCta.icon}
@@ -240,19 +240,19 @@ export function CinematicVideoHero({
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.25 }}
-                  className="pt-4 flex flex-wrap gap-3"
+                  className="pt-4 flex flex-wrap gap-2.5 sm:gap-3"
                 >
                   {metrics.map((m, idx) => (
                     <div
                       key={idx}
-                      className="flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-surface-card/85 border border-white/[0.08] backdrop-blur-md"
+                      className="flex items-center gap-2 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-card/90 border border-border backdrop-blur-md text-xs sm:text-sm shadow-sm"
                     >
                       {m.icon && <span className="text-primary">{m.icon}</span>}
                       <div>
-                        <div className="text-sm font-bold text-white leading-none font-display uppercase tracking-wide">
+                        <div className="text-sm font-bold text-foreground leading-none font-display uppercase tracking-wide">
                           {m.value}
                         </div>
-                        <div className="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">
+                        <div className="text-[10px] text-muted-foreground uppercase tracking-wider font-semibold">
                           {m.label}
                         </div>
                       </div>
@@ -291,12 +291,12 @@ export function CinematicVideoHero({
                         {bc.href ? (
                           <BreadcrumbLink
                             href={bc.href}
-                            className="text-muted-foreground hover:text-white transition-colors text-xs uppercase tracking-wider"
+                            className="text-muted-foreground hover:text-foreground transition-colors text-xs uppercase tracking-wider"
                           >
                             {bc.label}
                           </BreadcrumbLink>
                         ) : (
-                          <BreadcrumbPage className="text-white font-medium text-xs uppercase tracking-wider">
+                          <BreadcrumbPage className="text-foreground font-medium text-xs uppercase tracking-wider">
                             {bc.label}
                           </BreadcrumbPage>
                         )}
@@ -318,7 +318,7 @@ export function CinematicVideoHero({
                 <Badge
                   variant={badgeVariant}
                   dot
-                  className="bg-[#0C0F15]/90 border-white/[0.12] text-xs py-1 px-3 shadow-luxury-dark backdrop-blur-md"
+                  className="bg-card/90 border-border text-foreground text-xs py-1 px-3 shadow-sm backdrop-blur-md"
                 >
                   {badgeIcon || <Sparkles className="w-3.5 h-3.5" />}
                   <span>{badgeText}</span>
@@ -331,7 +331,7 @@ export function CinematicVideoHero({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight text-white font-display leading-[0.98]"
+              className="text-2xl xs:text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight text-foreground font-display leading-[0.98] break-words"
             >
               {title}
             </motion.h1>
@@ -342,7 +342,7 @@ export function CinematicVideoHero({
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.15 }}
               className={cn(
-                "text-sm sm:text-base md:text-lg lg:text-xl text-slate-300 leading-relaxed font-normal",
+                "text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed font-normal",
                 align === "center" ? "max-w-3xl xl:max-w-4xl mx-auto" : "max-w-3xl xl:max-w-4xl"
               )}
             >
@@ -356,7 +356,7 @@ export function CinematicVideoHero({
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className={cn(
-                  "flex flex-wrap items-center gap-3.5 pt-2",
+                  "flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2 w-full sm:w-auto",
                   align === "center" ? "justify-center" : "justify-start"
                 )}
               >
@@ -368,7 +368,7 @@ export function CinematicVideoHero({
                         variant: (primaryCta.variant as any) || "glow",
                         size: "lg",
                       }),
-                      "shadow-glow-sm"
+                      "w-full sm:w-auto justify-center shadow-glow-sm"
                     )}
                   >
                     {primaryCta.icon}
@@ -381,7 +381,7 @@ export function CinematicVideoHero({
                     href={secondaryCta.href}
                     className={cn(
                       buttonVariants({ variant: "outline", size: "lg" }),
-                      "border-white/[0.14] hover:bg-white/[0.05] text-white"
+                      "w-full sm:w-auto justify-center border-border hover:bg-secondary text-foreground"
                     )}
                   >
                     {secondaryCta.icon}
@@ -398,21 +398,21 @@ export function CinematicVideoHero({
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.25 }}
                 className={cn(
-                  "pt-4 flex flex-wrap gap-3",
+                  "pt-4 flex flex-wrap gap-2.5 sm:gap-3",
                   align === "center" ? "justify-center" : "justify-start"
                 )}
               >
                 {metrics.map((m, idx) => (
                   <div
                     key={idx}
-                    className="flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-surface-card/85 border border-white/[0.08] backdrop-blur-md"
+                    className="flex items-center gap-2 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-card/90 border border-border backdrop-blur-md text-xs sm:text-sm shadow-sm"
                   >
                     {m.icon && <span className="text-primary">{m.icon}</span>}
                     <div className="text-left">
-                      <div className="text-sm font-bold text-white leading-none font-display uppercase tracking-wide">
+                      <div className="text-sm font-bold text-foreground leading-none font-display uppercase tracking-wide">
                         {m.value}
                       </div>
-                      <div className="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">
+                      <div className="text-[10px] text-muted-foreground uppercase tracking-wider font-semibold">
                         {m.label}
                       </div>
                     </div>

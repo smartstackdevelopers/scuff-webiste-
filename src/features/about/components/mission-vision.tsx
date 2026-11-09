@@ -13,16 +13,16 @@ export function MissionVision() {
   const { commitmentToQuality, mobileConvenience } = ABOUT_CONTENT;
 
   return (
-    <section className="py-20 md:py-24 bg-[#0C0F15] border-t border-white/[0.08] relative">
+    <section className="py-20 md:py-24 bg-background border-t border-border relative transition-colors duration-200">
       <Container>
         <div className="max-w-3xl mx-auto text-center mb-14 space-y-3">
           <Badge variant="electric" dot>
             Quality & Convenience
           </Badge>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-white font-display">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-foreground font-display">
             Our Standards & Mobile Service
           </h2>
-          <p className="text-slate-400 text-sm sm:text-base max-w-xl mx-auto">
+          <p className="text-muted-foreground text-sm sm:text-base max-w-xl mx-auto">
             Combining meticulous craftsmanship, high-grade automotive materials, and total mobile convenience across the West Midlands.
           </p>
         </div>
@@ -35,7 +35,7 @@ export function MissionVision() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <Card className="h-full bg-[#07080A]/95 backdrop-blur-md border-white/[0.1] hover:border-primary/50 transition-all duration-300 shadow-luxury-dark group relative overflow-hidden flex flex-col justify-between p-6 sm:p-8">
+            <Card className="h-full bg-surface-card backdrop-blur-md border-border hover:border-primary/50 transition-all duration-300 shadow-sm group relative overflow-hidden flex flex-col justify-between p-6 sm:p-8">
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 blur-[60px] -z-10 group-hover:bg-primary/20 transition-all" />
 
               <div className="space-y-6">
@@ -46,23 +46,23 @@ export function MissionVision() {
                   <span className="text-[11px] font-bold text-primary uppercase tracking-wider">
                     {commitmentToQuality.badge}
                   </span>
-                  <h3 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-white font-display mt-1">
+                  <h3 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-foreground font-display mt-1">
                     {commitmentToQuality.title}
                   </h3>
                 </div>
 
-                <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                   {commitmentToQuality.statement}
                 </p>
 
                 <div className="space-y-3 pt-2">
                   {commitmentToQuality.points.map((pt, i) => (
-                    <div key={i} className="p-3.5 rounded-xl bg-[#0C0F15] border border-white/[0.08] space-y-1">
-                      <div className="flex items-center gap-2 text-white font-bold text-xs uppercase tracking-wide">
+                    <div key={i} className="p-3.5 rounded-xl bg-surface-secondary border border-border space-y-1">
+                      <div className="flex items-center gap-2 text-foreground font-bold text-xs uppercase tracking-wide">
                         <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
                         <span>{pt.title}</span>
                       </div>
-                      <p className="text-xs text-slate-400 pl-6 leading-relaxed">
+                      <p className="text-xs text-muted-foreground pl-6 leading-relaxed">
                         {pt.desc}
                       </p>
                     </div>
@@ -70,7 +70,7 @@ export function MissionVision() {
                 </div>
               </div>
 
-              <div className="pt-6 mt-6 border-t border-white/[0.08]">
+              <div className="pt-6 mt-6 border-t border-border">
                 <div className="flex items-center gap-3 text-xs text-primary font-semibold">
                   <Sparkles className="w-4 h-4 shrink-0" />
                   <span>{commitmentToQuality.highlight}</span>
@@ -86,7 +86,7 @@ export function MissionVision() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.15 }}
           >
-            <Card className="h-full bg-[#07080A]/95 backdrop-blur-md border-white/[0.1] hover:border-primary/50 transition-all duration-300 shadow-luxury-dark group relative overflow-hidden flex flex-col justify-between p-6 sm:p-8">
+            <Card className="h-full bg-surface-card backdrop-blur-md border-border hover:border-primary/50 transition-all duration-300 shadow-sm group relative overflow-hidden flex flex-col justify-between p-6 sm:p-8">
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 blur-[60px] -z-10 group-hover:bg-primary/20 transition-all" />
 
               <div className="space-y-6">
@@ -97,18 +97,18 @@ export function MissionVision() {
                   <span className="text-[11px] font-bold text-primary uppercase tracking-wider">
                     {mobileConvenience.badge}
                   </span>
-                  <h3 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-white font-display mt-1">
+                  <h3 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-foreground font-display mt-1">
                     {mobileConvenience.title}
                   </h3>
                 </div>
 
-                <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                   {mobileConvenience.description}
                 </p>
 
                 <div className="space-y-3 pt-2">
                   {mobileConvenience.points.map((point, i) => (
-                    <div key={i} className="flex items-start gap-3 p-3 rounded-xl bg-[#0C0F15] border border-white/[0.08] text-xs text-slate-300">
+                    <div key={i} className="flex items-start gap-3 p-3 rounded-xl bg-surface-secondary border border-border text-xs text-muted-foreground">
                       <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
                       <span>{point}</span>
                     </div>
@@ -116,8 +116,8 @@ export function MissionVision() {
                 </div>
               </div>
 
-              <div className="pt-6 mt-6 border-t border-white/[0.08]">
-                <div className="flex items-center gap-3 text-xs text-emerald-400 font-semibold">
+              <div className="pt-6 mt-6 border-t border-border">
+                <div className="flex items-center gap-3 text-xs text-emerald-600 dark:text-emerald-400 font-semibold">
                   <MapPin className="w-4 h-4 shrink-0" />
                   <span>Serving Birmingham, Solihull, Wolverhampton, Coventry & West Midlands</span>
                 </div>

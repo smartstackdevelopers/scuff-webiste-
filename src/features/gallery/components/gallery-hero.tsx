@@ -48,7 +48,7 @@ export function GalleryHero() {
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.35 }}
-        className="pt-2 text-xs text-slate-400 flex items-center justify-center gap-2"
+        className="pt-2 text-xs text-muted-foreground flex items-center justify-center gap-2"
       >
         <span className="inline-block w-2 h-2 rounded-full bg-primary animate-pulse" />
         <span>All photos captured under calibrated 5000K daylight detailing inspection lamps.</span>

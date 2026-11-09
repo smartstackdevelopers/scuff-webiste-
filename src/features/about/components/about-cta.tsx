@@ -14,7 +14,7 @@ export function AboutCTA() {
   const { cta } = ABOUT_CONTENT;
 
   return (
-    <section className="py-20 md:py-28 relative overflow-hidden bg-[#07080A] border-t border-white/[0.08]">
+    <section className="py-20 md:py-28 relative overflow-hidden bg-background border-t border-border transition-colors duration-200">
       {/* Decorative gradient backdrops */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.04] to-transparent pointer-events-none" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-72 bg-primary/10 blur-[140px] pointer-events-none -z-10" />
@@ -25,7 +25,7 @@ export function AboutCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative rounded-3xl border border-white/[0.12] bg-[#0C0F15] p-8 sm:p-12 md:p-16 text-center max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto shadow-luxury-dark backdrop-blur-md overflow-hidden"
+          className="relative rounded-3xl border border-border bg-surface-card p-8 sm:p-12 md:p-16 text-center max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto shadow-sm backdrop-blur-md overflow-hidden"
         >
           {/* Subtle grid pattern background */}
           <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none" />
@@ -36,11 +36,11 @@ export function AboutCTA() {
               <span>Friendly Family Service • Free No-Obligation Quotes</span>
             </div>
 
-            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-white max-w-3xl xl:max-w-4xl mx-auto leading-tight">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-foreground max-w-3xl xl:max-w-4xl mx-auto leading-tight">
               {cta.headline}
             </h2>
 
-            <p className="text-base sm:text-lg text-slate-300 max-w-3xl xl:max-w-4xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg text-muted-foreground max-w-3xl xl:max-w-4xl mx-auto leading-relaxed">
               {cta.subheadline}
             </p>
 
@@ -60,7 +60,7 @@ export function AboutCTA() {
                 href={cta.secondaryBtn.href}
                 className={cn(
                   buttonVariants({ size: "lg", variant: "outline" }),
-                  "w-full sm:w-auto text-base border-white/[0.15] text-white hover:border-primary hover:text-primary"
+                  "w-full sm:w-auto text-base border-border text-foreground hover:border-primary hover:text-primary"
                 )}
               >
                 <Phone className="w-4 h-4 mr-2" />

@@ -28,13 +28,13 @@ export function ServiceBeforeAfterViewer({ service }: ServiceBeforeAfterViewerPr
   };
 
   return (
-    <section className="py-16 md:py-24 bg-surface-secondary border-t border-border/40 relative">
+    <section className="py-16 md:py-24 bg-surface-secondary border-t border-border relative transition-colors duration-200">
       <Container>
         <div className="max-w-3xl mx-auto text-center mb-14 space-y-3">
           <Badge variant="electric" dot>
             Real Visual Transformation
           </Badge>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-white font-display">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-foreground font-display">
             Before & After Results
           </h2>
           <p className="text-muted-foreground text-sm sm:text-base max-w-xl mx-auto">
@@ -49,7 +49,7 @@ export function ServiceBeforeAfterViewer({ service }: ServiceBeforeAfterViewerPr
           transition={{ duration: 0.5 }}
           className="max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto"
         >
-          <Card className="overflow-hidden border-white/[0.08] shadow-sm bg-surface-card p-2 sm:p-3">
+          <Card className="overflow-hidden border-border shadow-sm bg-surface-card p-2 sm:p-3">
             {/* Interactive Image Splitter Container */}
             <div
               ref={containerRef}

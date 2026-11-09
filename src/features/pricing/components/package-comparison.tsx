@@ -30,7 +30,7 @@ export function PackageComparison() {
         </div>
 
         {/* Desktop Comparison Table (Visible on lg+) */}
-        <div className="hidden lg:block overflow-x-auto rounded-2xl border border-white/[0.08] bg-surface-card shadow-sm backdrop-blur-md">
+        <div className="hidden lg:block overflow-x-auto rounded-2xl border border-border bg-surface-card shadow-sm backdrop-blur-md">
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="border-b border-border/80 bg-muted/40">

@@ -12,13 +12,13 @@ export function ServiceGrid() {
       <Container>
         <div className="max-w-4xl xl:max-w-5xl mx-auto text-center mb-16 space-y-3">
           <span className="text-xs uppercase tracking-widest font-bold text-primary">
-            Precision Care Solutions
+            Precision Repair Solutions
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-white font-display">
-            Our Detailing Services
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-foreground font-display">
+            Our Repair & Refurbishment Services
           </h2>
           <p className="text-muted-foreground text-sm sm:text-base max-w-3xl mx-auto leading-relaxed">
-            Engineered treatments designed for every condition—from daily commuters needing sanitisation to exotic sports cars requiring multi-stage correction.
+            Professional alloy wheel refurbishment, diamond cutting, and dent & scratch SMART repairs delivered directly to your home or workplace across Birmingham and the West Midlands.
           </p>
         </div>
 

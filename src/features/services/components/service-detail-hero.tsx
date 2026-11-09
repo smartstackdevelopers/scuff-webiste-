@@ -54,7 +54,7 @@ export function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
   }, [service.slug, service.heroImage]);
 
   return (
-    <section className="relative min-h-[62vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden bg-[#07080A] border-b border-white/[0.08]">
+    <section className="relative min-h-[62vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden bg-background border-b border-border text-foreground transition-colors duration-200">
       {/* Real Automotive Photography Background */}
       <div className="absolute inset-0 -z-20 overflow-hidden">
         <Image
@@ -68,9 +68,9 @@ export function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
       </div>
 
       {/* Cinematic Contrast Overlays for Perfect Readability */}
-      <div className="absolute inset-0 -z-10 pointer-events-none bg-gradient-to-t from-[#07080A] via-[#07080A]/85 to-[#07080A]/60" />
-      <div className="absolute inset-0 -z-10 pointer-events-none bg-gradient-to-r from-[#07080A]/90 via-[#07080A]/40 to-[#07080A]/80" />
-      <div className="absolute inset-0 -z-10 pointer-events-none bg-[radial-gradient(ellipse_at_center,transparent_35%,rgba(7,8,10,0.85)_100%)]" />
+      <div className="absolute inset-0 -z-10 pointer-events-none bg-gradient-to-t from-background via-background/90 to-background/60 dark:from-[#07080A] dark:via-[#07080A]/85 dark:to-[#07080A]/60" />
+      <div className="absolute inset-0 -z-10 pointer-events-none bg-gradient-to-r from-background/90 via-background/40 to-background/80 dark:from-[#07080A]/90 dark:via-[#07080A]/40 dark:to-[#07080A]/80" />
+      <div className="absolute inset-0 -z-10 pointer-events-none bg-[radial-gradient(ellipse_at_center,transparent_35%,hsl(var(--background)/0.85)_100%)] dark:bg-[radial-gradient(ellipse_at_center,transparent_35%,rgba(7,8,10,0.85)_100%)]" />
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-full max-w-4xl h-80 bg-primary/10 blur-[130px] pointer-events-none -z-10" />
 
       <Container className="relative z-10 py-16 md:py-24">
@@ -82,7 +82,7 @@ export function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
                 <BreadcrumbItem>
                   <BreadcrumbLink
                     href="/"
-                    className="text-muted-foreground hover:text-white transition-colors text-xs uppercase tracking-wider"
+                    className="text-muted-foreground hover:text-foreground transition-colors text-xs uppercase tracking-wider"
                   >
                     Home
                   </BreadcrumbLink>
@@ -91,14 +91,14 @@ export function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
                 <BreadcrumbItem>
                   <BreadcrumbLink
                     href="/services"
-                    className="text-muted-foreground hover:text-white transition-colors text-xs uppercase tracking-wider"
+                    className="text-muted-foreground hover:text-foreground transition-colors text-xs uppercase tracking-wider"
                   >
                     Services
                   </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
-                  <BreadcrumbPage className="text-white font-medium text-xs uppercase tracking-wider">
+                  <BreadcrumbPage className="text-foreground font-medium text-xs uppercase tracking-wider">
                     {service.title}
                   </BreadcrumbPage>
                 </BreadcrumbItem>
@@ -113,13 +113,13 @@ export function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
             transition={{ duration: 0.5 }}
             className="flex flex-wrap items-center gap-2.5"
           >
-            <Badge variant="electric" dot className="bg-[#0C0F15]/90 border-white/[0.12] backdrop-blur-md">
+            <Badge variant="electric" dot className="bg-card/90 border-border text-foreground backdrop-blur-md shadow-sm">
               <Sparkles className="w-3.5 h-3.5" />
               <span>{service.badge}</span>
             </Badge>
 
             {service.popular && (
-              <Badge variant="outline" className="text-amber-400 border-amber-400/40 bg-[#0C0F15]/80">
+              <Badge variant="outline" className="text-amber-500 border-amber-500/40 bg-card/90">
                 Highly Recommended
               </Badge>
             )}
@@ -132,7 +132,7 @@ export function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-white font-display leading-[0.98]"
+            className="text-3xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-foreground font-display leading-[0.98]"
           >
             {service.title}
           </motion.h1>
@@ -152,7 +152,7 @@ export function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-sm sm:text-base md:text-lg text-slate-300 max-w-4xl leading-relaxed"
+            className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-4xl leading-relaxed"
           >
             {service.longDescription}
           </motion.p>
@@ -162,31 +162,31 @@ export function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.25 }}
-            className="p-5 sm:p-6 rounded-2xl bg-surface-card/90 backdrop-blur-xl border border-white/[0.1] shadow-luxury-dark flex flex-wrap items-center justify-between gap-6"
+            className="p-5 sm:p-6 rounded-2xl bg-card/95 backdrop-blur-xl border border-border shadow-sm flex flex-wrap items-center justify-between gap-6"
           >
             <div className="flex flex-wrap items-center gap-6 sm:gap-10">
               <div>
-                <span className="text-xs uppercase tracking-wider text-slate-400 block font-semibold">
+                <span className="text-xs uppercase tracking-wider text-muted-foreground block font-semibold">
                   Investment
                 </span>
-                <span className="text-2xl sm:text-3xl font-black text-white font-display uppercase tracking-tight">
+                <span className="text-2xl sm:text-3xl font-black text-foreground font-display uppercase tracking-tight">
                   {service.priceOnAssessment
                     ? "Quote on assessment"
                     : `From ${service.currency}${service.startingPrice}`}
                 </span>
               </div>
 
-              <div className="h-10 w-px bg-white/[0.1] hidden sm:block" />
+              <div className="h-10 w-px bg-border hidden sm:block" />
 
               <div className="flex items-center gap-2.5">
                 <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/30 text-primary flex items-center justify-center">
                   <Clock className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-xs uppercase tracking-wider text-slate-400 block font-semibold">
+                  <span className="text-xs uppercase tracking-wider text-muted-foreground block font-semibold">
                     Turnaround
                   </span>
-                  <span className="text-sm sm:text-base font-bold text-white">
+                  <span className="text-sm sm:text-base font-bold text-foreground">
                     {service.duration}
                   </span>
                 </div>
@@ -210,7 +210,7 @@ export function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
           </motion.div>
 
           {/* Suitable For note */}
-          <p className="text-xs text-slate-400 flex items-center gap-2">
+          <p className="text-xs text-muted-foreground flex items-center gap-2">
             <CheckCircle2 className="w-3.5 h-3.5 text-primary shrink-0" />
             <span>Ideal for: {service.recommendedFor}</span>
           </p>

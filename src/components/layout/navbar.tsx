@@ -34,13 +34,15 @@ export function Navbar() {
         className={cn(
           "sticky top-0 z-40 w-full transition-all duration-300",
           isScrolled
-            ? "bg-[#07080A]/92 backdrop-blur-xl border-b border-white/[0.08] shadow-luxury-dark"
-            : "bg-[#07080A]/75 backdrop-blur-md border-b border-white/[0.06]"
+            ? "bg-background/92 backdrop-blur-xl border-b border-border shadow-sm text-foreground"
+            : "bg-background/80 backdrop-blur-md border-b border-border/70 text-foreground"
         )}
       >
         <Container>
-          <div className="flex h-20 items-center justify-between gap-4">
-            <BrandLogo size="md" />
+          <div className="flex h-16 sm:h-20 items-center justify-between gap-2 sm:gap-4 min-w-0">
+            <div className="shrink min-w-0 max-w-[150px] xs:max-w-[190px] sm:max-w-none">
+              <BrandLogo size="md" />
+            </div>
 
             <nav
               className="hidden lg:flex items-center gap-1 xl:gap-2"
@@ -86,10 +88,10 @@ export function Navbar() {
               })}
             </nav>
 
-            <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
+            <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
               <a
                 href={siteConfig.contact.phoneTel}
-                className="hidden xl:inline-flex items-center gap-2 px-3 py-1.5 text-xs font-bold text-white hover:text-primary transition-colors bg-white/[0.04] border border-white/[0.08] hover:border-primary/40 rounded-xl"
+                className="hidden xl:inline-flex items-center gap-2 px-3 py-1.5 text-xs font-bold text-foreground hover:text-primary transition-colors bg-secondary/60 border border-border hover:border-primary/40 rounded-xl"
               >
                 <Phone className="w-3.5 h-3.5 text-primary" />
                 <span>{siteConfig.contact.phone}</span>
@@ -111,10 +113,10 @@ export function Navbar() {
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(true)}
-                className="lg:hidden flex items-center justify-center w-10 h-10 rounded-xl bg-card border border-border/80 text-foreground hover:bg-secondary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric"
+                className="lg:hidden flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-card border border-border/80 text-foreground hover:bg-secondary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric"
                 aria-label="Open mobile navigation menu"
               >
-                <Menu className="w-5 h-5" />
+                <Menu className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
             </div>
           </div>

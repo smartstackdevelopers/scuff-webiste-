@@ -13,7 +13,7 @@ export const metadata = {
 
 export default function PrivacyPage() {
   return (
-    <div className="flex flex-col min-h-screen bg-[#07080A]">
+    <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-200">
       <CinematicVideoHero
         videoSrc="/videos/hero/03-car-drive.mp4"
         posterSrc="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?q=80&w=2000&auto=format&fit=crop"
@@ -40,19 +40,19 @@ export default function PrivacyPage() {
         ]}
       />
 
-      <div className="py-16 sm:py-24 space-y-12 bg-[#0C0F15]">
+      <div className="py-16 sm:py-24 space-y-12 bg-surface-secondary border-t border-border transition-colors duration-200">
         <Container className="max-w-5xl xl:max-w-6xl">
-          <div className="space-y-8 text-sm text-slate-300 leading-relaxed bg-surface-card p-6 sm:p-10 rounded-3xl border border-white/[0.08] shadow-luxury-dark">
+          <div className="space-y-8 text-sm text-muted-foreground leading-relaxed bg-surface-card p-6 sm:p-10 rounded-3xl border border-border shadow-sm">
             <section className="space-y-3">
-              <h2 className="text-xl font-bold text-white font-display uppercase tracking-wider">1. Introduction & Commitment</h2>
+              <h2 className="text-xl font-bold text-foreground font-display uppercase tracking-wider">1. Introduction & Commitment</h2>
               <p>
                 At {siteConfig.name} (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;), we take your privacy and the confidentiality of your personal and automotive data with the utmost seriousness. This Privacy Policy outlines how we collect, store, process, and protect your information when using our website, booking our mobile detailing vans, or visiting our master detailing studio.
               </p>
             </section>
 
             <section className="space-y-3">
-              <h2 className="text-xl font-bold text-white font-display uppercase tracking-wider">2. Data We Collect</h2>
-              <ul className="list-disc pl-5 space-y-1.5 text-slate-300">
+              <h2 className="text-xl font-bold text-foreground font-display uppercase tracking-wider">2. Data We Collect</h2>
+              <ul className="list-disc pl-5 space-y-1.5 text-muted-foreground">
                 <li><strong>Contact Information:</strong> Full name, billing address, email address, and telephone number.</li>
                 <li><strong>Automotive Specifications:</strong> Vehicle registration mark (VRM), make, model, paint code, factory finish type, and documented pre-existing scratch/scuff conditions.</li>
                 <li><strong>Service & Diagnostic Records:</strong> Ultrasonic paint depth gauge readings, high-resolution before/after vehicle photography, and ceramic warranty registration numbers.</li>
@@ -61,29 +61,29 @@ export default function PrivacyPage() {
             </section>
 
             <section className="space-y-3">
-              <h2 className="text-xl font-bold text-white font-display uppercase tracking-wider">3. Vehicle Photography & Showcase Usage</h2>
+              <h2 className="text-xl font-bold text-foreground font-display uppercase tracking-wider">3. Vehicle Photography & Showcase Usage</h2>
               <p>
                 During inspection and detailing transformations, our technicians capture photographic records of your vehicle. For gallery showcase or promotional publishing, all vehicle registration plates and identifying owner marks are digitally anonymised and obscured unless explicit written authorization has been granted by the client.
               </p>
             </section>
 
             <section className="space-y-3">
-              <h2 className="text-xl font-bold text-white font-display uppercase tracking-wider">4. Data Security & Retention</h2>
+              <h2 className="text-xl font-bold text-foreground font-display uppercase tracking-wider">4. Data Security & Retention</h2>
               <p>
                 All customer profiles and vehicle diagnostics are transmitted over TLS 1.3 encryption and stored in secure UK/EU data centers conforming to ISO 27001 standards. We retain maintenance records for up to 6 years to service 5-Year Ceramic Coating warranty validations.
               </p>
             </section>
 
             <section className="space-y-3">
-              <h2 className="text-xl font-bold text-white font-display uppercase tracking-wider">5. Your Legal Rights</h2>
+              <h2 className="text-xl font-bold text-foreground font-display uppercase tracking-wider">5. Your Legal Rights</h2>
               <p>
                 Under the UK General Data Protection Regulation (UK GDPR), you retain the right to access, rectify, or request erasure of your personal data at any time. For all data subject inquiries, contact our Data Protection Officer at: <a href={`mailto:${siteConfig.contact.emailPlaceholder}`} className="text-primary hover:underline">{siteConfig.contact.emailPlaceholder}</a>.
               </p>
             </section>
 
-            <div className="pt-6 border-t border-white/[0.08] flex items-center justify-between">
+            <div className="pt-6 border-t border-border flex items-center justify-between">
               <Link href="/">
-                <Button variant="outline" size="sm" className="gap-2 border-white/[0.12] text-white">
+                <Button variant="outline" size="sm" className="gap-2 border-border text-foreground">
                   <ArrowLeft className="w-4 h-4" />
                   <span>Return to Homepage</span>
                 </Button>

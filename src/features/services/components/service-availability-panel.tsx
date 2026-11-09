@@ -18,15 +18,15 @@ export function ServiceAvailabilityPanel({ service }: ServiceAvailabilityPanelPr
   const problems = service.problemsAddressed ?? [];
 
   return (
-    <section className="py-14 md:py-20 border-t border-border/40 bg-surface-secondary">
+    <section className="py-14 md:py-20 border-t border-border bg-surface-secondary transition-colors duration-200">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1560px] mx-auto">
-          <Card className="p-6 sm:p-8 bg-surface-card border-white/[0.08] space-y-5">
+          <Card className="p-6 sm:p-8 bg-surface-card border-border shadow-sm space-y-5">
             <div className="flex flex-wrap items-center gap-2">
               <ServiceAvailabilityBadge service={service} />
             </div>
             <div className="space-y-2">
-              <h2 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-white font-display">
+              <h2 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-foreground font-display">
                 Mobile & Workshop Suitability
               </h2>
               <p className="text-sm text-muted-foreground leading-relaxed">
@@ -57,7 +57,7 @@ export function ServiceAvailabilityPanel({ service }: ServiceAvailabilityPanelPr
           </Card>
 
           {problems.length > 0 && (
-            <Card className="p-6 sm:p-8 bg-surface-card border-white/[0.08] space-y-5">
+            <Card className="p-6 sm:p-8 bg-surface-card border-border shadow-sm space-y-5">
               <h2 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-foreground">
                 Common Problems Addressed
               </h2>

@@ -15,7 +15,7 @@ export function ServiceAreasSection() {
   const { serviceAreas } = ABOUT_CONTENT;
 
   return (
-    <section className="py-20 md:py-28 bg-[#0C0F15] border-t border-white/[0.08] relative overflow-hidden">
+    <section className="py-20 md:py-28 bg-surface-secondary border-t border-border relative overflow-hidden transition-colors duration-200">
       <div className="absolute inset-0 bg-radial-vignette opacity-15 pointer-events-none" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl h-72 bg-primary/5 blur-[130px] pointer-events-none -z-10" />
 
@@ -24,10 +24,10 @@ export function ServiceAreasSection() {
           <Badge variant="electric" dot>
             Mobile Service Coverage
           </Badge>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-white font-display">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-foreground font-display">
             Our Service Areas
           </h2>
-          <p className="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-sm sm:text-base max-w-2xl mx-auto">
             You Scuff We Buff provides professional mobile alloy wheel repairs and SMART bodywork repairs across Birmingham and the wider West Midlands. Our team comes directly to your home or workplace.
           </p>
         </div>
@@ -41,20 +41,20 @@ export function ServiceAreasSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.35, delay: index * 0.05 }}
-              className="p-6 rounded-2xl bg-[#07080A] border border-white/[0.08] hover:border-primary/40 transition-all duration-300 group hover:-translate-y-0.5 shadow-luxury-dark"
+              className="p-6 rounded-2xl bg-surface-card border border-border hover:border-primary/40 transition-all duration-300 group hover:-translate-y-0.5 shadow-sm"
             >
               <div className="flex items-start gap-3.5">
                 <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/25 text-primary flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-black transition-colors">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div className="space-y-1 flex-1">
-                  <h3 className="text-lg font-bold text-white uppercase tracking-tight font-display group-hover:text-primary transition-colors">
+                  <h3 className="text-lg font-bold text-foreground uppercase tracking-tight font-display group-hover:text-primary transition-colors">
                     {area.name}
                   </h3>
-                  <p className="text-xs text-slate-400 leading-relaxed">
+                  <p className="text-xs text-muted-foreground leading-relaxed">
                     {area.description}
                   </p>
-                  <div className="flex items-center gap-1.5 pt-2 text-[11px] font-semibold text-emerald-400">
+                  <div className="flex items-center gap-1.5 pt-2 text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">
                     <CheckCircle2 className="w-3.5 h-3.5" />
                     <span>Mobile Repair Available</span>
                   </div>
@@ -65,12 +65,12 @@ export function ServiceAreasSection() {
         </div>
 
         {/* Banner callout */}
-        <div className="mt-12 p-6 sm:p-8 rounded-3xl bg-[#07080A]/80 border border-primary/20 backdrop-blur-md max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 shadow-glow-sm">
+        <div className="mt-12 p-6 sm:p-8 rounded-3xl bg-surface-card border border-primary/25 backdrop-blur-md max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm">
           <div className="space-y-1 text-center sm:text-left">
-            <h4 className="text-base sm:text-lg font-bold text-white font-display uppercase tracking-tight">
+            <h4 className="text-base sm:text-lg font-bold text-foreground font-display uppercase tracking-tight">
               Don&apos;t See Your Exact Postcode?
             </h4>
-            <p className="text-xs sm:text-sm text-slate-400">
+            <p className="text-xs sm:text-sm text-muted-foreground">
               We cover surrounding areas across the West Midlands. Contact us to verify your location.
             </p>
           </div>

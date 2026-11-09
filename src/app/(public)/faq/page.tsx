@@ -97,7 +97,7 @@ export default function FAQPage() {
   });
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#07080A]">
+    <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-200">
       {/* Cinematic Video Hero */}
       <CinematicVideoHero
         videoSrc="/videos/hero/04-painting.mp4"
@@ -137,17 +137,17 @@ export default function FAQPage() {
       >
         {/* Search Input Box */}
         <div className="pt-4 max-w-xl xl:max-w-2xl mx-auto relative">
-          <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+          <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
           <Input
             placeholder="Search questions (e.g. ceramic coating, rain, scratch)..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="pl-11 h-12 bg-surface-card/90 text-white text-sm rounded-2xl border-white/[0.12] shadow-luxury-dark backdrop-blur-md focus:border-primary"
+            className="pl-11 h-12 bg-card/90 text-foreground text-sm rounded-2xl border-border shadow-sm backdrop-blur-md focus:border-primary"
           />
         </div>
       </CinematicVideoHero>
 
-      <div className="py-16 sm:py-24 space-y-12 bg-[#0C0F15]">
+      <div className="py-16 sm:py-24 space-y-12 bg-surface-secondary transition-colors duration-200">
         <Container>
           {/* Category Filter Pills */}
           <div className="flex flex-wrap items-center justify-center gap-2 pb-6">
@@ -165,7 +165,7 @@ export default function FAQPage() {
                   "px-4 py-2 rounded-xl text-xs font-semibold transition-all select-none border",
                   activeCategory === cat.id
                     ? "bg-primary text-black font-bold border-primary shadow-glow-sm"
-                    : "bg-surface-card border-white/[0.08] text-slate-300 hover:text-white hover:border-white/20"
+                    : "bg-surface-card border-border text-muted-foreground hover:text-foreground hover:border-primary/40"
                 )}
               >
                 {cat.label}
@@ -176,7 +176,7 @@ export default function FAQPage() {
           {/* Accordion List */}
           <div className="max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mx-auto space-y-4">
             {filteredFaqs.length === 0 ? (
-              <div className="py-12 text-center text-muted-foreground bg-surface-card rounded-2xl border border-white/[0.08] p-8">
+              <div className="py-12 text-center text-muted-foreground bg-surface-card rounded-2xl border border-border p-8">
                 <HelpCircle className="w-8 h-8 text-muted-foreground mx-auto mb-2 opacity-50" />
                 <p className="text-sm">No matching questions found for &quot;{search}&quot;.</p>
                 <button
@@ -195,12 +195,12 @@ export default function FAQPage() {
                 return (
                   <div
                     key={idx}
-                    className="bg-surface-card border border-white/[0.08] rounded-2xl overflow-hidden transition-all duration-200"
+                    className="bg-surface-card border border-border rounded-2xl overflow-hidden transition-all duration-200 shadow-sm"
                   >
                     <button
                       type="button"
                       onClick={() => toggleAccordion(idx)}
-                      className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 font-bold text-white text-sm sm:text-base hover:text-primary transition-colors focus:outline-none"
+                      className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 font-bold text-foreground text-sm sm:text-base hover:text-primary transition-colors focus:outline-none"
                     >
                       <span>{faq.question}</span>
                       <ChevronDown
@@ -212,7 +212,7 @@ export default function FAQPage() {
                     </button>
 
                     {isOpen && (
-                      <div className="px-5 pb-5 sm:px-6 sm:pb-6 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-white/[0.04] pt-4">
+                      <div className="px-5 pb-5 sm:px-6 sm:pb-6 text-xs sm:text-sm text-muted-foreground leading-relaxed border-t border-border pt-4">
                         {faq.answer}
                       </div>
                     )}
@@ -224,10 +224,10 @@ export default function FAQPage() {
 
           {/* Bottom Help Banner */}
           <div className="max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mx-auto pt-8">
-            <div className="p-6 rounded-3xl bg-surface-card border border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+            <div className="p-6 rounded-3xl bg-surface-card border border-border flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left shadow-sm">
               <div>
-                <h4 className="text-sm font-bold text-white font-display uppercase tracking-wider">Have a bespoke vehicle enquiry?</h4>
-                <p className="text-xs text-slate-400 mt-0.5">Our detailing directors are available Monday to Saturday for consultations.</p>
+                <h4 className="text-sm font-bold text-foreground font-display uppercase tracking-wider">Have a bespoke vehicle enquiry?</h4>
+                <p className="text-xs text-muted-foreground mt-0.5">Our detailing directors are available Monday to Saturday for consultations.</p>
               </div>
               <Link href="/contact">
                 <Button size="sm" variant="glow" className="shrink-0 gap-1.5">

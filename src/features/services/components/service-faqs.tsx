@@ -19,13 +19,13 @@ export function ServiceFAQs({ service }: ServiceFAQsProps) {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-surface-tertiary border-t border-border/40 relative">
+    <section className="py-16 md:py-24 bg-background border-t border-border relative transition-colors duration-200">
       <Container>
         <div className="max-w-3xl mx-auto text-center mb-14 space-y-3">
           <span className="text-xs uppercase tracking-widest font-bold text-primary">
             Frequently Asked Questions
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-white font-display">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-foreground font-display">
             Questions About {service.title}
           </h2>
           <p className="text-muted-foreground text-sm sm:text-base max-w-xl mx-auto">
@@ -42,7 +42,7 @@ export function ServiceFAQs({ service }: ServiceFAQsProps) {
                 key={index}
                 className={cn(
                   "bg-surface-card border transition-all duration-200 overflow-hidden",
-                  isOpen ? "border-primary/50 shadow-sm" : "border-white/[0.08]"
+                  isOpen ? "border-primary/50 shadow-sm" : "border-border"
                 )}
               >
                 <button

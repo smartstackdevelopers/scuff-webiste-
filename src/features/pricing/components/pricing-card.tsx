@@ -22,7 +22,7 @@ export function PricingCard({ pkg }: PricingCardProps) {
         "relative flex flex-col h-full bg-surface-card backdrop-blur-md transition-all duration-300 shadow-sm overflow-hidden group",
         isRecommended
           ? "border-2 border-primary shadow-glow-sm lg:-translate-y-2.5 z-10"
-          : "border-white/[0.08] hover:border-primary/50 hover:-translate-y-1"
+          : "border-border hover:border-primary/50 hover:-translate-y-1"
       )}
     >
       {/* Recommended Ribbon / Badge */}

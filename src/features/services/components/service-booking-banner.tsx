@@ -15,7 +15,7 @@ interface ServiceBookingBannerProps {
 
 export function ServiceBookingBanner({ service }: ServiceBookingBannerProps) {
   return (
-    <section className="py-20 bg-[#07080A] border-t border-border/40 relative overflow-hidden">
+    <section className="py-20 bg-background border-t border-border relative overflow-hidden transition-colors duration-200">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-72 bg-primary/10 blur-[130px] pointer-events-none -z-10" />
 
       <Container>
@@ -24,7 +24,7 @@ export function ServiceBookingBanner({ service }: ServiceBookingBannerProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative rounded-3xl border border-white/[0.1] bg-surface-card p-8 sm:p-12 md:p-14 text-center max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto shadow-sm backdrop-blur-md overflow-hidden"
+          className="relative rounded-3xl border border-border bg-surface-card p-8 sm:p-12 md:p-14 text-center max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto shadow-sm backdrop-blur-md overflow-hidden"
         >
           <div className="relative z-10 space-y-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/15 border border-primary/30 text-primary text-xs font-semibold uppercase tracking-wider">
@@ -32,12 +32,15 @@ export function ServiceBookingBanner({ service }: ServiceBookingBannerProps) {
               <span>Mobile Service Across Birmingham &amp; West Midlands</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-white font-display max-w-3xl xl:max-w-4xl mx-auto leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-foreground font-display max-w-3xl xl:max-w-4xl mx-auto leading-tight">
               Ready to Book Your {service.title}?
             </h2>
 
             <p className="text-sm sm:text-base text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Appointments starting from {service.currency}{service.startingPrice}. Mobile repair appointments available across Birmingham and the wider West Midlands at your home or workplace.
+              {service.priceOnAssessment
+                ? "Fast, free bespoke quote on assessment."
+                : `Appointments starting from ${service.currency}${service.startingPrice}.`}{" "}
+              Mobile repair appointments available across Birmingham and the wider West Midlands at your home or workplace.
             </p>
 
             {/* Quick check indicators */}

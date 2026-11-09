@@ -37,7 +37,7 @@ export function GalleryGrid() {
   };
 
   return (
-    <section id="portfolio" className="py-16 md:py-24 bg-surface-tertiary border-t border-border/40 relative">
+    <section id="portfolio" className="py-16 md:py-24 bg-surface-secondary border-t border-border relative transition-colors duration-200">
       <Container>
         {/* Filters Header */}
         <div className="mb-12">

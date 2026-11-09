@@ -11,7 +11,7 @@ export function TrustCredibility() {
   const { trustCredentials } = ABOUT_CONTENT;
 
   return (
-    <section className="py-16 md:py-24 bg-[#07080A] border-t border-white/[0.08] relative">
+    <section className="py-16 md:py-24 bg-background border-t border-border relative transition-colors duration-200">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           {/* Left Column: Trust Narrative */}
@@ -19,14 +19,14 @@ export function TrustCredibility() {
             <Badge variant="electric" dot>
               Peace of Mind Guarantee
             </Badge>
-            <h2 className="text-3xl sm:text-4xl font-extrabold uppercase tracking-tight text-white font-display">
+            <h2 className="text-3xl sm:text-4xl font-extrabold uppercase tracking-tight text-foreground font-display">
               Built on Complete Trust & Legal Protection
             </h2>
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+            <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
               When you entrust your vehicle to You Scuff We Buff, it is protected by the highest operational standards in the UK automotive repair industry.
             </p>
 
-            <div className="space-y-3 pt-2 text-xs text-slate-300">
+            <div className="space-y-3 pt-2 text-xs text-muted-foreground">
               <div className="flex items-center gap-2.5">
                 <ShieldCheck className="w-4 h-4 text-primary shrink-0" />
                 <span>Full £5M Public & Motor Trade Road Risk Coverage</span>
@@ -55,15 +55,15 @@ export function TrustCredibility() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.08 }}
-                className="p-6 rounded-3xl bg-[#0C0F15] border border-white/[0.08] hover:border-primary/40 transition-colors shadow-luxury-dark space-y-2"
+                className="p-6 rounded-3xl bg-surface-card border border-border hover:border-primary/40 transition-colors shadow-sm space-y-2"
               >
                 <div className="text-xs uppercase tracking-wider font-semibold text-primary">
                   {item.title}
                 </div>
-                <div className="text-3xl font-black text-white font-display tracking-tight">
+                <div className="text-3xl font-black text-foreground font-display tracking-tight">
                   {item.value}
                 </div>
-                <p className="text-xs text-slate-400 leading-relaxed pt-1">
+                <p className="text-xs text-muted-foreground leading-relaxed pt-1">
                   {item.desc}
                 </p>
               </motion.div>

@@ -24,7 +24,7 @@ export function Footer() {
   const { t } = useLanguage();
 
   return (
-    <footer className="w-full border-t border-white/[0.08] bg-[#07080A] text-foreground transition-colors duration-200">
+    <footer className="w-full border-t border-border bg-surface-secondary text-foreground transition-colors duration-200">
       <Container>
         <div className="py-14 md:py-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           <div className="space-y-4">
@@ -34,7 +34,7 @@ export function Footer() {
               Mobile Alloy Wheel Repair & Refurbishment
             </div>
 
-            <p className="text-sm text-slate-300 leading-relaxed">
+            <p className="text-sm text-muted-foreground leading-relaxed">
               {siteConfig.description}
             </p>
 
@@ -44,7 +44,7 @@ export function Footer() {
             </div>
 
             <div className="pt-2">
-              <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-2.5">
+              <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground block mb-2.5">
                 Follow Our Work
               </span>
               <div className="flex items-center gap-2.5">
@@ -52,7 +52,7 @@ export function Footer() {
                   href={siteConfig.links.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2.5 rounded-xl bg-secondary/80 border border-border/80 text-slate-400 hover:text-primary hover:border-primary/40 transition-colors"
+                  className="p-2.5 rounded-xl bg-card border border-border text-muted-foreground hover:text-primary hover:border-primary/40 transition-colors shadow-sm"
                   aria-label="You Scuff We Buff on Instagram"
                 >
                   <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
@@ -63,7 +63,7 @@ export function Footer() {
                   href={siteConfig.links.tiktok}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2.5 rounded-xl bg-secondary/80 border border-border/80 text-slate-400 hover:text-primary hover:border-primary/40 transition-colors"
+                  className="p-2.5 rounded-xl bg-card border border-border text-muted-foreground hover:text-primary hover:border-primary/40 transition-colors shadow-sm"
                   aria-label="You Scuff We Buff on TikTok"
                 >
                   <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
@@ -75,10 +75,10 @@ export function Footer() {
           </div>
 
           <div className="space-y-4">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-white border-b border-white/[0.08] pb-2">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-foreground border-b border-border pb-2">
               Quick Navigation
             </h4>
-            <ul className="space-y-2.5 text-sm text-slate-300">
+            <ul className="space-y-2.5 text-sm text-muted-foreground">
               {MAIN_NAV_ITEMS.map((item) => (
                 <li key={item.href}>
                   <Link
@@ -93,10 +93,10 @@ export function Footer() {
           </div>
 
           <div className="space-y-4">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-white border-b border-white/[0.08] pb-2">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-foreground border-b border-border pb-2">
               Specialist Services
             </h4>
-            <ul className="space-y-2.5 text-sm text-slate-300">
+            <ul className="space-y-2.5 text-sm text-muted-foreground">
               {FOOTER_SERVICES.map((serv) => (
                 <li key={serv.href}>
                   <Link
@@ -111,10 +111,10 @@ export function Footer() {
           </div>
 
           <div className="space-y-4">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-white border-b border-white/[0.08] pb-2">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-foreground border-b border-border pb-2">
               Contact & Coverage
             </h4>
-            <div className="space-y-3 text-sm text-slate-300">
+            <div className="space-y-3 text-sm text-muted-foreground">
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-primary shrink-0 mt-0.5" />
                 <span className="leading-snug text-xs">
@@ -125,7 +125,7 @@ export function Footer() {
                 <Phone className="w-4 h-4 text-primary shrink-0" />
                 <a
                   href={siteConfig.contact.phoneTel}
-                  className="font-bold text-white hover:text-primary transition-colors"
+                  className="font-bold text-foreground hover:text-primary transition-colors"
                 >
                   {siteConfig.contact.phone}
                 </a>
@@ -134,14 +134,14 @@ export function Footer() {
                 <Mail className="w-4 h-4 text-primary shrink-0" />
                 <a
                   href={siteConfig.contact.emailMailto}
-                  className="truncate text-slate-300 hover:text-primary transition-colors"
+                  className="truncate text-muted-foreground hover:text-primary transition-colors"
                 >
                   {siteConfig.contact.email}
                 </a>
               </div>
               <div className="flex items-start gap-2.5 pt-1">
                 <Clock className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                <span className="text-xs leading-relaxed text-slate-400">
+                <span className="text-xs leading-relaxed text-muted-foreground">
                   {siteConfig.contact.businessHoursPlaceholder}
                 </span>
               </div>
@@ -149,7 +149,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/[0.08] py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+        <div className="border-t border-border py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
           <p>
             © {currentYear} {siteConfig.name}. Family-Run Mobile Alloy Wheel Repair & SMART Repairs.
           </p>
@@ -166,7 +166,7 @@ export function Footer() {
             ))}
           </div>
 
-          <p className="text-[11px] tracking-wide uppercase text-slate-500">
+          <p className="text-[11px] tracking-wide uppercase text-muted-foreground/80">
             Birmingham & West Midlands Mobile Service
           </p>
         </div>
