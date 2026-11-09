@@ -130,22 +130,22 @@ export function LanguageToggle({
           <div
             role="listbox"
             aria-label={t("langToggle")}
-            className="fixed inset-x-3 top-16 z-[60] sm:absolute sm:inset-x-auto sm:right-0 sm:top-full sm:mt-2 sm:w-72 max-w-sm mx-auto sm:mx-0 rounded-2xl border border-electric/30 bg-card/98 backdrop-blur-2xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-150"
+            className="fixed inset-x-3 top-16 z-[60] sm:absolute sm:inset-x-auto sm:right-0 sm:top-full sm:mt-2 sm:w-72 max-w-sm mx-auto sm:mx-0 rounded-2xl border border-primary/40 bg-white dark:bg-[#0B0E14] text-foreground shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-150"
           >
-            <div className="p-2 border-b border-border/70 bg-electric/5">
+            <div className="p-2.5 border-b border-border/80 bg-slate-50 dark:bg-[#10141E]">
               <div className="relative">
-                <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-electric" />
+                <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-primary" />
                 <input
                   ref={searchRef}
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   placeholder={t("langSearch")}
-                  className="w-full h-9 rounded-xl border border-border/80 bg-background pl-8 pr-3 text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-electric/60"
+                  className="w-full h-9 rounded-xl border border-border bg-white dark:bg-[#07090E] pl-8 pr-3 text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/60"
                 />
               </div>
             </div>
 
-            <div className="max-h-60 sm:max-h-64 overflow-y-auto p-1.5">
+            <div className="max-h-60 sm:max-h-64 overflow-y-auto p-1.5 bg-white dark:bg-[#0B0E14]">
               {filtered.length === 0 ? (
                 <p className="px-3 py-4 text-xs text-muted-foreground text-center">
                   No languages found
@@ -163,8 +163,8 @@ export function LanguageToggle({
                       className={cn(
                         "w-full flex items-center gap-2.5 rounded-xl px-2.5 py-2 text-left transition-colors",
                         active
-                          ? "bg-electric/15 text-foreground"
-                          : "hover:bg-secondary text-foreground"
+                          ? "bg-primary/20 text-foreground font-semibold"
+                          : "hover:bg-slate-100 dark:hover:bg-[#141926] text-foreground"
                       )}
                     >
                       <span className="text-base leading-none" aria-hidden>
@@ -178,10 +178,10 @@ export function LanguageToggle({
                           {lang.name}
                         </span>
                       </span>
-                      <span className="text-[10px] font-bold uppercase text-electric/80">
+                      <span className="text-[10px] font-bold uppercase text-primary">
                         {lang.code}
                       </span>
-                      {active && <Check className="w-3.5 h-3.5 text-electric shrink-0" />}
+                      {active && <Check className="w-3.5 h-3.5 text-primary shrink-0" />}
                     </button>
                   );
                 })

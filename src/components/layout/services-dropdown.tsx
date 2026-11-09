@@ -139,7 +139,7 @@ export function ServicesDropdown({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 6, scale: 0.98 }}
             transition={{ duration: 0.18, ease: "easeOut" }}
-            className="absolute left-1/2 -translate-x-1/2 top-full mt-1.5 w-[min(580px,calc(100vw-2rem))] rounded-2xl border border-border/80 bg-card/95 backdrop-blur-xl p-4 shadow-luxury-dark z-50 text-card-foreground"
+            className="absolute left-1/2 -translate-x-1/2 top-full mt-1.5 w-[min(580px,calc(100vw-2rem))] rounded-2xl border border-border dark:border-primary/30 bg-white dark:bg-[#0B0E14] p-4 shadow-2xl z-50 text-foreground"
           >
             <div className="flex items-center justify-between pb-3 mb-2 border-b border-border/60 px-2">
               <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
