@@ -19,8 +19,8 @@ const SERVICE_QUICK_PILLS = [
 export function ServicesHero() {
   return (
     <CinematicVideoHero
-      imageSrc={BRAND_ASSETS.wheels}
-      imageAlt="Professional alloy wheel repair by You Scuff We Buff"
+      imageSrc="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=2070&auto=format&fit=crop"
+      imageAlt="Professional alloy wheel repair and refurbishment workshop You Scuff We Buff"
       badgeText="Mobile Alloy Wheel Repair Across the West Midlands"
       badgeIcon={<Sparkles className="w-3.5 h-3.5" />}
       badgeVariant="electric"
@@ -34,9 +34,9 @@ export function ServicesHero() {
           <span className="text-gradient-electric">REPAIR SERVICES.</span>
         </>
       }
-      subtitle="At You Scuff We Buff, we make alloy wheel repairs easy and convenient with our mobile alloy wheel repair service across the West Midlands. Whether you are at home or work, our friendly team will help restore your wheels to their best. We specialise in alloy wheel refurbishment for different makes and models, helping improve the appearance and condition of your wheels."
+      subtitle="Mobile alloy wheel refurbishment, diamond cutting, and SMART repairs across Birmingham and the West Midlands. We bring professional workshop craftsmanship directly to your home or workplace."
       align="center"
-      minHeightClass="min-h-[64vh] sm:min-h-[72vh]"
+      minHeightClass="min-h-[46vh] sm:min-h-[52vh] md:min-h-[56vh]"
       primaryCta={{
         label: "Get a Free Quote Today",
         href: "/booking",

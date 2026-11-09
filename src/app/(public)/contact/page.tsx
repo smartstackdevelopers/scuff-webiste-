@@ -63,7 +63,7 @@ export default function ContactPage() {
         }
         subtitle="Looking for help or have any questions? Whether you need professional alloy wheel refurbishment, diamond cutting repair, or dent and scratch SMART repairs, our friendly team is here to help. Contact You Scuff We Buff today for advice, free estimates and convenient mobile repair bookings across Birmingham and the West Midlands."
         align="center"
-        minHeightClass="min-h-[58vh] sm:min-h-[66vh]"
+        minHeightClass="min-h-[46vh] sm:min-h-[52vh] md:min-h-[56vh]"
         primaryCta={{
           label: "WhatsApp Photo Quote",
           href: `https://wa.me/${siteConfig.contact.whatsAppPlaceholder.number}?text=${encodeURIComponent(

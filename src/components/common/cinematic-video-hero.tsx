@@ -74,7 +74,7 @@ export function CinematicVideoHero({
   secondaryCta,
   metrics,
   children,
-  minHeightClass = "min-h-[58vh] sm:min-h-[66vh]",
+  minHeightClass = "min-h-[46vh] sm:min-h-[52vh] md:min-h-[56vh]",
   overlayGradient,
   align = "center",
   className,
@@ -95,36 +95,35 @@ export function CinematicVideoHero({
       )}
     >
       {/* Real High-Resolution Automotive Photograph Background */}
-      <div className="absolute inset-0 -z-30 overflow-hidden select-none" aria-hidden="true">
+      <div className="absolute inset-0 z-0 overflow-hidden select-none" aria-hidden="true">
         <Image
           src={finalImage}
           alt={imageAlt}
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center transition-transform duration-1000 ease-out hover:scale-105"
+          className="object-cover object-center filter brightness-[0.72] contrast-[1.06] transition-transform duration-1000 ease-out hover:scale-105"
         />
       </div>
 
-      {/* Professional Cinematic Overlays - Adaptive to Dark and Light Modes */}
+      {/* Professional Cinematic Overlays - Adaptive & Clear Real Photography */}
       <div
         className={cn(
-          "absolute inset-0 -z-10 bg-gradient-to-t from-background via-background/90 to-background/60 dark:from-[#07080A] dark:via-[#07080A]/85 dark:to-[#07080A]/60",
+          "absolute inset-0 z-[1] pointer-events-none bg-gradient-to-t from-background via-black/50 to-black/30 dark:from-[#050505] dark:via-[#050505]/70 dark:to-[#050505]/35",
           overlayGradient
         )}
       />
-      <div className="absolute inset-0 -z-10 bg-background/50 dark:bg-black/45" />
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,transparent_30%,hsl(var(--background)/0.8)_100%)] dark:bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(7,8,10,0.75)_100%)]" />
+      <div className="absolute inset-0 z-[1] pointer-events-none bg-[radial-gradient(ellipse_at_center,transparent_35%,rgba(0,0,0,0.55)_100%)]" />
 
       {/* Subtle Atmospheric Ambient Glow Orb */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-full max-w-5xl h-80 bg-primary/10 blur-[140px] pointer-events-none -z-10" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-full max-w-5xl h-64 bg-primary/15 blur-[120px] pointer-events-none z-[2]" />
 
       {/* Content Container */}
-      <Container className="relative z-10 py-16 sm:py-20 md:py-24">
+      <Container className="relative z-10 py-10 sm:py-14 md:py-16">
         {align === "split" ? (
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
             {/* Left Column: Heading, Subtitle & CTAs */}
-            <div className="lg:col-span-7 space-y-6 text-left">
+            <div className="lg:col-span-7 space-y-4 sm:space-y-5 text-left">
               {/* Breadcrumbs */}
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
@@ -271,7 +270,7 @@ export function CinematicVideoHero({
           /* Center / Left Aligned Single Column */
           <div
             className={cn(
-              "max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto space-y-7",
+              "max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mx-auto space-y-4 sm:space-y-5 md:space-y-6",
               align === "center" ? "text-center" : "text-left"
             )}
           >
@@ -331,7 +330,7 @@ export function CinematicVideoHero({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-2xl xs:text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight text-foreground font-display leading-[0.98] break-words"
+              className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-black uppercase tracking-tight text-foreground font-display leading-[1.05] break-words"
             >
               {title}
             </motion.h1>
@@ -342,8 +341,8 @@ export function CinematicVideoHero({
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.15 }}
               className={cn(
-                "text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed font-normal",
-                align === "center" ? "max-w-3xl xl:max-w-4xl mx-auto" : "max-w-3xl xl:max-w-4xl"
+                "text-xs sm:text-sm md:text-base text-zinc-300 dark:text-muted-foreground leading-relaxed font-normal",
+                align === "center" ? "max-w-2xl xl:max-w-3xl mx-auto" : "max-w-2xl xl:max-w-3xl"
               )}
             >
               {subtitle}

@@ -33,7 +33,7 @@ export function PricingHero() {
       }
       subtitle="Honest, fixed rates with no hidden mobile surcharges or fine-print upcharges. Clear deliverables, digital vehicle condition check, and guaranteed studio standards on every booking."
       align="center"
-      minHeightClass="min-h-[64vh] sm:min-h-[72vh]"
+      minHeightClass="min-h-[46vh] sm:min-h-[52vh] md:min-h-[56vh]"
       primaryCta={{
         label: "View All Packages",
         href: "#packages",

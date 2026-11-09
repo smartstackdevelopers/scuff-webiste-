@@ -90,7 +90,7 @@ export default function CarMaintenancePage() {
         }
         subtitle="Precision engineering inspections, CNC diamond-cut alloy wheel refurbishment, high-temp brake caliper enamel, headlight de-oxidation, and end-of-lease de-snagging to eliminate punitive finance return charges."
         align="split"
-        minHeightClass="min-h-[66vh] sm:min-h-[74vh]"
+        minHeightClass="min-h-[48vh] sm:min-h-[56vh] md:min-h-[60vh]"
         primaryCta={{
           label: "Book Maintenance Bay",
           href: "/booking",

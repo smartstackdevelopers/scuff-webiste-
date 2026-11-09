@@ -26,7 +26,7 @@ export function GalleryHero() {
       }
       subtitle="Witness forensic-level automotive transformations. From heavy swirl mark elimination and oxidized clear coat revival to CNC diamond-cut alloy restoration and undetectable SMART bumper blending."
       align="center"
-      minHeightClass="min-h-[64vh] sm:min-h-[72vh]"
+      minHeightClass="min-h-[46vh] sm:min-h-[52vh] md:min-h-[56vh]"
       primaryCta={{
         label: "Book Your Transformation",
         href: "/booking",

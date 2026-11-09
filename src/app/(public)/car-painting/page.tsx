@@ -105,7 +105,7 @@ export default function CarPaintingPage() {
         }
         subtitle="Flawless colour matching via computerized 5-angle digital spectrophotometers. From bumper scuffs and stone chips to full panel resprays inside our dust-free positive-pressure spray booth."
         align="split"
-        minHeightClass="min-h-[66vh] sm:min-h-[74vh]"
+        minHeightClass="min-h-[48vh] sm:min-h-[56vh] md:min-h-[60vh]"
         primaryCta={{
           label: "Book Spray Booth Bay",
           href: "/booking?service=smart-repairs",

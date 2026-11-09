@@ -30,7 +30,7 @@ export function AboutHero() {
       }
       subtitle={hero.description}
       align="split"
-      minHeightClass="min-h-[66vh] sm:min-h-[74vh]"
+      minHeightClass="min-h-[48vh] sm:min-h-[56vh] md:min-h-[60vh]"
       primaryCta={{
         label: "Get a Free Quote",
         href: "/booking",

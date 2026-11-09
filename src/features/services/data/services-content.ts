@@ -552,10 +552,15 @@ export const SERVICES_DATA: Record<string, DetailedService> = applyAvailability(
   ...CORE_SERVICES,
 });
 
-/** All enabled services for grids, booking and detail routes */
-export const SERVICES_LIST = Object.values(SERVICES_DATA).filter(
-  (service) => service.enabled !== false
-);
+/** All enabled services for grids, booking and detail routes: The 6 Core You Scuff We Buff Offerings */
+export const SERVICES_LIST: DetailedService[] = [
+  SERVICES_DATA["alloy-wheel-refurbishment"],
+  SERVICES_DATA["diamond-cutting"],
+  SERVICES_DATA["smart-repairs"],
+  SERVICES_DATA["car-painting"],
+  SERVICES_DATA["paint-scuff-repair"],
+  SERVICES_DATA["mobile-repairs"],
+].filter(Boolean);
 
 /** Original detailing tiers used by the comparison matrix (fixed feature columns) */
 export const DETAILING_COMPARISON_SLUGS = [

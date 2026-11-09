@@ -28,7 +28,7 @@ export const REPAIR_SERVICES: Record<string, DetailedService> = {
     longDescription:
       "Our expert mobile technicians repair scuffed, scratched and kerb-damaged alloy wheels, restoring their appearance with quality materials and professional repair techniques. We aim to bring your wheels back to their best while providing a convenient service at your home or workplace across Birmingham and the West Midlands. Whether you are dealing with minor parking scrapes or severe kerb damage, our team delivers high-quality finishes without the hassle of leaving your car at a traditional garage.",
     heroImage: {
-      url: BRAND_ASSETS.wheels,
+      url: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=2070&auto=format&fit=crop",
       alt: "Restored alloy wheels by You Scuff We Buff",
     },
     popular: true,
@@ -135,7 +135,7 @@ export const REPAIR_SERVICES: Record<string, DetailedService> = {
     longDescription:
       "Diamond cut alloy wheels feature a machined metallic face with contrasting painted inserts, requiring specialist care when damaged. Our trained technicians assess every wheel to determine the most suitable repair approach. From localised edge repair to complete face refinishing, we help restore the distinctive two-tone appearance of diamond cut alloys across Birmingham and the West Midlands.",
     heroImage: {
-      url: BRAND_ASSETS.wheels,
+      url: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=2070&auto=format&fit=crop",
       alt: "Diamond cut alloy wheel restoration by You Scuff We Buff",
     },
     popular: true,
@@ -412,6 +412,102 @@ export const REPAIR_SERVICES: Record<string, DetailedService> = {
         question: "Can you fix a cracked plastic bumper?",
         answer:
           "Minor hairline cracks on plastic bumpers can often be plastic-welded or reinforced. Send us a photo on WhatsApp (07448 661 691) so we can confirm suitability.",
+      },
+    ],
+  },
+
+  "paint-scuff-repair": {
+    id: "svc-paint-scuff",
+    slug: "paint-scuff-repair",
+    title: "Paint Scuff Repair",
+    tagline: "Precision minor paint scuff, scrape and stone chip repair at your doorstep.",
+    badge: "SMART Paint",
+    category: "Smart Repair",
+    startingPrice: 0,
+    currency: "£",
+    priceOnAssessment: true,
+    duration: "1.5 – 2.5 Hours",
+    description:
+      "We repair unsightly paint scuffs, door mirror scrapes, and paint transfers using computerized colour-matching and localized SMART spray techniques directly at your home or workplace.",
+    longDescription:
+      "Minor paint scuffs on wing mirrors, door edges, wheel arches, and quarter panels detract from your vehicle's value. At You Scuff We Buff, our mobile technicians prepare the damage, apply OEM factory-matched paint, and blend high-solids clearcoat so only the damaged area is treated. Fast, convenient, and far more cost-effective than traditional body shop full resprays.",
+    heroImage: {
+      url: "https://images.unsplash.com/photo-1590362891991-f776e747a588?q=80&w=1200&auto=format&fit=crop",
+      alt: "Automotive paint scuff repair and clearcoat blending",
+    },
+    popular: true,
+    recommendedFor:
+      "Vehicles with localized paint scuffs, door mirror scrapes, or minor cosmetic paint abrasions.",
+    relatedSlugs: ["car-painting", "smart-repairs", "alloy-wheel-refurbishment"],
+    availability: "mobile_suitable",
+    availabilityNote:
+      "Mobile SMART paint repair carried out at your home or workplace across Birmingham and the West Midlands.",
+    problemsAddressed: [
+      "Door mirror and wing scuffs",
+      "Wheel arch paint scrapes",
+      "Minor paint transfer from parking barriers",
+      "Surface clearcoat scuff marks",
+    ],
+    keyBenefits: [
+      {
+        title: "Exact Computerized Colour Match",
+        description:
+          "Formulated specifically to your car's manufacturer paint code.",
+      },
+      {
+        title: "Preserve Factory Paint",
+        description:
+          "Only the scuffed area is repaired, keeping original factory panels intact.",
+      },
+      {
+        title: "At Your Doorstep",
+        description:
+          "No leaving your vehicle at a bodyshop for days; repaired in 2-3 hours.",
+      },
+      {
+        title: "Transparent Pricing",
+        description:
+          "Free fast quotes with no hidden fees—send a photo on WhatsApp.",
+      },
+    ],
+    whatsIncluded: [
+      {
+        phase: "1. Surface Prep & Masking",
+        items: [
+          "Thorough decontamination and surface degreasing",
+          "Fine feathered sanding to eliminate rough edges",
+          "Precision masking of adjacent trim and panels",
+        ],
+      },
+      {
+        phase: "2. Primer & Basecoat Application",
+        items: [
+          "Anti-corrosive primer application and smoothing",
+          "Even application of computer-matched basecoat",
+          "Seamless blending into surrounding factory paint",
+        ],
+      },
+      {
+        phase: "3. Clearcoat & Machine Buff",
+        items: [
+          "High-gloss UV protective clearcoat application",
+          "Shortwave infrared curing",
+          "Rotary machine polish to seamless mirror finish",
+        ],
+      },
+    ],
+    beforeAfter: {
+      beforeUrl: "https://images.unsplash.com/photo-1590362891991-f776e747a588?q=80&w=1200&auto=format&fit=crop",
+      afterUrl: BRAND_ASSETS.van,
+      beforeLabel: "Wing mirror scuff",
+      afterLabel: "Restored mirror finish",
+      caseNote: "Paint scuff repair completed on customer driveway in Solihull.",
+    },
+    faqs: [
+      {
+        question: "Will the colour match my existing car paint?",
+        answer:
+          "Yes. We mix paints on-site based on your vehicle's specific manufacturer paint code and blend into the existing clearcoat for an undetectable finish.",
       },
     ],
   },

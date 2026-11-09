@@ -117,7 +117,7 @@ export default function FAQPage() {
         }
         subtitle="Transparent answers on ceramic longevity, paint depth safety, self-sufficient mobile requirements, and studio warranty certificates."
         align="center"
-        minHeightClass="min-h-[58vh] sm:min-h-[66vh]"
+        minHeightClass="min-h-[46vh] sm:min-h-[52vh] md:min-h-[56vh]"
         primaryCta={{
           label: "Book Service Bay",
           href: "/booking",

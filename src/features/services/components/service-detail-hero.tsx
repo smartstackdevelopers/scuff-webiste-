@@ -54,27 +54,26 @@ export function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
   }, [service.slug, service.heroImage]);
 
   return (
-    <section className="relative min-h-[62vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden bg-background border-b border-border text-foreground transition-colors duration-200">
+    <section className="relative min-h-[46vh] sm:min-h-[52vh] md:min-h-[56vh] flex items-center justify-center overflow-hidden bg-background border-b border-border text-foreground transition-colors duration-200">
       {/* Real Automotive Photography Background */}
-      <div className="absolute inset-0 -z-20 overflow-hidden">
+      <div className="absolute inset-0 z-0 overflow-hidden select-none">
         <Image
           src={heroImageSrc}
           alt={`${service.title} - You Scuff We Buff`}
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center filter brightness-[0.78] contrast-[1.08] transition-transform duration-1000 group-hover:scale-105"
+          className="object-cover object-center filter brightness-[0.72] contrast-[1.06] transition-transform duration-1000 group-hover:scale-105"
         />
       </div>
 
       {/* Cinematic Contrast Overlays for Perfect Readability */}
-      <div className="absolute inset-0 -z-10 pointer-events-none bg-gradient-to-t from-background via-background/90 to-background/60 dark:from-[#07080A] dark:via-[#07080A]/85 dark:to-[#07080A]/60" />
-      <div className="absolute inset-0 -z-10 pointer-events-none bg-gradient-to-r from-background/90 via-background/40 to-background/80 dark:from-[#07080A]/90 dark:via-[#07080A]/40 dark:to-[#07080A]/80" />
-      <div className="absolute inset-0 -z-10 pointer-events-none bg-[radial-gradient(ellipse_at_center,transparent_35%,hsl(var(--background)/0.85)_100%)] dark:bg-[radial-gradient(ellipse_at_center,transparent_35%,rgba(7,8,10,0.85)_100%)]" />
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-full max-w-4xl h-80 bg-primary/10 blur-[130px] pointer-events-none -z-10" />
+      <div className="absolute inset-0 z-[1] pointer-events-none bg-gradient-to-t from-background via-black/50 to-black/30 dark:from-[#050505] dark:via-[#050505]/70 dark:to-[#050505]/35" />
+      <div className="absolute inset-0 z-[1] pointer-events-none bg-[radial-gradient(ellipse_at_center,transparent_35%,rgba(0,0,0,0.55)_100%)]" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-full max-w-4xl h-64 bg-primary/15 blur-[120px] pointer-events-none z-[2]" />
 
-      <Container className="relative z-10 py-16 md:py-24">
-        <div className="max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto space-y-6">
+      <Container className="relative z-10 py-10 sm:py-14 md:py-16">
+        <div className="max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mx-auto space-y-4 sm:space-y-5">
           {/* Breadcrumbs */}
           <div className="flex">
             <Breadcrumb>

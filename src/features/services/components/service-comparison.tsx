@@ -22,13 +22,13 @@ export function ServiceComparison() {
       <Container>
         <div className="max-w-4xl xl:max-w-5xl mx-auto text-center mb-16 space-y-3">
           <Badge variant="electric" dot>
-            Package Comparison Matrix
+            Repair & Refurbishment Matrix
           </Badge>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-foreground font-display">
-            Compare Detailing Tiers
+            Compare Wheel &amp; Repair Packages
           </h2>
           <p className="text-muted-foreground text-sm sm:text-base max-w-3xl mx-auto leading-relaxed">
-            Not sure which package fits your car? Compare our complete scope of work across exterior, correction, protection, and cabin care.
+            Not sure which service fits your vehicle? Compare our mobile repair options across alloy wheel refurbishment, diamond cutting, and SMART bodywork repairs.
           </p>
         </div>
 
