@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Calendar, User, Menu } from "lucide-react";
+import { Calendar, User, Menu, Phone } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/common/theme-toggle";
@@ -12,6 +12,7 @@ import { ServicesDropdown } from "@/components/layout/services-dropdown";
 import { MobileNav } from "@/components/layout/mobile-nav";
 import { BrandLogo } from "@/components/brand/brand-logo";
 import { MAIN_NAV_ITEMS } from "@/constants/navigation";
+import { siteConfig } from "@/config/site";
 import { useLanguage } from "@/lib/i18n/language-context";
 import { cn } from "@/lib/utils";
 
@@ -86,13 +87,13 @@ export function Navbar() {
             </nav>
 
             <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
-              <Link
-                href="/login"
-                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground hover:text-foreground hover:bg-secondary/80 rounded-lg transition-colors"
+              <a
+                href={siteConfig.contact.phoneTel}
+                className="hidden xl:inline-flex items-center gap-2 px-3 py-1.5 text-xs font-bold text-white hover:text-primary transition-colors bg-white/[0.04] border border-white/[0.08] hover:border-primary/40 rounded-xl"
               >
-                <User className="w-3.5 h-3.5" />
-                <span>{t("navLogin")}</span>
-              </Link>
+                <Phone className="w-3.5 h-3.5 text-primary" />
+                <span>{siteConfig.contact.phone}</span>
+              </a>
 
               <LanguageToggle />
               <ThemeToggle />

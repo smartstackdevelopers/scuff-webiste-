@@ -302,7 +302,7 @@ export const MOCK_CRM_LEADS: CRMLead[] = [
     createdDate: "2026-11-03",
     lastContactedDate: "2026-11-03",
     nextFollowUpDate: "2026-11-09",
-    notes: "Visited Mayfair studio in person. Car inspected with LED swirl inspection lamp.",
+    notes: "Car inspected on-site in Solihull. Wheels and bumper assessed for refurbishment.",
     activities: [
       {
         id: "act-8",
@@ -347,7 +347,7 @@ export const MOCK_CRM_LEADS: CRMLead[] = [
         id: "act-9",
         leadId: "lead-108",
         title: "Telephone Inquiry Received",
-        description: "Direct call to studio concierge requesting Mayfair collection.",
+        description: "Direct call requesting mobile alloy wheel repair quote.",
         timestamp: "2026-11-04 16:30",
         type: "status_change",
         actorName: "Julian Thorne",

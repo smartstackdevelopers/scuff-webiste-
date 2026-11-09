@@ -2,35 +2,35 @@
 
 import * as React from "react";
 import { motion } from "framer-motion";
-import { Sparkles, ShieldCheck, Clock, CheckCircle2, Car } from "lucide-react";
+import { Sparkles, ShieldCheck, Clock, CheckCircle2, Truck, MapPin } from "lucide-react";
 import { CinematicVideoHero } from "@/components/common/cinematic-video-hero";
 
 export function BookingHero() {
   return (
     <CinematicVideoHero
-      videoSrc="/videos/hero/03-car-drive.mp4"
-      posterSrc="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?q=80&w=2000&auto=format&fit=crop"
-      badgeText="Studio Clean Bay & Mobile Van Reservations"
+      imageSrc="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?q=80&w=2000&auto=format&fit=crop"
+      imageAlt="Professional automotive workshop and mobile repair dispatch"
+      badgeText="MOBILE ALLOY WHEEL & SMART REPAIR BOOKINGS"
       badgeIcon={<Sparkles className="w-3.5 h-3.5" />}
       badgeVariant="electric"
       breadcrumbs={[
         { label: "Home", href: "/" },
         { label: "Services", href: "/services" },
-        { label: "Online Booking Wizard" },
+        { label: "Book a Repair" },
       ]}
       title={
         <>
-          RESERVE YOUR VEHICLE&apos;S <br className="hidden sm:inline" />
-          <span className="text-gradient-electric">PERFECT RESTORATION.</span>
+          REQUEST YOUR <br className="hidden sm:inline" />
+          <span className="text-gradient-electric">FREE REPAIR QUOTE.</span>
         </>
       }
-      subtitle="Complete your bespoke appointment in 4 simple steps. Select whether you prefer our climate-controlled detailing studio or our fully self-sufficient mobile van to come to your home or office."
+      subtitle="Arrange your mobile repair in a few simple steps. Our friendly team comes directly to your home or workplace across Birmingham and the wider West Midlands to restore damaged wheels and bodywork scuffs."
       align="center"
       minHeightClass="min-h-[50vh] sm:min-h-[58vh]"
       metrics={[
         { label: "Upfront Cost", value: "£0 Deposit", icon: <ShieldCheck className="w-4 h-4" /> },
-        { label: "Confirmation", value: "Instant Ref", icon: <Clock className="w-4 h-4" /> },
-        { label: "Van Requirements", value: "100% Self-Contained", icon: <Car className="w-4 h-4" /> },
+        { label: "Service Mode", value: "100% Mobile", icon: <Truck className="w-4 h-4" /> },
+        { label: "Coverage", value: "West Midlands", icon: <MapPin className="w-4 h-4" /> },
       ]}
     >
       <motion.div
@@ -41,12 +41,12 @@ export function BookingHero() {
       >
         <span className="flex items-center gap-1.5 text-primary">
           <CheckCircle2 className="w-3.5 h-3.5" />
-          <span>Full £5M Public Liability Insurance</span>
+          <span>Family-Run Quality & Care</span>
         </span>
         <span className="hidden sm:inline text-white/20">•</span>
         <span className="flex items-center gap-1.5 text-primary">
           <CheckCircle2 className="w-3.5 h-3.5" />
-          <span>Free Cancellation & Rescheduling</span>
+          <span>Free Upfront Estimates</span>
         </span>
       </motion.div>
     </CinematicVideoHero>

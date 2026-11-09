@@ -24,7 +24,7 @@ export function InvoiceBuilder() {
   const [customerName, setCustomerName] = React.useState("");
   const [customerEmail, setCustomerEmail] = React.useState("");
   const [customerPhone, setCustomerPhone] = React.useState("");
-  const [customerAddress, setCustomerAddress] = React.useState("Mayfair, London, UK");
+  const [customerAddress, setCustomerAddress] = React.useState("Birmingham, West Midlands, UK");
 
   // Booking & Vehicle fields
   const [bookingReference, setBookingReference] = React.useState(`YSWB-${Math.floor(1000 + Math.random() * 9000)}`);

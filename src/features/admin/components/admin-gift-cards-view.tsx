@@ -293,7 +293,7 @@ export function AdminGiftCardsView() {
                 <label className="block text-foreground font-semibold mb-1">Purchaser / Sponsor Name *</label>
                 <Input
                   required
-                  placeholder="e.g. Porsche Club GB or Mayfair Executive"
+                  placeholder="e.g. BMW Car Club or Midlands Fleet Services"
                   value={issueForm.purchaserName}
                   onChange={(e) => setIssueForm({ ...issueForm, purchaserName: e.target.value })}
                   className="bg-card text-xs"

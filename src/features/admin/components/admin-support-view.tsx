@@ -69,7 +69,7 @@ export function AdminSupportView() {
           sender: "support",
           senderName: "Marcus (Head of Studio Bay)",
           message:
-            "Good afternoon Lord Vance! Yes, we have an accredited SunTek & XPEL film plotter directly in our Mayfair bay. We can apply self-healing film to your bonnet, front wings, and mirrors before locking in the remainder with 9H ceramic shield.",
+            "Good afternoon! Yes, we have specialist protective film facilities and mobile units across Birmingham and the West Midlands. We can apply protective film to your bonnet, front wings, and mirrors before completing the refurbishment.",
           timestamp: "04 Nov 2026, 14:15",
         },
       ],

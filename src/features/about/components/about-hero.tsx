@@ -2,10 +2,11 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Sparkles, ShieldCheck, Award, CheckCircle2, ArrowRight, Calendar, Wrench } from "lucide-react";
+import { Sparkles, ShieldCheck, Award, CheckCircle2, ArrowRight, Calendar, Phone, MapPin, Wrench } from "lucide-react";
 import { motion } from "framer-motion";
 import { CinematicVideoHero } from "@/components/common/cinematic-video-hero";
 import { ABOUT_CONTENT } from "../data/about-content";
+import { siteConfig } from "@/config/site";
 
 export function AboutHero() {
   const { hero } = ABOUT_CONTENT;
@@ -23,28 +24,28 @@ export function AboutHero() {
       ]}
       title={
         <>
-          CRAFTSMANSHIP BEYOND <br className="hidden sm:inline" />
-          <span className="text-gradient-electric">CONVENTIONAL DETAILING.</span>
+          ABOUT <br className="hidden sm:inline" />
+          <span className="text-gradient-electric">YOU SCUFF WE BUFF</span>
         </>
       }
       subtitle={hero.description}
       align="split"
       minHeightClass="min-h-[66vh] sm:min-h-[74vh]"
       primaryCta={{
-        label: "Book Studio Bay",
+        label: "Get a Free Quote",
         href: "/booking",
         variant: "amber",
         icon: <Calendar className="w-4 h-4 mr-2" />,
       }}
       secondaryCta={{
-        label: "Explore Working Standards",
-        href: "#standards",
-        icon: <Wrench className="w-4 h-4 mr-2" />,
+        label: `Call ${siteConfig.contact.phone}`,
+        href: `tel:${siteConfig.contact.phoneRaw}`,
+        icon: <Phone className="w-4 h-4 mr-2" />,
       }}
       metrics={[
-        { label: "Motor Trade Cover", value: "£5,000,000", icon: <ShieldCheck className="w-4 h-4" /> },
-        { label: "Paint Depth Audit", value: "100% Verified", icon: <CheckCircle2 className="w-4 h-4" /> },
-        { label: "Ceramic Warranty", value: "Up to 5 Years", icon: <Award className="w-4 h-4" /> },
+        { label: "Service Mode", value: "100% Mobile", icon: <Wrench className="w-4 h-4" /> },
+        { label: "Coverage", value: "West Midlands", icon: <MapPin className="w-4 h-4" /> },
+        { label: "Quotes", value: "Free & Fast", icon: <CheckCircle2 className="w-4 h-4" /> },
       ]}
     >
       {/* Right Column: Floating Technical Excellence Plate */}
@@ -61,15 +62,15 @@ export function AboutHero() {
             </div>
             <div>
               <div className="text-[11px] uppercase tracking-wider text-primary font-bold">
-                Standards of Excellence
+                Family-Run Specialist
               </div>
               <div className="text-base font-bold text-white font-display uppercase tracking-tight">
-                Studio Clean Bay & UK Mobile Units
+                Mobile Alloy & SMART Repairs
               </div>
             </div>
           </div>
           <span className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-[10px] font-bold text-emerald-400 uppercase tracking-widest">
-            Accredited
+            West Midlands
           </span>
         </div>
 
@@ -77,35 +78,38 @@ export function AboutHero() {
           <div className="flex items-start gap-2.5">
             <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
             <span>
-              <strong className="text-white">Cleanroom Class 100 Bay:</strong> Air-scrubbed studio environment prevents micro-dust settling during ceramic coating curing.
+              <strong className="text-white">We Come To You:</strong> Mobile repairs carried out at your home or workplace across Birmingham & West Midlands.
             </span>
           </div>
           <div className="flex items-start gap-2.5">
             <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
             <span>
-              <strong className="text-white">Ultrasonic Paint Thickness:</strong> Continuous digital measurement ensures safe multi-stage compounding without clearcoat danger.
+              <strong className="text-white">Alloy Wheel Refurbishment:</strong> Restores kerbed, scratched, scuffed, and corroded wheels to showroom condition.
             </span>
           </div>
           <div className="flex items-start gap-2.5">
             <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
             <span>
-              <strong className="text-white">Self-Sufficient Mobile Fleet:</strong> Vans carry onboard Honda generators, 500L pure de-ionised water, and all-weather pop-up bay canopies.
+              <strong className="text-white">Diamond Cutting & SMART Repairs:</strong> Precision diamond-cut face repairs and dent & scratch bodywork blending.
             </span>
           </div>
           <div className="flex items-start gap-2.5">
             <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
             <span>
-              <strong className="text-white">Accredited Master Detailers:</strong> Over a decade of specialized prestige, supercar, and classic vehicle preservation.
+              <strong className="text-white">Honest Pricing & Fast Quotes:</strong> Free estimates with no hidden fees—send photos on WhatsApp for instant pricing.
             </span>
           </div>
         </div>
 
-        <div className="pt-3 border-t border-white/[0.08] flex items-center justify-between text-xs text-slate-400">
-          <span>UK Studio: Unit 4, Falcon Park</span>
-          <Link href="/contact" className="text-primary hover:underline font-semibold flex items-center gap-1 group">
-            <span>Find Studio Bay</span>
-            <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
-          </Link>
+        <div className="pt-2 border-t border-white/[0.08] flex items-center justify-between">
+          <span className="text-[11px] text-slate-400">Direct phone line:</span>
+          <a
+            href={`tel:${siteConfig.contact.phoneRaw}`}
+            className="text-xs font-bold text-primary hover:underline flex items-center gap-1.5"
+          >
+            <Phone className="w-3.5 h-3.5" />
+            <span>{siteConfig.contact.phone}</span>
+          </a>
         </div>
       </motion.div>
     </CinematicVideoHero>

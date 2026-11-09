@@ -3,23 +3,23 @@ import type { Metadata } from "next";
 import {
   AboutHero,
   StorySection,
-  MissionVision,
   AboutExpertise,
-  WorkshopShowcase,
+  MissionVision,
   WhyChooseUs,
   OurProcess,
+  ServiceAreasSection,
   TrustCredibility,
   AboutCTA,
 } from "@/features/about";
 
 export const metadata: Metadata = {
-  title: "About Us | You Scuff We Buff - Master Vehicle Care & Detailing",
+  title: "About You Scuff We Buff | Alloy Wheel Repair West Midlands",
   description:
-    "Learn about You Scuff We Buff—delivering professional vehicle care, precision paint correction, and ceramic protection across the UK.",
+    "You Scuff We Buff is a family-run business specialising in professional mobile alloy wheel refurbishment, diamond cutting, and dent & scratch SMART repairs across Birmingham and the West Midlands.",
   openGraph: {
-    title: "About Us | You Scuff We Buff",
+    title: "About You Scuff We Buff | Alloy Wheel Repair West Midlands",
     description:
-      "Precision vehicle detailing, paint correction, and ceramic coating craftsmanship in the UK.",
+      "Family-run mobile alloy wheel repair and refurbishment across Birmingham, Solihull, Wolverhampton, Coventry and the West Midlands.",
     url: "/about",
   },
 };
@@ -29,11 +29,11 @@ export default function AboutPage() {
     <div className="flex flex-col min-h-screen bg-[#07080A]">
       <AboutHero />
       <StorySection />
-      <MissionVision />
       <AboutExpertise />
-      <WorkshopShowcase />
+      <MissionVision />
       <WhyChooseUs />
       <OurProcess />
+      <ServiceAreasSection />
       <TrustCredibility />
       <AboutCTA />
     </div>

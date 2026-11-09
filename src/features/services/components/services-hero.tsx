@@ -2,53 +2,56 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Sparkles, Calendar, ShieldCheck, Award, Clock, ArrowRight, Layers, PaintBucket, Wrench, Sparkle } from "lucide-react";
+import { Sparkles, Calendar, ShieldCheck, Phone, Clock, ArrowRight, Wrench, PaintBucket, Car } from "lucide-react";
 import { motion } from "framer-motion";
 import { CinematicVideoHero } from "@/components/common/cinematic-video-hero";
+import { siteConfig } from "@/config/site";
+import { BRAND_ASSETS } from "@/constants/theme";
 
 const SERVICE_QUICK_PILLS = [
-  { label: "Paint Correction", href: "/services/paint-correction", icon: Layers },
-  { label: "Ceramic Coatings", href: "/services/ceramic-coating", icon: Sparkles },
-  { label: "SMART Scuff Repairs", href: "/services/smart-repairs", icon: PaintBucket },
-  { label: "Alloy Wheel Refurb", href: "/services/alloy-wheel-refurbishment", icon: Wrench },
-  { label: "Interior Detailing", href: "/services/interior-detailing", icon: Sparkle },
+  { label: "Alloy Wheel Refurbishment", href: "/services/alloy-wheel-refurbishment", icon: Wrench },
+  { label: "Diamond Cutting Repair", href: "/services/diamond-cutting", icon: Sparkles },
+  { label: "Dent & Scratch SMART Repair", href: "/services/smart-repairs", icon: PaintBucket },
+  { label: "Bumper Damage & Paint Scuffs", href: "/car-painting", icon: PaintBucket },
+  { label: "Mobile Service (We Come To You)", href: "/services/mobile-repairs", icon: Car },
 ];
 
 export function ServicesHero() {
   return (
     <CinematicVideoHero
-      videoSrc="/videos/hero/06-final-reveal.mp4"
-      posterSrc="https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?q=80&w=2000&auto=format&fit=crop"
-      badgeText="Certified Automotive Detailing & Preservation"
+      imageSrc={BRAND_ASSETS.wheels}
+      imageAlt="Professional alloy wheel repair by You Scuff We Buff"
+      badgeText="Mobile Alloy Wheel Repair Across the West Midlands"
       badgeIcon={<Sparkles className="w-3.5 h-3.5" />}
       badgeVariant="electric"
       breadcrumbs={[
         { label: "Home", href: "/" },
-        { label: "Services Catalog" },
+        { label: "Services" },
       ]}
       title={
         <>
-          CRAFTSMANSHIP FOR EVERY CURVE. <br className="hidden sm:inline" />
-          <span className="text-gradient-electric">TAILORED DETAILING & REPAIR.</span>
+          OUR ALLOY WHEEL <br className="hidden sm:inline" />
+          <span className="text-gradient-electric">REPAIR SERVICES.</span>
         </>
       }
-      subtitle="From surgical multi-stage paint correction and certified 9H ceramic glass protection to computerized SMART bumper scuff repairs and CNC diamond-cut alloy wheels. Select your vehicle treatment below."
+      subtitle="At You Scuff We Buff, we make alloy wheel repairs easy and convenient with our mobile alloy wheel repair service across the West Midlands. Whether you are at home or work, our friendly team will help restore your wheels to their best. We specialise in alloy wheel refurbishment for different makes and models, helping improve the appearance and condition of your wheels."
       align="center"
       minHeightClass="min-h-[64vh] sm:min-h-[72vh]"
       primaryCta={{
-        label: "Book Service Bay",
+        label: "Get a Free Quote Today",
         href: "/booking",
         variant: "amber",
         icon: <Calendar className="w-4 h-4 mr-2" />,
       }}
       secondaryCta={{
-        label: "View Transparent Pricing",
-        href: "/pricing",
+        label: `Call ${siteConfig.contact.phone}`,
+        href: siteConfig.contact.phoneTel,
+        icon: <Phone className="w-4 h-4 mr-2" />,
       }}
       metrics={[
-        { label: "Fully Insured", value: "£5M Cover", icon: <ShieldCheck className="w-4 h-4" /> },
-        { label: "Ceramic Warranty", value: "Up to 5 Yrs", icon: <Award className="w-4 h-4" /> },
-        { label: "Studio & Mobile", value: "100% Mobile Ready", icon: <Clock className="w-4 h-4" /> },
+        { label: "Service Model", value: "We Come To You", icon: <Car className="w-4 h-4" /> },
+        { label: "Coverage", value: "Birmingham & West Midlands", icon: <Clock className="w-4 h-4" /> },
+        { label: "Business Type", value: "Family-Run Specialist", icon: <ShieldCheck className="w-4 h-4" /> },
       ]}
     >
       {/* Category Quick Navigator Pills */}
@@ -56,7 +59,7 @@ export function ServicesHero() {
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.35 }}
-        className="pt-4 flex flex-wrap justify-center gap-2 max-w-3xl mx-auto"
+        className="pt-4 flex flex-wrap justify-center gap-2 max-w-4xl mx-auto"
       >
         {SERVICE_QUICK_PILLS.map((pill) => {
           const Icon = pill.icon;

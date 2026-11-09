@@ -8,13 +8,13 @@ import {
 } from "@/features/services";
 
 export const metadata: Metadata = {
-  title: "Vehicle Detailing Services & Packages | You Scuff We Buff",
+  title: "Alloy Wheel Refurbishment & SMART Repairs | You Scuff We Buff",
   description:
-    "Explore our full suite of professional vehicle detailing services in the UK: paint correction, 9H ceramic coatings, interior steam sanitisation, and regular maintenance.",
+    "Professional mobile alloy wheel repair, diamond cutting, dent and scratch SMART repairs across Birmingham and the West Midlands. We come to you at home or work.",
   openGraph: {
-    title: "Vehicle Detailing Services & Packages | You Scuff We Buff",
+    title: "Alloy Wheel Refurbishment & SMART Repairs | You Scuff We Buff",
     description:
-      "Precision vehicle detailing, paint correction, ceramic coatings, and cabin restoration across the UK.",
+      "Professional mobile alloy wheel refurbishment and SMART bodywork repairs across Birmingham, Solihull, Coventry, and the West Midlands.",
     url: "/services",
   },
 };

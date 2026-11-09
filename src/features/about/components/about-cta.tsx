@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Calendar, ArrowRight, ShieldCheck, MessageSquare } from "lucide-react";
+import { Calendar, ArrowRight, ShieldCheck, MessageSquare, Phone } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -33,7 +33,7 @@ export function AboutCTA() {
           <div className="relative z-10 space-y-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/15 border border-primary/30 text-primary text-xs font-semibold uppercase tracking-wider">
               <ShieldCheck className="w-4 h-4" />
-              <span>Full Satisfaction Guarantee</span>
+              <span>Friendly Family Service • Free No-Obligation Quotes</span>
             </div>
 
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-white max-w-2xl mx-auto leading-tight">
@@ -56,20 +56,20 @@ export function AboutCTA() {
                 {cta.primaryBtn.text}
               </Link>
 
-              <Link
+              <a
                 href={cta.secondaryBtn.href}
                 className={cn(
                   buttonVariants({ size: "lg", variant: "outline" }),
                   "w-full sm:w-auto text-base border-white/[0.15] text-white hover:border-primary hover:text-primary"
                 )}
               >
-                {cta.secondaryBtn.text}
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Link>
+                <Phone className="w-4 h-4 mr-2" />
+                {cta.secondaryBtn.text} ({siteConfig.contact.phone})
+              </a>
 
               <a
                 href={`https://wa.me/${siteConfig.contact.whatsAppPlaceholder.number}?text=${encodeURIComponent(
-                  "Hi You Scuff We Buff, I would like to consult with a technician about vehicle detailing / repair:"
+                  "Hi You Scuff We Buff, I would like a quote for alloy wheel / paint repair:"
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -79,7 +79,7 @@ export function AboutCTA() {
                 )}
               >
                 <MessageSquare className="w-4 h-4 mr-2" />
-                WhatsApp Photo Quote
+                WhatsApp Photos
               </a>
             </div>
           </div>

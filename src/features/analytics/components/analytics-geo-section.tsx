@@ -130,10 +130,10 @@ export function AnalyticsGeoSection({ geography }: AnalyticsGeoSectionProps) {
       <div className="p-3.5 rounded-xl bg-secondary/30 border border-border/60 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-muted-foreground">
         <span className="flex items-center gap-2">
           <Compass className="w-3.5 h-3.5 text-amber-400" />
-          Primary physical studio facility: 14 Berkeley Square, Mayfair, London W1J 6BD
+          Mobile Repair Coverage: Birmingham & West Midlands
         </span>
         <span className="font-mono text-foreground font-semibold">
-          Coverage: Mobile detailing vans service within 35 miles of M25
+          Coverage: Solihull, Wolverhampton, Walsall, Dudley, Coventry & Black Country
         </span>
       </div>
     </div>

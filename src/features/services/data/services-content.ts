@@ -548,8 +548,8 @@ function applyAvailability(services: Record<string, DetailedService>): Record<st
 }
 
 export const SERVICES_DATA: Record<string, DetailedService> = applyAvailability({
-  ...CORE_SERVICES,
   ...REPAIR_SERVICES,
+  ...CORE_SERVICES,
 });
 
 /** All enabled services for grids, booking and detail routes */

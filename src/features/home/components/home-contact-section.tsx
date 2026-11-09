@@ -12,6 +12,7 @@ import {
   Send,
   Navigation,
   CheckCircle2,
+  Truck,
 } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Badge } from "@/components/ui/badge";
@@ -46,36 +47,35 @@ export function HomeContactSection() {
         <div className="max-w-3xl mx-auto text-center space-y-4 mb-14">
           <div className="flex justify-center">
             <Badge variant="electric" dot>
-              Studio & Mobile Dispatch
+              Mobile Service Coverage
             </Badge>
           </div>
 
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-white">
-            Visit Our Studio or Request Mobile Dispatch
+            We Come Directly To Your Doorstep
           </h2>
 
           <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-            Have questions about a scuff, paint correction, or ceramic warranty? Get in touch with our
-            master technicians or send photos via WhatsApp for an immediate assessment.
+            Need alloy wheel refurbishment, diamond cutting, or SMART scratch repairs? Contact our friendly family-run team today for advice, free estimates, and fast bookings across Birmingham and the West Midlands.
           </p>
         </div>
 
         {/* Contact Cards Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          {/* Card 1: Studio Info & Channels (7 cols) */}
+          {/* Card 1: Mobile Operations & Channels (7 cols) */}
           <div className="lg:col-span-7 flex flex-col justify-between p-6 sm:p-8 rounded-3xl bg-surface-card border border-white/[0.08] shadow-sm space-y-8">
             <div className="space-y-6">
               <div className="flex items-center justify-between border-b border-white/[0.08] pb-5">
                 <div>
                   <h3 className="text-xl font-bold uppercase tracking-tight text-white font-display">
-                    You Scuff We Buff Headquarters
+                    You Scuff We Buff
                   </h3>
                   <p className="text-xs text-muted-foreground mt-0.5">
-                    Studio Lighting Tunnel, Machine Polishing Bays & Mobile Fleet Depot
+                    Family-Run Mobile Alloy Wheel Repair & SMART Refurbishment
                   </p>
                 </div>
                 <Badge variant="success" size="sm" dot>
-                  Bay Open
+                  Mobile Units Active
                 </Badge>
               </div>
 
@@ -86,12 +86,12 @@ export function HomeContactSection() {
                     <MapPin className="w-5 h-5 text-primary" />
                   </div>
                   <div className="text-xs space-y-1">
-                    <span className="font-bold text-white block">Studio Location</span>
+                    <span className="font-bold text-white block">Service Coverage</span>
                     <p className="text-muted-foreground leading-relaxed">
-                      {siteConfig.contact.addressPlaceholder}
+                      Birmingham, Solihull, Wolverhampton, Walsall, Dudley, Sandwell, Coventry & Black Country
                     </p>
-                    <span className="text-[11px] text-primary font-medium block pt-0.5">
-                      Greater London & Home Counties
+                    <span className="text-[11px] text-emerald-400 font-medium block pt-0.5">
+                      100% Mobile Service
                     </span>
                   </div>
                 </div>
@@ -106,10 +106,10 @@ export function HomeContactSection() {
                       Mon – Fri: 08:00 – 18:00
                     </p>
                     <p className="text-muted-foreground">
-                      Saturday: 08:30 – 16:00
+                      Saturday: 08:00 – 16:00
                     </p>
                     <span className="text-[11px] text-muted-foreground/80 block">
-                      Sunday: Closed (Emergency dispatch on request)
+                      Sunday: Closed / By appointment
                     </span>
                   </div>
                 </div>
@@ -121,13 +121,13 @@ export function HomeContactSection() {
                   <div className="text-xs space-y-1">
                     <span className="font-bold text-white block">Direct Telephone</span>
                     <a
-                      href={`tel:${siteConfig.contact.phonePlaceholder}`}
+                      href={`tel:${siteConfig.contact.phoneRaw}`}
                       className="text-white hover:text-primary transition-colors font-medium block"
                     >
-                      {siteConfig.contact.phonePlaceholder}
+                      {siteConfig.contact.phone}
                     </a>
                     <span className="text-[11px] text-muted-foreground">
-                      Available Mon-Sat for instant phone advice
+                      Call our team directly for free advice & bookings
                     </span>
                   </div>
                 </div>
@@ -144,10 +144,10 @@ export function HomeContactSection() {
                       rel="noopener noreferrer"
                       className="text-emerald-400 hover:underline font-semibold block"
                     >
-                      Send Scratch Photos &rarr;
+                      Send Photos for Free Quote &rarr;
                     </a>
                     <span className="text-[11px] text-muted-foreground">
-                      Average response: Under 15 mins
+                      Quick response with transparent pricing
                     </span>
                   </div>
                 </div>
@@ -157,7 +157,7 @@ export function HomeContactSection() {
             {/* Quick Note Action */}
             <form onSubmit={handleQuickSend} className="space-y-3 pt-2 border-t border-white/[0.08]">
               <span className="text-xs font-bold uppercase tracking-wider text-white block">
-                Quick Message to Dispatch
+                Quick Message / Postcode Check
               </span>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
                 <input
@@ -171,7 +171,7 @@ export function HomeContactSection() {
                 <input
                   type="text"
                   required
-                  placeholder="Your Question / Postcode"
+                  placeholder="Your Postcode & Wheel / Scuff Issue"
                   value={quickMessage}
                   onChange={(e) => setQuickMessage(e.target.value)}
                   className="sm:col-span-2 px-3 py-2 rounded-xl bg-surface-secondary border border-white/[0.1] text-xs text-white focus:outline-none focus:border-primary"
@@ -184,7 +184,7 @@ export function HomeContactSection() {
                   </span>
                 ) : (
                   <span className="text-[11px] text-muted-foreground">
-                    We respect your privacy. No spam guaranteed.
+                    Friendly family service. No pressure, free advice.
                   </span>
                 )}
                 <Button type="submit" variant="default" size="xs" rightIcon={<Send className="w-3 h-3" />}>
@@ -194,15 +194,15 @@ export function HomeContactSection() {
             </form>
           </div>
 
-          {/* Card 2: Interactive Studio Map Card & Directions (5 cols) */}
+          {/* Card 2: Interactive West Midlands Coverage Map (5 cols) */}
           <div className="lg:col-span-5 flex flex-col justify-between p-6 sm:p-8 rounded-3xl bg-surface-card border border-white/[0.08] shadow-sm relative overflow-hidden">
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-bold uppercase tracking-wider text-primary">
-                  Studio Location Map
+                  West Midlands Coverage
                 </span>
                 <span className="text-[11px] text-muted-foreground flex items-center gap-1">
-                  <Navigation className="w-3 h-3 text-primary" /> Easy Access
+                  <Truck className="w-3.5 h-3.5 text-primary" /> We Come To You
                 </span>
               </div>
 
@@ -226,33 +226,32 @@ export function HomeContactSection() {
                   <div className="absolute top-1/4 left-0 right-0 h-1 bg-white/5" />
                 </div>
 
-                {/* Studio Center Pin Animation */}
-                <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                {/* Birmingham Mobile Center Marker */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
                   <div className="relative flex items-center justify-center">
-                    <div className="w-12 h-12 rounded-full bg-primary/20 animate-ping absolute" />
-                    <div className="w-9 h-9 rounded-full bg-primary/30 flex items-center justify-center border border-primary relative z-10 shadow-glow-neon">
-                      <MapPin className="w-5 h-5 text-white" />
+                    <div className="w-14 h-14 rounded-full bg-primary/20 animate-ping absolute" />
+                    <div className="w-10 h-10 rounded-full bg-primary/30 flex items-center justify-center border border-primary relative z-10 shadow-glow-neon">
+                      <Truck className="w-5 h-5 text-white" />
                     </div>
                   </div>
-                  <div className="mt-2 px-2.5 py-1 rounded-lg bg-surface-card/95 border border-primary/40 text-[10px] font-bold text-white shadow-lg whitespace-nowrap">
-                    You Scuff We Buff Studio
+                  <div className="mt-2 px-3 py-1 rounded-lg bg-surface-card/95 border border-primary/40 text-[10px] font-bold text-white shadow-lg whitespace-nowrap">
+                    Birmingham & West Midlands Mobile Service
                   </div>
                 </div>
 
                 {/* Mobile Van Transit Marker */}
-                <div className="absolute bottom-6 right-6 px-3 py-1.5 rounded-xl bg-surface-card/90 border border-white/[0.1] text-[11px] text-muted-foreground flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                  <span>3 Mobile Vans In Transit</span>
+                <div className="absolute bottom-4 right-4 px-3 py-1.5 rounded-xl bg-surface-card/90 border border-white/[0.1] text-[11px] text-muted-foreground flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>Mobile Vans Active</span>
                 </div>
               </div>
 
               <div className="space-y-2 pt-2">
                 <h4 className="text-sm font-bold text-white">
-                  Studio Parking & Bay Access
+                  Home & Workplace Convenience
                 </h4>
                 <p className="text-xs text-muted-foreground leading-relaxed">
-                  Dedicated secure customer parking on arrival. High-clearance bays accommodating
-                  large SUVs, modified vehicles, and low ground-clearance sports cars.
+                  No need to leave your car at a garage for days. Our fully equipped mobile repair units arrive at your home or workplace to complete wheel refurbishments and SMART repairs right on site.
                 </p>
               </div>
             </div>
@@ -260,7 +259,7 @@ export function HomeContactSection() {
             <div className="pt-4 flex flex-col sm:flex-row gap-3">
               <Link href="/contact" className="w-full sm:w-auto flex-1">
                 <Button variant="outline" size="sm" className="w-full">
-                  Detailed Directions
+                  Contact Page
                 </Button>
               </Link>
               <a

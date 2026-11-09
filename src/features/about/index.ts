@@ -3,6 +3,7 @@ export * from "./components/about-hero";
 export * from "./components/story-section";
 export * from "./components/mission-vision";
 export * from "./components/about-expertise";
+export * from "./components/service-areas";
 export * from "./components/workshop-showcase";
 export * from "./components/why-choose-us";
 export * from "./components/our-process";

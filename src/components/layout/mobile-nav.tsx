@@ -237,16 +237,18 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
                 </Link>
               </div>
 
-              <div className="pt-2 text-xs text-muted-foreground space-y-1.5">
+              <div className="pt-2 text-xs text-muted-foreground space-y-2">
                 <div className="flex items-center gap-2">
-                  <Phone className="w-3.5 h-3.5 text-electric shrink-0" />
-                  <span>{siteConfig.contact.phonePlaceholder}</span>
+                  <Phone className="w-3.5 h-3.5 text-primary shrink-0" />
+                  <a href={siteConfig.contact.phoneTel} className="text-white hover:text-primary font-bold">
+                    {siteConfig.contact.phone}
+                  </a>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Mail className="w-3.5 h-3.5 text-electric shrink-0" />
-                  <span className="truncate">
-                    {siteConfig.contact.emailPlaceholder}
-                  </span>
+                  <Mail className="w-3.5 h-3.5 text-primary shrink-0" />
+                  <a href={siteConfig.contact.emailMailto} className="truncate text-slate-300 hover:text-primary">
+                    {siteConfig.contact.email}
+                  </a>
                 </div>
               </div>
             </div>

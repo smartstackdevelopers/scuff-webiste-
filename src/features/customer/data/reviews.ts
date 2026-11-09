@@ -21,7 +21,7 @@ export const MOCK_CUSTOMER_REVIEWS: CustomerReview[] = [
     rating: 5,
     title: "Master craftsmanship on track-driven paintwork",
     comment:
-      "Picked up the GT3 following a weekend at Silverstone. All rubber tyre marbles, track bug splatter, and brake dust were completely eradicated without adding a single swirl scratch. Exceptional attention to detail in their Mayfair studio bay.",
+      "Picked up the GT3 following a weekend at the track. All rubber tyre marbles, bug splatter, and heavy brake dust were completely eradicated without adding a single swirl scratch. Exceptional attention to detail and outstanding mobile service.",
     reviewDate: "24 Aug 2026",
     status: "published",
   },

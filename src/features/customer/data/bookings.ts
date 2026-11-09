@@ -18,7 +18,7 @@ export const MOCK_CUSTOMER_BOOKINGS: CustomerBooking[] = [
     currency: "£",
     duration: "1 – 2 Days",
     addressType: "studio",
-    locationSummary: "You Scuff We Buff Studio Bay 2 (Mayfair / Park Lane)",
+    locationSummary: "You Scuff We Buff Mobile Unit (Birmingham / Solihull)",
     customerNotes: "Please pay extra attention to front bumper stone guard edges.",
     addons: [
       { id: "wheel-ceramic", title: "Wheel Barrel Ceramic Shield", price: 65 },
@@ -80,7 +80,7 @@ export const MOCK_CUSTOMER_BOOKINGS: CustomerBooking[] = [
     currency: "£",
     duration: "4.5 Hours",
     addressType: "mobile",
-    locationSummary: "Client Home Driveway (Mayfair, London)",
+    locationSummary: "Client Home Driveway (Solihull, West Midlands)",
     customerNotes: "Dog hair in rear luggage bay. Full steam sanitisation.",
     addons: [
       { id: "pet-hair", title: "Pet Hair Agitation & Extraction", price: 35 },

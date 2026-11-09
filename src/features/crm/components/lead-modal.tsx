@@ -356,7 +356,7 @@ export function LeadModal({
                   <option value="whatsapp">WhatsApp Direct Inbound</option>
                   <option value="phone_call">Telephone Call</option>
                   <option value="referral">Private Client Referral</option>
-                  <option value="walk_in">Mayfair Studio Walk-In</option>
+                  <option value="walk_in">Direct Inbound / Local Referral</option>
                   <option value="facebook">Facebook Ads</option>
                   <option value="other">Other Channel</option>
                 </select>

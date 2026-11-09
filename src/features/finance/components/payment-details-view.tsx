@@ -193,7 +193,7 @@ export function PaymentDetailsView({ id }: PaymentDetailsViewProps) {
                 YOU SCUFF WE BUFF
               </span>
               <span className="text-xs font-bold uppercase tracking-wider text-amber-400 print:text-amber-700">
-                Studio Mayfair
+                Mobile Repair Service
               </span>
             </div>
             <p className="text-xs text-zinc-400 font-mono uppercase tracking-wider print:text-zinc-600 mb-3">
@@ -202,9 +202,9 @@ export function PaymentDetailsView({ id }: PaymentDetailsViewProps) {
             <div className="text-xs text-zinc-400 space-y-1 print:text-zinc-600">
               <p className="flex items-center gap-1.5">
                 <Building2 className="w-3.5 h-3.5 text-zinc-500" />
-                14 Berkeley Square, Mayfair, London W1J 6BD
+                Mobile Coverage: Birmingham &amp; West Midlands
               </p>
-              <p>HMRC VAT Reg: GB 492 819 320</p>
+              <p>Telephone: 07448 661 691 &bull; info@youscuffwebuff.co.uk</p>
             </div>
           </div>
 
@@ -355,11 +355,10 @@ export function PaymentDetailsView({ id }: PaymentDetailsViewProps) {
         {/* Legal Signoff */}
         <div className="mt-12 pt-6 border-t border-zinc-800/80 text-center text-[11px] text-zinc-500 print:text-zinc-600 space-y-1">
           <p>
-            Official Electronic Settlement Voucher &bull; You Scuff We Buff Ltd &bull; 14 Berkeley Square, Mayfair,
-            London W1J 6BD
+            Official Electronic Settlement Voucher &bull; You Scuff We Buff &bull; Birmingham &amp; West Midlands
           </p>
           <p>
-            This document confirms receipt of client funds for vehicle detailing, ceramic coating or restorative care.
+            This document confirms receipt of client funds for mobile alloy wheel refurbishment and SMART repair care.
           </p>
         </div>
       </div>

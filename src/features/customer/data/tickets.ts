@@ -27,7 +27,7 @@ export const MOCK_SUPPORT_TICKETS: SupportTicket[] = [
         senderName: "Marcus (Head of Studio Bay)",
         avatarUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
         message:
-          "Good afternoon Alexander! Yes, we have an accredited SunTek & XPEL film plotter directly in our Mayfair bay. We can apply self-healing film to your bonnet, front wings, and wing mirrors before locking in the remainder of the car with our 9H ceramic shield. I will add the PPF options sheet to your booking file.",
+          "Good afternoon Alexander! Yes, we have specialist protective film facilities and mobile units across the West Midlands. We can apply protective film to your bonnet, front wings, and wing mirrors before locking in the remainder of the car. I will add the options sheet to your booking file.",
         timestamp: "03 Nov 2026, 14:15",
         attachmentName: "GT3-Front-End-PPF-Options.pdf",
       },

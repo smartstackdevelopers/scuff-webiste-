@@ -48,7 +48,7 @@ export function VisitorAnalyticsView() {
               TELEMETRY &amp; CONVERSIONS
             </span>
             <span className="text-xs text-muted-foreground font-mono">
-              You Scuff We Buff &bull; Mayfair Studio
+              You Scuff We Buff &bull; Birmingham &amp; West Midlands
             </span>
           </div>
           <h1 className="text-2xl md:text-3xl font-extrabold text-foreground tracking-tight">

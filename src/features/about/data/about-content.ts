@@ -23,236 +23,254 @@ export interface ServiceExpertise {
   href: string;
 }
 
+export interface ServiceArea {
+  name: string;
+  description: string;
+}
+
 export const ABOUT_CONTENT = {
   hero: {
-    badge: "PRECISION AUTOMOTIVE RESTORATION & DETAILING",
-    headline: "Craftsmanship Beyond Conventional Detailing",
+    badge: "FAMILY-RUN MOBILE ALLOY WHEEL & SMART REPAIR SPECIALISTS",
+    headline: "About You Scuff We Buff",
+    supportingHeading: "Expert Alloy Wheel Repair & Refurbishment Across the West Midlands",
     description:
-      "Founded on an obsession with optical paint clarity and structural perfection. From our climate-controlled studio cleanrooms to self-sufficient mobile workshop vans, we bring Concours-level vehicle preservation across the UK.",
+      "You Scuff We Buff is a family-run business specialising in professional alloy wheel repair and refurbishment. We take pride in restoring damaged alloy wheels to their original condition, combining skilled workmanship with friendly and reliable customer service. Serving Birmingham and the wider West Midlands, we provide convenient mobile alloy wheel repairs and SMART bodywork repairs at your home or workplace. Our aim is simple: deliver quality repairs, excellent finishes and a hassle-free service that customers can rely on.",
     image: {
       url: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=2070&auto=format&fit=crop",
-      alt: "Professional automotive detailing studio clean bay under ceiling hex lighting",
+      alt: "Professional automotive workshop showing alloy wheel refurbishment and vehicle care",
     },
+    metrics: [
+      { label: "Service Mode", value: "100% Mobile" },
+      { label: "Coverage", value: "West Midlands" },
+      { label: "Quotes", value: "Free & Fast" },
+    ],
   },
 
-  story: {
-    heading: "The Standard Behind You Scuff We Buff",
-    subheading: "A calculated standard of restoration, not a rushed surface wash.",
+  whoWeAre: {
+    badge: "OUR HERITAGE & MISSION",
+    heading: "Who We Are",
+    subheading: "A family-run team dedicated to honest craftsmanship and outstanding finishes.",
     paragraphs: [
-      "You Scuff We Buff was founded with a single uncompromising mission: to challenge the rushed, abrasive practices of conventional car valeting and offer true paint preservation and SMART repair craftsmanship to drivers across the UK.",
-      "Most automotive paint damage doesn't occur on the road—it happens in traditional car washes using harsh caustic detergents, dirty sponges, and aggressive automatic brushes that scour microscopic swirl marks into factory clearcoats. We take an engineer's approach to every vehicle: measuring clear coat thickness with digital ultrasonic gauges, pairing polishing compounds to specific factory paint hardness, and executing localized repairs that preserve up to 90% of your car's original factory finish.",
-      "Today, our operations encompass both our dedicated London studio facility at Falcon Park and a fleet of self-contained mobile repair units. Whether you bring a high-performance sports car to our cleanroom bay or require diamond-cut wheel refurbishment at your driveway, you receive identical diagnostic rigor, laboratory-grade chemistry, and total transparency.",
+      "You Scuff We Buff is an independent, family-run mobile alloy wheel repair and refurbishment specialist. Founded on a passion for automotive excellence and straightforward, friendly customer care, we set out to make wheel and bodywork repairs seamless, cost-effective, and convenient for car owners throughout the West Midlands.",
+      "Rather than losing your car for days at an impersonal body shop or paying inflated replacement costs at dealerships, our skilled mobile technicians bring professional refurbishment directly to your doorstep. Whether you are at home or at work, we restore kerbed, scratched, scuffed, and oxidized wheels right outside your door.",
+      "Every vehicle we work on is treated with the care and precision we would demand on our own family cars. From precision diamond-cut alloy repairs to seamless dent and paint scuff SMART repairs, we deliver showroom-grade results with transparent, competitive pricing and zero hassle.",
     ],
     image: {
       url: "https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?q=80&w=2070&auto=format&fit=crop",
-      alt: "Master technician refining luxury automotive paint with professional rotary machine polisher",
+      alt: "Professional technician carrying out precision wheel and bodywork restoration",
     },
     stats: [
-      { label: "Surface Audit", value: "100% Inspected" },
-      { label: "Liability Insurance", value: "£5,000,000" },
-      { label: "Coating Warranty", value: "Up to 5 Years" },
+      { label: "Family Run", value: "100% Dedicated" },
+      { label: "Service Area", value: "West Midlands Wide" },
+      { label: "Customer Rating", value: "5-Star Service" },
     ],
   },
 
-  missionVision: {
-    mission: {
-      title: "Our Mission",
-      statement:
-        "To elevate UK automotive vehicle care through uncompromising craftsmanship, scientific paint restoration, and honest customer transparency on every service.",
-      highlight: "Treating every vehicle as an engineering project, never a volume commodity.",
-    },
-    vision: {
-      title: "Our Vision",
-      statement:
-        "To stand as the UK's most trusted authority in mobile SMART repairs and master studio detailing, setting a national benchmark for workmanship and client respect.",
-      highlight: "Transparent pricing, verifiable clearcoat health, and long-term surface protection.",
-    },
+  commitmentToQuality: {
+    badge: "UNCOMPROMISING QUALITY",
+    title: "Our Commitment to Quality",
+    statement:
+      "We believe that exceptional results come from combining high-grade materials, proven specialist techniques, and genuine pride in workmanship.",
+    highlight: "Quality materials, precise colour matching, and finishes built to withstand daily British roads.",
+    points: [
+      {
+        title: "Premium Materials & Lacquers",
+        desc: "We exclusively use professional automotive-grade primers, basecoats, and UV-resistant protective lacquers designed for lasting durability and brake dust resistance.",
+      },
+      {
+        title: "Meticulous Attention to Detail",
+        desc: "Every scuff, scratch, and kerbed edge is thoroughly prepped, smoothed, primed, and precision-blended to achieve an OEM-level finish.",
+      },
+      {
+        title: "Customer Satisfaction First",
+        desc: "We take the time to inspect every repair alongside you before completion, ensuring you are completely happy with the results.",
+      },
+    ],
+  },
+
+  mobileConvenience: {
+    badge: "MOBILE CONVENIENCE",
+    title: "Convenient Mobile Repairs — We Come To You",
+    description:
+      "Say goodbye to the inconvenience of dropping off your car, arranging lifts, or waiting days for repairs. Our fully equipped mobile repair units come directly to your home or workplace across Birmingham and the West Midlands.",
+    points: [
+      "Repairs carried out at your driveway, garage, or office parking space",
+      "Self-contained mobile repair units with professional tools and equipment",
+      "Most wheel and SMART scuff repairs completed in just a few hours",
+      "Zero disruption to your daily schedule—carry on with your day while we work",
+    ],
+    image: "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?q=80&w=1200&auto=format&fit=crop",
   },
 
   expertise: [
     {
-      id: "exp-1",
-      title: "Multi-Stage Paint Correction",
-      subtitle: "Optical Micro-Scratch & Swirl Elimination",
+      id: "alloy-wheel-refurbishment",
+      title: "Alloy Wheel Refurbishment",
+      subtitle: "Full Kerb Damage, Scuff & Corrosion Restoration",
       description:
-        "Using dual-action and rotary polishers with dimorphic micro-abrasive compounds, we safely level paint clearcoats down to the micron to permanently remove swirl marks, bird lime etching, and hazing without compromising clearcoat safety.",
+        "Professional mobile repair for kerbed, scratched, chipped, and corroded alloy wheels. We restore the smooth profile and apply durable, factory-grade paint and clear protective lacquer.",
       features: [
-        "Digital paint depth gauge audit before polishing",
-        "Permanent defect removal, no silicone filler glazes",
-        "Jeweled finishing polish for maximum optical depth",
-      ],
-      image: "https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?q=80&w=1200&auto=format&fit=crop",
-      badge: "Stage 1–3 Correction",
-      href: "/services/paint-correction",
-    },
-    {
-      id: "exp-2",
-      title: "9H Ceramic & Graphene Shields",
-      subtitle: "Molecular Covalent Surface Bonding",
-      description:
-        "Our certified ceramic and graphene matrix coatings create an ultra-hard, hydrophobic shield that cross-links with the clear coat. Resists harsh road salt, UV radiation, environmental fallout, and oxidation for up to 5 years.",
-      features: [
-        "Infrared shortwave heat-cured bonding",
-        "Extreme 110° water contact angle and beading",
-        "Registered warranty certificates with every application",
-      ],
-      image: "https://images.unsplash.com/photo-1617788138017-80ad40651399?q=80&w=1200&auto=format&fit=crop",
-      badge: "Up to 5-Year Protection",
-      href: "/services/ceramic-coating",
-    },
-    {
-      id: "exp-3",
-      title: "SMART Bumper Scuff & Scratch Repair",
-      subtitle: "Localized OEM Precision Colour Matching",
-      description:
-        "Small to Medium Area Repair Technology (SMART) enables our technicians to repair bumper corners, stone chips, and door scratches within hours, matching factory color codes digitally and avoiding unnecessary panel replacement.",
-      features: [
-        "5-angle digital spectrophotometer colour formulation",
-        "Positive-pressure filtered spray booth curing",
-        "Lifetime paint adhesion warranty",
-      ],
-      image: "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?q=80&w=1200&auto=format&fit=crop",
-      badge: "Same-Day Turnaround",
-      href: "/car-painting",
-    },
-    {
-      id: "exp-4",
-      title: "CNC Diamond-Cut Alloy Refurbishment",
-      subtitle: "Computerized Precision Lathe Machining",
-      description:
-        "From severe kerb rash to corrosion, our specialized diamond-cutting lathes digitally map wheel contours and skim a micron-thin layer of alloy to restore the iridescent rainbow sheen and factory OEM profile.",
-      features: [
-        "0.001mm laser probe surface contour profiling",
-        "High-temperature powder coat primer and base",
-        "Clear protective acrylic lacquer against brake dust",
+        "Complete removal of unsightly kerbing and rash",
+        "High-grade automotive primer and durable finish coat",
+        "Protective lacquer shield against brake dust and road salt",
       ],
       image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=1200&auto=format&fit=crop",
-      badge: "OEM Factory Profile",
+      badge: "Core Speciality",
       href: "/services/alloy-wheel-refurbishment",
     },
-  ] as ServiceExpertise[],
-
-  workshopGallery: [
     {
-      title: "Climate-Controlled Studio Bay",
-      desc: "Positive-pressure cleanroom eliminating floating dust particles during ceramic application.",
-      image: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=1200&auto=format&fit=crop",
-      category: "Facility",
+      id: "diamond-cutting",
+      title: "Diamond Cutting Repair",
+      subtitle: "Precision Diamond-Cut Wheel Face Restoration",
+      description:
+        "Specialist restoration for premium diamond-cut wheels with high-precision edge repair, clear coat re-application, and OEM factory-standard gloss finish.",
+      features: [
+        "Restores two-tone and machine-faced alloy profiles",
+        "Removes milky spider-web corrosion and edge scuffs",
+        "Ultra-clear UV-stable protective lacquer finish",
+      ],
+      image: "https://images.unsplash.com/photo-1617788138017-80ad40651399?q=80&w=1200&auto=format&fit=crop",
+      badge: "Precision Finish",
+      href: "/services/diamond-cutting",
     },
     {
-      title: "Master Machine Polishing",
-      desc: "Precision compounding tailored to German, Japanese, and British clearcoat hardness.",
+      id: "smart-repairs",
+      title: "Dent & Scratch SMART Repair",
+      subtitle: "Localized Small-to-Medium Area Repair",
+      description:
+        "Targeted repair technology focusing specifically on the damaged area rather than respraying whole panels, keeping repairs swift, affordable, and seamless.",
+      features: [
+        "Computerized digital paint matching to manufacturer codes",
+        "Preserves original factory finish across untouched panels",
+        "Completed within hours at your home or workplace",
+      ],
       image: "https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?q=80&w=1200&auto=format&fit=crop",
-      category: "Technique",
+      badge: "Fast Turnaround",
+      href: "/services/smart-repairs",
     },
     {
-      title: "OEM Spray Booth Refinishing",
-      desc: "Shortwave infrared lamp baking ensures rapid cure and stone-hard chip resistance.",
+      id: "bumper-paint-scuff",
+      title: "Bumper Damage & Paint Scuff",
+      subtitle: "Seamless Corner Scuff & Plastic Bumper Repair",
+      description:
+        "Restore scratched bumper corners, parking scuffs, and chipped bodywork back to a flawless, uniform finish without costly bumper replacement.",
+      features: [
+        "Repairs textured and gloss plastic bumper sections",
+        "Exact colour blending seamlessly into adjacent bodywork",
+        "Protects against rust, peeling, and long-term weathering",
+      ],
       image: "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?q=80&w=1200&auto=format&fit=crop",
-      category: "Painting",
+      badge: "Same-Day Service",
+      href: "/car-painting",
     },
-    {
-      title: "Flawless Handover Reflections",
-      desc: "Every completed vehicle undergoes high-CRI inspection before client sign-off.",
-      image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop",
-      category: "Handover",
-    },
-  ],
+  ] as ServiceExpertise[],
 
   whyChooseUs: [
     {
       id: "feature-1",
-      title: "IDA-Certified Master Technicians",
+      title: "Friendly Family-Run Service",
       description:
-        "Every detailing and painting specialist undergoes continuous technical accreditation in clear coat metallurgy and multi-stage correction.",
-      iconName: "Award",
-    },
-    {
-      id: "feature-2",
-      title: "OEM Factory-Approved Materials",
-      description:
-        "We exclusively partner with world-renowned detailing laboratories including Gyeon, CarPro, Menzerna, and Glasurit waterborne coatings.",
+        "We are an independent, family-operated business that genuinely cares about our reputation, delivering personal service and honest advice on every job.",
       iconName: "ShieldCheck",
     },
     {
-      id: "feature-3",
-      title: "Digital Paint Depth Verification",
+      id: "feature-2",
+      title: "Skilled & Experienced Technicians",
       description:
-        "Ultrasonic paint thickness readings across 24 panel checkpoints ensure polishing never removes critical clearcoat layers.",
-      iconName: "Search",
+        "Our repair specialists bring years of hands-on expertise in alloy wheel refurbishments, diamond cut repairs, and precision SMART paint blending.",
+      iconName: "Award",
     },
     {
-      id: "feature-4",
-      title: "Self-Sufficient Mobile Vans",
+      id: "feature-3",
+      title: "Convenient Mobile Service",
       description:
-        "Our mobile fleet arrives equipped with silent Honda generators, 500L de-ionised pure water, pop-up canopies, and lighting.",
+        "We come directly to your home or workplace across the West Midlands, saving you time and avoiding the hassle of visiting a body shop.",
       iconName: "Wrench",
     },
     {
-      id: "feature-5",
-      title: "Transparent Fixed Pricing",
+      id: "feature-4",
+      title: "Honest Pricing & Free Quotes",
       description:
-        "Clear, written quotations before any work begins. No hidden call-out charges, mileage fees, or surprise upsells.",
+        "Clear, upfront quotes with no hidden charges. Simply send us photos of the damage via WhatsApp or our quote form for a fast, free estimate.",
       iconName: "CheckCircle2",
     },
     {
-      id: "feature-6",
-      title: "Full £5M Public Liability Cover",
+      id: "feature-5",
+      title: "High-Quality Finishes",
       description:
-        "Comprehensive motor trade insurance protecting prestige, supercar, commercial, and everyday vehicles throughout our care.",
+        "We use professional automotive-grade coatings and high-durability lacquers to ensure your wheels and panels look exceptional and stay protected.",
+      iconName: "Search",
+    },
+    {
+      id: "feature-6",
+      title: "Fast & Reliable Service",
+      description:
+        "Most mobile repairs are completed in just a few hours on the same day, getting you back on the road safely and without delay.",
       iconName: "Shield",
     },
   ] as AboutFeature[],
 
+  serviceAreas: [
+    { name: "Birmingham", description: "Central, South, North & East Birmingham suburbs" },
+    { name: "Solihull", description: "Shirley, Knowle, Dorridge & surrounding districts" },
+    { name: "Wolverhampton", description: "City centre, Tettenhall, Penn & neighbouring localities" },
+    { name: "Walsall", description: "Aldridge, Bloxwich, Streetly & borough areas" },
+    { name: "Dudley", description: "Stourbridge, Halesowen, Brierley Hill & surrounding area" },
+    { name: "Sandwell", description: "West Bromwich, Oldbury, Smethwick, Rowley Regis" },
+    { name: "Coventry", description: "Full Coventry coverage and adjoining commuter towns" },
+    { name: "The Black Country", description: "Comprehensive mobile coverage throughout all boroughs" },
+    { name: "West Midlands", description: "Wider West Midlands region and neighbouring postcodes" },
+  ] as ServiceArea[],
+
   process: [
     {
       stepNumber: "01",
-      title: "Diagnostic Assessment",
+      title: "Send Us Photos",
       description:
-        "High-CRI LED defect mapping and ultrasonic paint depth audit to identify swirl density, stone chips, and clearcoat thickness.",
+        "Take a couple of clear photos of the wheel or bodywork damage and send them to us via WhatsApp or our simple online quote form.",
       iconName: "Search",
     },
     {
       stepNumber: "02",
-      title: "Multi-Stage Decontamination",
+      title: "Receive Free Quote",
       description:
-        "pH-neutral citrus pre-wash, iron fallout chemical dissolution, tar removal, and soft clay bar extraction of embedded contaminants.",
+        "We review the photos promptly and provide a transparent, competitive quote with no obligation and no hidden extras.",
       iconName: "Sliders",
     },
     {
       stepNumber: "03",
-      title: "Correction & Protection",
+      title: "We Come To You",
       description:
-        "Tailored machine compounding, refinement jewelling, SMART scuff refinishing, and shortwave IR-cured 9H ceramic bond.",
+        "Our fully equipped mobile unit arrives at your home or workplace at a time that suits you, carrying out the repair cleanly on site.",
       iconName: "Wrench",
     },
     {
       stepNumber: "04",
-      title: "Handover Walkaround",
+      title: "Inspect & Drive Away",
       description:
-        "Joint 30-point inspection under direct lighting, tyre and trim conditioning, interior touch-up, and warranty handover.",
+        "We walk around the finished wheel or panel together so you can inspect the flawless finish before any payment is made.",
       iconName: "CheckCircle2",
     },
   ] as ProcessStep[],
 
   trustCredentials: [
-    { title: "Motor Trade Cover", value: "£5,000,000", desc: "Comprehensive public & vehicle liability insurance" },
-    { title: "Defect Elimination", value: "Up to 95%", desc: "Permanent swirl, scratch & oxidation removal" },
-    { title: "Ceramic Warranty", value: "Up to 5 Years", desc: "Chemical, UV & hydrophobicity guarantee" },
-    { title: "Colour Accuracy", value: "99.4%", desc: "Computerized spectrophotometer digital matching" },
+    { title: "Service Model", value: "100% Mobile", desc: "Repairs carried out at your home or workplace" },
+    { title: "Service Area", value: "West Midlands", desc: "Birmingham, Solihull, Black Country & Coventry" },
+    { title: "Quotes", value: "100% Free", desc: "No-obligation WhatsApp & online photo estimates" },
+    { title: "Turnaround", value: "Same Day", desc: "Most repairs completed in a matter of hours" },
   ],
 
   cta: {
-    headline: "Experience Automotive Detailing Done Right.",
+    headline: "Restore Your Wheels & Bodywork Today.",
     subheadline:
-      "Whether you need master paint correction at our Falcon Park cleanroom bay or alloy wheel repair at your home, our certified technicians are ready to restore your vehicle.",
+      "Contact You Scuff We Buff for friendly advice and a free, no-obligation quote. Our mobile team is ready to visit your home or workplace across Birmingham and the West Midlands.",
     primaryBtn: {
-      text: "Book Detailing Bay",
+      text: "Get a Free Quote",
       href: "/booking",
     },
     secondaryBtn: {
-      text: "View Services Catalog",
-      href: "/services",
+      text: "Call Our Team",
+      href: "tel:+447448661691",
     },
   },
 };

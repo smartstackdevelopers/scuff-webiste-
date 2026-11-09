@@ -9,7 +9,7 @@ export const MOCK_ADMIN_INVOICES: AdminInvoice[] = [
     customerName: "Alexander Hamilton",
     customerEmail: "alexander@hamilton-partners.co.uk",
     customerPhone: "+44 7700 900881",
-    customerAddress: "Flat 4B, 22 Grosvenor Square, Mayfair, London W1K 6LG",
+    customerAddress: "Manor Road, Solihull, West Midlands B91 2BL",
     vehicleMake: "Porsche",
     vehicleModel: "911 GT3 RS",
     vehicleYear: "2024",

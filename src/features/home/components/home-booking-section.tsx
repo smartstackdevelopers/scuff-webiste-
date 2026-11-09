@@ -15,42 +15,38 @@ import {
   User,
   ArrowRight,
   AlertCircle,
+  Truck,
+  Building,
+  Home as HomeIcon,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Container } from "@/components/ui/container";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { siteConfig } from "@/config/site";
 
 const SERVICES_LIST = [
-  { id: "alloy-wheel-refurbishment", name: "Alloy Wheel Refurbishment (Diamond Cut / Powder)", price: "From £75" },
-  { id: "smart-repairs", name: "SMART Bumper Scuff & Scratch Repair", price: "From £120" },
-  { id: "paint-correction", name: "Multi-Stage Paint Correction & Gloss Restoration", price: "From £280" },
-  { id: "ceramic-coating", name: "9H Ceramic & Graphene Coating (5-Year)", price: "From £450" },
-  { id: "interior-detailing", name: "Deep Interior Steam Sanitization & Leather Care", price: "From £95" },
-  { id: "mobile-repairs", name: "Mobile Van Service (Home or Workplace Visit)", price: "Quote Assessed" },
+  { id: "alloy-wheel-refurbishment", name: "Alloy Wheel Refurbishment", price: "Free Quote" },
+  { id: "diamond-cutting", name: "Diamond Cutting Repair", price: "Free Quote" },
+  { id: "smart-repairs", name: "Dent & Scratch SMART Repair", price: "Free Quote" },
+  { id: "bumper-damage", name: "Bumper Damage Repair", price: "Free Quote" },
+  { id: "paint-scuff", name: "Paint Scuff Repair", price: "Free Quote" },
+  { id: "mobile-repairs", name: "Mobile Alloy Wheel Repair (Full Set / Custom)", price: "Free Quote" },
 ];
 
 export function HomeBookingSection() {
   const [service, setService] = React.useState(SERVICES_LIST[0].id);
-  const [serviceLocation, setServiceLocation] = React.useState<"studio" | "mobile">("mobile");
+  const [serviceLocation, setServiceLocation] = React.useState<"home" | "workplace">("home");
   const [customerName, setCustomerName] = React.useState("");
   const [customerEmail, setCustomerEmail] = React.useState("");
   const [customerPhone, setCustomerPhone] = React.useState("");
+  const [postcode, setPostcode] = React.useState("");
   const [vehicleMakeModel, setVehicleMakeModel] = React.useState("");
-  const [vehicleReg, setVehicleReg] = React.useState("");
   const [preferredDate, setPreferredDate] = React.useState("");
-  const [preferredTime, setPreferredTime] = React.useState("morning");
   const [notes, setNotes] = React.useState("");
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [submittedRef, setSubmittedRef] = React.useState<string | null>(null);
   const [formError, setFormError] = React.useState<string | null>(null);
-
-  // Set default minimum date to tomorrow
-  const minDate = React.useMemo(() => {
-    const d = new Date();
-    d.setDate(d.getDate() + 1);
-    return d.toISOString().split("T")[0];
-  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -64,11 +60,9 @@ export function HomeBookingSection() {
     setIsSubmitting(true);
 
     try {
-      // Simulate real dispatch preparation
-      await new Promise((resolve) => setTimeout(resolve, 900));
+      await new Promise((resolve) => setTimeout(resolve, 800));
       const ref = `YSWB-${Math.floor(100000 + Math.random() * 900000)}`;
 
-      // Save to local storage for persistence across portal
       const bookingData = {
         reference: ref,
         service,
@@ -76,10 +70,9 @@ export function HomeBookingSection() {
         customerName,
         customerEmail,
         customerPhone,
+        postcode,
         vehicleMakeModel,
-        vehicleReg,
         preferredDate: preferredDate || "Earliest Available",
-        preferredTime,
         notes,
         createdAt: new Date().toISOString(),
         status: "confirmed",
@@ -90,12 +83,12 @@ export function HomeBookingSection() {
         existing.unshift(bookingData);
         localStorage.setItem("yswb_recent_bookings", JSON.stringify(existing.slice(0, 10)));
       } catch {
-        // local storage fallback
+        // fallback
       }
 
       setSubmittedRef(ref);
     } catch {
-      setFormError("An unexpected error occurred while reserving your slot. Please try again.");
+      setFormError("An unexpected error occurred while submitting your request. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -115,17 +108,15 @@ export function HomeBookingSection() {
           <div className="lg:col-span-5 space-y-7">
             <div className="space-y-3">
               <Badge variant="warning" dot>
-                Online Booking & Estimate
+                Online Quote & Mobile Booking
               </Badge>
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-white leading-tight">
-                Reserve Your Appointment or Request an Estimate
+                Request a Mobile Repair Quote
               </h2>
             </div>
 
             <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-              Skip phone queues. Choose your required service, indicate whether you prefer our
-              dedicated studio cleanroom bay or our fully equipped mobile van at your doorstep,
-              and our dispatch coordinator will lock in your slot.
+              We make the repair process convenient and hassle-free. Select your service, tell us whether you prefer a visit to your home or workplace across Birmingham and the West Midlands, and our team will provide a fast, free estimate.
             </p>
 
             {/* 3 Trust Points */}
@@ -134,22 +125,22 @@ export function HomeBookingSection() {
                 <ShieldCheck className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                 <div>
                   <h4 className="text-xs sm:text-sm font-bold text-white">
-                    Zero Upfront Deposit Required
+                    Free, No-Obligation Quotes
                   </h4>
                   <p className="text-xs text-muted-foreground mt-0.5">
-                    Pay upon completion once you inspect the workmanship with our technician.
+                    Clear upfront pricing with no hidden charges or unexpected extras.
                   </p>
                 </div>
               </div>
 
               <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-surface-card border border-white/[0.08]">
-                <MapPin className="w-5 h-5 text-amber-500 shrink-0 mt-0.5" />
+                <Truck className="w-5 h-5 text-amber-500 shrink-0 mt-0.5" />
                 <div>
                   <h4 className="text-xs sm:text-sm font-bold text-white">
-                    Fully Self-Sufficient Mobile Fleet
+                    We Come To Your Home or Workplace
                   </h4>
                   <p className="text-xs text-muted-foreground mt-0.5">
-                    Our vans bring their own onboard power and filtered soft water. No plugs needed.
+                    No need to drop your car off. Our mobile team carries out the work right outside your door.
                   </p>
                 </div>
               </div>
@@ -158,26 +149,28 @@ export function HomeBookingSection() {
                 <Sparkles className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                 <div>
                   <h4 className="text-xs sm:text-sm font-bold text-white">
-                    Lifetime Workmanship Guarantee
+                    High-Quality Durable Finishes
                   </h4>
                   <p className="text-xs text-muted-foreground mt-0.5">
-                    Paint and SMART clearcoats are fully backed against peeling, fading, and flaking.
+                    High-grade primers, factory-matched paints, and long-lasting clear coat protection.
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Deep Multi-Step Wizard Link */}
-            <div className="pt-2 p-4 rounded-2xl bg-surface-tertiary border border-white/[0.08] flex items-center justify-between">
+            {/* Direct Phone / WhatsApp Quick Strip */}
+            <div className="p-4 rounded-2xl bg-surface-tertiary border border-white/[0.08] flex items-center justify-between">
               <div className="text-xs">
-                <span className="font-bold text-white block">Need comprehensive package comparison?</span>
-                <span className="text-muted-foreground">Use our interactive multi-step booking wizard</span>
+                <span className="font-bold text-white block">Prefer to speak directly?</span>
+                <span className="text-muted-foreground">Call {siteConfig.contact.phone} or send photos on WhatsApp</span>
               </div>
-              <Link href="/booking">
-                <Button variant="outline" size="sm" rightIcon={<ArrowRight className="w-3.5 h-3.5" />}>
-                  Open Wizard
-                </Button>
-              </Link>
+              <a
+                href={`tel:${siteConfig.contact.phoneRaw}`}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-primary text-black font-bold text-xs hover:bg-primary/90"
+              >
+                <Phone className="w-3.5 h-3.5" />
+                <span>Call Now</span>
+              </a>
             </div>
           </div>
 
@@ -199,29 +192,28 @@ export function HomeBookingSection() {
 
                     <div className="space-y-2">
                       <span className="text-xs font-bold uppercase tracking-wider text-primary">
-                        Booking Confirmed
+                        Quote Request Received
                       </span>
                       <h3 className="text-2xl font-black uppercase text-white font-display">
-                        Appointment Slot Reserved
+                        Thank You, {customerName}
                       </h3>
                       <p className="text-sm text-muted-foreground max-w-md mx-auto leading-relaxed">
-                        Thank you <strong className="text-white">{customerName}</strong>. Your reference
-                        number is <strong className="text-primary font-mono">{submittedRef}</strong>.
-                        Our UK dispatch technician will reach out via WhatsApp/phone to confirm the exact bay or arrival window.
+                        Your quote reference is <strong className="text-primary font-mono">{submittedRef}</strong>.
+                        Our team will contact you shortly via phone or WhatsApp to provide your estimate and arrange a convenient date.
                       </p>
                     </div>
 
                     <div className="p-4 rounded-xl bg-surface-secondary border border-white/[0.08] max-w-sm mx-auto text-left text-xs space-y-1.5">
                       <div className="flex justify-between text-muted-foreground">
                         <span>Vehicle:</span>
-                        <span className="text-white font-medium">{vehicleMakeModel} ({vehicleReg || "N/A"})</span>
+                        <span className="text-white font-medium">{vehicleMakeModel}</span>
                       </div>
                       <div className="flex justify-between text-muted-foreground">
-                        <span>Location Mode:</span>
-                        <span className="text-white font-medium capitalize">{serviceLocation}</span>
+                        <span>Location Preference:</span>
+                        <span className="text-white font-medium capitalize">{serviceLocation} Visit ({postcode || "West Midlands"})</span>
                       </div>
                       <div className="flex justify-between text-muted-foreground">
-                        <span>Requested Date:</span>
+                        <span>Preferred Date:</span>
                         <span className="text-white font-medium">{preferredDate || "Earliest Available"}</span>
                       </div>
                     </div>
@@ -237,23 +229,26 @@ export function HomeBookingSection() {
                           setVehicleMakeModel("");
                         }}
                       >
-                        Submit Another Inquiry
+                        Submit Another Request
                       </Button>
-                      <Link href="/customer/dashboard">
-                        <Button variant="default" size="sm">
-                          View Customer Dashboard
-                        </Button>
-                      </Link>
+                      <a
+                        href={siteConfig.links.whatsapp}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs"
+                      >
+                        <span>Send Photos on WhatsApp</span>
+                      </a>
                     </div>
                   </motion.div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-5">
                     <div>
                       <h3 className="text-xl font-bold uppercase text-white font-display tracking-tight">
-                        Instant Booking Form
+                        Free Mobile Repair Quote
                       </h3>
                       <p className="text-xs text-muted-foreground">
-                        Fill in your details below to lock in an appointment or mobile van visit.
+                        Fill in your details for a quick, no-obligation repair estimate.
                       </p>
                     </div>
 
@@ -264,41 +259,41 @@ export function HomeBookingSection() {
                       </div>
                     )}
 
-                    {/* Studio vs Mobile Toggle */}
+                    {/* Home vs Workplace Toggle */}
                     <div className="space-y-1.5">
                       <label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                        Service Location Option
+                        Where would you like us to visit?
                       </label>
                       <div className="grid grid-cols-2 gap-3">
                         <button
                           type="button"
-                          onClick={() => setServiceLocation("mobile")}
+                          onClick={() => setServiceLocation("home")}
                           className={`p-3 rounded-xl border text-xs font-bold transition-all text-left flex items-center gap-2.5 ${
-                            serviceLocation === "mobile"
+                            serviceLocation === "home"
                               ? "bg-primary/10 border-primary text-white"
                               : "bg-surface-secondary border-white/[0.08] text-muted-foreground hover:text-white"
                           }`}
                         >
-                          <MapPin className={`w-4 h-4 ${serviceLocation === "mobile" ? "text-primary" : "text-muted-foreground"}`} />
+                          <HomeIcon className={`w-4 h-4 ${serviceLocation === "home" ? "text-primary" : "text-muted-foreground"}`} />
                           <div>
-                            <span className="block font-bold">Mobile Van Service</span>
-                            <span className="text-[10px] text-muted-foreground font-normal">At Your Home or Office</span>
+                            <span className="block font-bold">Home Visit</span>
+                            <span className="text-[10px] text-muted-foreground font-normal">Driveway or Private Parking</span>
                           </div>
                         </button>
 
                         <button
                           type="button"
-                          onClick={() => setServiceLocation("studio")}
+                          onClick={() => setServiceLocation("workplace")}
                           className={`p-3 rounded-xl border text-xs font-bold transition-all text-left flex items-center gap-2.5 ${
-                            serviceLocation === "studio"
+                            serviceLocation === "workplace"
                               ? "bg-primary/10 border-primary text-white"
                               : "bg-surface-secondary border-white/[0.08] text-muted-foreground hover:text-white"
                           }`}
                         >
-                          <Car className={`w-4 h-4 ${serviceLocation === "studio" ? "text-primary" : "text-muted-foreground"}`} />
+                          <Building className={`w-4 h-4 ${serviceLocation === "workplace" ? "text-primary" : "text-muted-foreground"}`} />
                           <div>
-                            <span className="block font-bold">Studio Lighting Bay</span>
-                            <span className="text-[10px] text-muted-foreground font-normal">Dedicated Cleanroom</span>
+                            <span className="block font-bold">Workplace Visit</span>
+                            <span className="text-[10px] text-muted-foreground font-normal">Office / Company Car Park</span>
                           </div>
                         </button>
                       </div>
@@ -307,7 +302,7 @@ export function HomeBookingSection() {
                     {/* Service Selection Dropdown */}
                     <div className="space-y-1.5">
                       <label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                        Select Primary Service
+                        Select Required Repair Service
                       </label>
                       <select
                         value={service}
@@ -316,7 +311,7 @@ export function HomeBookingSection() {
                       >
                         {SERVICES_LIST.map((s) => (
                           <option key={s.id} value={s.id} className="bg-[#121620] text-white">
-                            {s.name} ({s.price})
+                            {s.name}
                           </option>
                         ))}
                       </select>
@@ -333,7 +328,7 @@ export function HomeBookingSection() {
                           <input
                             type="text"
                             required
-                            placeholder="e.g. James Harrison"
+                            placeholder="e.g. John Smith"
                             value={customerName}
                             onChange={(e) => setCustomerName(e.target.value)}
                             className="w-full pl-9 pr-3.5 py-2 rounded-xl bg-surface-secondary border border-white/[0.1] text-white text-xs sm:text-sm placeholder:text-muted-foreground/60 focus:outline-none focus:border-primary"
@@ -350,7 +345,7 @@ export function HomeBookingSection() {
                           <input
                             type="tel"
                             required
-                            placeholder="e.g. 07700 900123"
+                            placeholder="e.g. 07123 456 789"
                             value={customerPhone}
                             onChange={(e) => setCustomerPhone(e.target.value)}
                             className="w-full pl-9 pr-3.5 py-2 rounded-xl bg-surface-secondary border border-white/[0.1] text-white text-xs sm:text-sm placeholder:text-muted-foreground/60 focus:outline-none focus:border-primary"
@@ -359,7 +354,42 @@ export function HomeBookingSection() {
                       </div>
                     </div>
 
-                    {/* Vehicle details row */}
+                    {/* Email and Postcode */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                          Email Address
+                        </label>
+                        <div className="relative">
+                          <Mail className="w-4 h-4 text-muted-foreground absolute left-3 top-3" />
+                          <input
+                            type="email"
+                            placeholder="e.g. john@example.co.uk"
+                            value={customerEmail}
+                            onChange={(e) => setCustomerEmail(e.target.value)}
+                            className="w-full pl-9 pr-3.5 py-2 rounded-xl bg-surface-secondary border border-white/[0.1] text-white text-xs sm:text-sm placeholder:text-muted-foreground/60 focus:outline-none focus:border-primary"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                          Service Postcode (West Midlands)
+                        </label>
+                        <div className="relative">
+                          <MapPin className="w-4 h-4 text-muted-foreground absolute left-3 top-3" />
+                          <input
+                            type="text"
+                            placeholder="e.g. B1, B91, WV1, CV1"
+                            value={postcode}
+                            onChange={(e) => setPostcode(e.target.value)}
+                            className="w-full pl-9 pr-3.5 py-2 rounded-xl bg-surface-secondary border border-white/[0.1] text-white text-xs sm:text-sm placeholder:text-muted-foreground/60 focus:outline-none focus:border-primary"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Vehicle Make Model and Preferred Date */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                       <div className="space-y-1.5">
                         <label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
@@ -370,7 +400,7 @@ export function HomeBookingSection() {
                           <input
                             type="text"
                             required
-                            placeholder="e.g. BMW M3 Competition"
+                            placeholder="e.g. BMW 3 Series, Audi A4, VW Golf"
                             value={vehicleMakeModel}
                             onChange={(e) => setVehicleMakeModel(e.target.value)}
                             className="w-full pl-9 pr-3.5 py-2 rounded-xl bg-surface-secondary border border-white/[0.1] text-white text-xs sm:text-sm placeholder:text-muted-foreground/60 focus:outline-none focus:border-primary"
@@ -380,68 +410,42 @@ export function HomeBookingSection() {
 
                       <div className="space-y-1.5">
                         <label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                          Vehicle Reg (UK Plate)
-                        </label>
-                        <input
-                          type="text"
-                          placeholder="e.g. BU77 SCU"
-                          value={vehicleReg}
-                          onChange={(e) => setVehicleReg(e.target.value.toUpperCase())}
-                          className="w-full px-3.5 py-2 rounded-xl bg-surface-secondary border border-white/[0.1] text-white text-xs sm:text-sm uppercase placeholder:text-muted-foreground/60 focus:outline-none focus:border-primary tracking-wider"
-                        />
-                      </div>
-                    </div>
-
-                    {/* Date and Time preference row */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                      <div className="space-y-1.5">
-                        <label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                           Preferred Appointment Date
                         </label>
                         <div className="relative">
                           <Calendar className="w-4 h-4 text-muted-foreground absolute left-3 top-3" />
                           <input
                             type="date"
-                            min={minDate}
                             value={preferredDate}
                             onChange={(e) => setPreferredDate(e.target.value)}
                             className="w-full pl-9 pr-3.5 py-2 rounded-xl bg-surface-secondary border border-white/[0.1] text-white text-xs sm:text-sm focus:outline-none focus:border-primary"
                           />
                         </div>
                       </div>
-
-                      <div className="space-y-1.5">
-                        <label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                          Preferred Time Window
-                        </label>
-                        <select
-                          value={preferredTime}
-                          onChange={(e) => setPreferredTime(e.target.value)}
-                          className="w-full px-3.5 py-2 rounded-xl bg-surface-secondary border border-white/[0.1] text-white text-xs sm:text-sm focus:outline-none focus:border-primary"
-                        >
-                          <option value="morning">Morning (08:30 - 12:00)</option>
-                          <option value="afternoon">Afternoon (12:30 - 16:30)</option>
-                          <option value="flexible">Flexible / Any Available</option>
-                        </select>
-                      </div>
                     </div>
 
-                    {/* Submit CTA button with warm amber/gold styling accent */}
-                    <div className="pt-2">
-                      <Button
-                        type="submit"
-                        variant="amber"
-                        size="lg"
-                        isLoading={isSubmitting}
-                        className="w-full shadow-lg"
-                        rightIcon={<Calendar className="w-4 h-4" />}
-                      >
-                        Confirm Appointment Booking
-                      </Button>
-                      <p className="text-[11px] text-muted-foreground text-center mt-2">
-                        No payment taken now • Instant reservation • Confirmed within 30 mins
-                      </p>
+                    {/* Notes / Damage details */}
+                    <div className="space-y-1.5">
+                      <label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                        Damage Description
+                      </label>
+                      <textarea
+                        rows={2}
+                        placeholder="Please describe the damage (e.g. 2 kerbed alloys, bumper corner scrape)..."
+                        value={notes}
+                        onChange={(e) => setNotes(e.target.value)}
+                        className="w-full px-3.5 py-2 rounded-xl bg-surface-secondary border border-white/[0.1] text-white text-xs sm:text-sm placeholder:text-muted-foreground/60 focus:outline-none focus:border-primary resize-none"
+                      />
                     </div>
+
+                    <Button
+                      type="submit"
+                      disabled={isSubmitting}
+                      variant="amber"
+                      className="w-full py-6 text-sm font-bold shadow-lg"
+                    >
+                      {isSubmitting ? "Submitting Your Quote..." : "Request Free Repair Quote"}
+                    </Button>
                   </form>
                 )}
               </AnimatePresence>

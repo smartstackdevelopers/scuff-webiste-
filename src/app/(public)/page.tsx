@@ -1,4 +1,5 @@
 import * as React from "react";
+import type { Metadata } from "next";
 import {
   HeroSection,
   HomeAboutSection,
@@ -18,10 +19,22 @@ import {
   CtaSection,
 } from "@/features/home";
 
+export const metadata: Metadata = {
+  title: "You Scuff We Buff | Mobile Alloy Wheel Repair Birmingham",
+  description:
+    "You Scuff We Buff provides professional mobile alloy wheel refurbishment, diamond cutting, and dent & scratch SMART repairs across Birmingham and the West Midlands. We come to your home or workplace.",
+  openGraph: {
+    title: "You Scuff We Buff | Mobile Alloy Wheel Repair Birmingham",
+    description:
+      "Family-run mobile alloy wheel repair and refurbishment across Birmingham, Solihull, Wolverhampton, Coventry & the West Midlands.",
+    url: "/",
+  },
+};
+
 export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* 2. Hero Section */}
+      {/* 2. Hero Section - HOMEPAGE HERO PRESERVED EXACTLY */}
       <HeroSection />
 
       {/* 3. About the Business */}
@@ -63,10 +76,10 @@ export default function HomePage() {
       {/* 14. Frequently Asked Questions Accordion */}
       <FaqSection />
 
-      {/* 15. Contact Section & Studio Map */}
+      {/* 15. Contact Section & Mobile Coverage */}
       <HomeContactSection />
 
-      {/* Final Studio & Dispatch Banner */}
+      {/* Final Mobile Dispatch Banner */}
       <CtaSection />
     </div>
   );

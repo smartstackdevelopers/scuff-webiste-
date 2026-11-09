@@ -4,13 +4,13 @@ import type { Metadata } from "next";
 import { BookingWizard } from "@/features/booking";
 
 export const metadata: Metadata = {
-  title: "Online Booking | You Scuff We Buff - Studio Bay & Mobile Detailing",
+  title: "Book a Mobile Repair | You Scuff We Buff",
   description:
-    "Schedule your automotive detailing appointment online. Select services, dates, arrival windows, and customize treatment add-ons across the UK.",
+    "Request a free quote or schedule a mobile alloy wheel repair, diamond cutting, or SMART bodywork repair across Birmingham and the West Midlands.",
   openGraph: {
-    title: "Online Booking | You Scuff We Buff",
+    title: "Book a Mobile Repair | You Scuff We Buff",
     description:
-      "Schedule your master vehicle detailing, paint correction, or ceramic coating appointment online.",
+      "Request a mobile alloy wheel refurbishment or dent & scratch repair quote across Birmingham and the West Midlands. We come to you.",
     url: "/booking",
   },
 };

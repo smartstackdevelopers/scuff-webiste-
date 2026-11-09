@@ -185,10 +185,10 @@ export function QuotationPreview({ id }: QuotationPreviewProps) {
               </div>
             </div>
             <div className="mt-4 text-xs text-muted-foreground print:text-neutral-600 space-y-0.5 leading-relaxed">
-              <p>14 Berkeley Square, Mayfair</p>
-              <p>London, W1J 6BL, United Kingdom</p>
-              <p>Telephone: +44 (0) 20 7946 0991</p>
-              <p>VAT Registration: GB 492 819 320</p>
+              <p>Mobile Alloy Wheel & SMART Repairs</p>
+              <p>Birmingham &amp; West Midlands</p>
+              <p>Telephone: 07448 661 691</p>
+              <p>Email: info@youscuffwebuff.co.uk</p>
             </div>
           </div>
 
@@ -235,7 +235,7 @@ export function QuotationPreview({ id }: QuotationPreviewProps) {
             </p>
             <div className="text-muted-foreground print:text-neutral-600 space-y-0.5">
               <p>Registration: <strong className="text-foreground print:text-black font-mono">{quotation.vehicleRegistration || "NOT PROVIDED"}</strong></p>
-              <p>Inspection: Mayfair Private Detailing Bay</p>
+              <p>Inspection: Mobile On-Site Assessment (Birmingham &amp; West Midlands)</p>
               <p>Service Standard: Luxury Bespoke Guarantee</p>
             </div>
           </div>

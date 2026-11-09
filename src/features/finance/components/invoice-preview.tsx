@@ -219,25 +219,25 @@ export function InvoicePreview({ id }: InvoicePreviewProps) {
               </span>
               <span className="hidden md:inline-block w-1.5 h-1.5 rounded-full bg-amber-400" />
               <span className="text-xs font-semibold tracking-wider uppercase text-amber-400 print:text-amber-700">
-                Studio London
+                Mobile Repair Service
               </span>
             </div>
             <p className="text-xs text-zinc-400 uppercase tracking-widest print:text-zinc-600 mb-4 font-mono">
-              Automotive Detailing &amp; Bespoke Protection Studio
+              Mobile Alloy Wheel Refurbishment &amp; SMART Repairs
             </p>
 
             <div className="text-xs text-zinc-400 space-y-1 print:text-zinc-600">
               <p className="flex items-center gap-1.5">
                 <Building2 className="w-3.5 h-3.5 text-zinc-500" />
-                14 Berkeley Square, Mayfair, London W1J 6BD
+                Mobile Coverage: Birmingham &amp; West Midlands
               </p>
               <p className="flex items-center gap-1.5">
                 <Phone className="w-3.5 h-3.5 text-zinc-500" />
-                +44 20 7946 0912
+                07448 661 691
               </p>
               <p className="flex items-center gap-1.5">
                 <Mail className="w-3.5 h-3.5 text-zinc-500" />
-                concierge@youscuffwebuff.co.uk
+                info@youscuffwebuff.co.uk
               </p>
             </div>
           </div>
@@ -502,15 +502,10 @@ export function InvoicePreview({ id }: InvoicePreviewProps) {
         {/* Corporate Legal Footer */}
         <div className="mt-12 pt-6 border-t border-zinc-800/60 text-center text-[11px] text-zinc-400 print:text-zinc-500 space-y-1">
           <p>
-            You Scuff We Buff Ltd &bull; Registered in England &amp; Wales No. 14829103 &bull; Registered Office: 14
-            Berkeley Square, Mayfair, London W1J 6BD
+            You Scuff We Buff &bull; Family-Run Mobile Alloy Wheel Refurbishment &bull; Birmingham &amp; West Midlands
           </p>
           <p>
-            HM Revenue &amp; Customs VAT Registration Number:{" "}
-            <span className="font-mono font-semibold text-zinc-300 print:text-zinc-700">GB 492 819 320</span>
-          </p>
-          <p className="text-[10px] text-zinc-400 mt-2">
-            This document is a certified VAT invoice issued under the UK Value Added Tax Act 1994.
+            Telephone: 07448 661 691 &bull; Email: info@youscuffwebuff.co.uk
           </p>
         </div>
       </div>
