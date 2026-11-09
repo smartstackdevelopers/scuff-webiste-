@@ -87,8 +87,8 @@ export default function CarPaintingPage() {
     <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-200">
       {/* 1. Cinematic Video Hero */}
       <CinematicVideoHero
-        videoSrc="/videos/hero/04-painting.mp4"
-        posterSrc="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?q=80&w=2000&auto=format&fit=crop"
+        imageSrc="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?q=80&w=2000&auto=format&fit=crop"
+        imageAlt="OEM spray painting and bumper repair workshop"
         badgeText="OEM Factory Automotive Spray Painting & SMART Repair"
         badgeIcon={<PaintBucket className="w-3.5 h-3.5" />}
         badgeVariant="electric"

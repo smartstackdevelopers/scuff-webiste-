@@ -9,8 +9,8 @@ import { CinematicVideoHero } from "@/components/common/cinematic-video-hero";
 export function GalleryHero() {
   return (
     <CinematicVideoHero
-      videoSrc="/videos/hero/06-final-reveal.mp4"
-      posterSrc="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2000&auto=format&fit=crop"
+      imageSrc="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2000&auto=format&fit=crop"
+      imageAlt="High-end automotive reflection and wheel restoration by You Scuff We Buff"
       badgeText="Documented Studio & Mobile Transformations"
       badgeIcon={<Sparkles className="w-3.5 h-3.5" />}
       badgeVariant="electric"
@@ -24,9 +24,9 @@ export function GalleryHero() {
           <span className="text-gradient-electric">TELLS A RESTORATION STORY.</span>
         </>
       }
-      subtitle="Witness forensic-level automotive transformations. From heavy swirl mark elimination and oxidized clear coat revival to CNC diamond-cut alloy restoration and undetectable SMART bumper blending."
+      subtitle="Forensic-level wheel restorations and undetectable SMART bumper scuff repairs documented across Birmingham and the West Midlands."
       align="center"
-      minHeightClass="min-h-[46vh] sm:min-h-[52vh] md:min-h-[56vh]"
+      minHeightClass="min-h-[44vh] sm:min-h-[50vh] md:min-h-[54vh]"
       primaryCta={{
         label: "Book Your Transformation",
         href: "/booking",

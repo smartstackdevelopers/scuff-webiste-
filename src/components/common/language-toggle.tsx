@@ -117,67 +117,78 @@ export function LanguageToggle({
       </button>
 
       {open && (
-        <div
-          role="listbox"
-          aria-label={t("langToggle")}
-          className="absolute right-0 top-full mt-2 z-[60] w-[min(18rem,calc(100vw-2rem))] rounded-2xl border border-electric/30 bg-card/95 backdrop-blur-xl shadow-luxury-dark overflow-hidden"
-        >
-          <div className="p-2 border-b border-border/70 bg-electric/5">
-            <div className="relative">
-              <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-electric" />
-              <input
-                ref={searchRef}
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                placeholder={t("langSearch")}
-                className="w-full h-9 rounded-xl border border-border/80 bg-background pl-8 pr-3 text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-electric/60"
-              />
+        <>
+          {/* Backdrop for easy dismissal on mobile */}
+          <div
+            className="fixed inset-0 z-[55] bg-black/60 backdrop-blur-xs sm:hidden"
+            onClick={() => {
+              setOpen(false);
+              setQuery("");
+            }}
+          />
+
+          <div
+            role="listbox"
+            aria-label={t("langToggle")}
+            className="fixed inset-x-3 top-16 z-[60] sm:absolute sm:inset-x-auto sm:right-0 sm:top-full sm:mt-2 sm:w-72 max-w-sm mx-auto sm:mx-0 rounded-2xl border border-electric/30 bg-card/98 backdrop-blur-2xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-150"
+          >
+            <div className="p-2 border-b border-border/70 bg-electric/5">
+              <div className="relative">
+                <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-electric" />
+                <input
+                  ref={searchRef}
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  placeholder={t("langSearch")}
+                  className="w-full h-9 rounded-xl border border-border/80 bg-background pl-8 pr-3 text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-electric/60"
+                />
+              </div>
+            </div>
+
+            <div className="max-h-60 sm:max-h-64 overflow-y-auto p-1.5">
+              {filtered.length === 0 ? (
+                <p className="px-3 py-4 text-xs text-muted-foreground text-center">
+                  No languages found
+                </p>
+              ) : (
+                filtered.map((lang) => {
+                  const active = lang.code === language;
+                  return (
+                    <button
+                      key={lang.code}
+                      type="button"
+                      role="option"
+                      aria-selected={active}
+                      onClick={() => select(lang.code as Language)}
+                      className={cn(
+                        "w-full flex items-center gap-2.5 rounded-xl px-2.5 py-2 text-left transition-colors",
+                        active
+                          ? "bg-electric/15 text-foreground"
+                          : "hover:bg-secondary text-foreground"
+                      )}
+                    >
+                      <span className="text-base leading-none" aria-hidden>
+                        {lang.flag}
+                      </span>
+                      <span className="flex-1 min-w-0">
+                        <span className="block text-xs font-semibold truncate">
+                          {lang.nativeName}
+                        </span>
+                        <span className="block text-[10px] text-muted-foreground truncate">
+                          {lang.name}
+                        </span>
+                      </span>
+                      <span className="text-[10px] font-bold uppercase text-electric/80">
+                        {lang.code}
+                      </span>
+                      {active && <Check className="w-3.5 h-3.5 text-electric shrink-0" />}
+                    </button>
+                  );
+                })
+              )}
             </div>
           </div>
-
-          <div className="max-h-64 overflow-y-auto p-1.5">
-            {filtered.length === 0 ? (
-              <p className="px-3 py-4 text-xs text-muted-foreground text-center">
-                No languages found
-              </p>
-            ) : (
-              filtered.map((lang) => {
-                const active = lang.code === language;
-                return (
-                  <button
-                    key={lang.code}
-                    type="button"
-                    role="option"
-                    aria-selected={active}
-                    onClick={() => select(lang.code as Language)}
-                    className={cn(
-                      "w-full flex items-center gap-2.5 rounded-xl px-2.5 py-2 text-left transition-colors",
-                      active
-                        ? "bg-electric/15 text-foreground"
-                        : "hover:bg-secondary text-foreground"
-                    )}
-                  >
-                    <span className="text-base leading-none" aria-hidden>
-                      {lang.flag}
-                    </span>
-                    <span className="flex-1 min-w-0">
-                      <span className="block text-xs font-semibold truncate">
-                        {lang.nativeName}
-                      </span>
-                      <span className="block text-[10px] text-muted-foreground truncate">
-                        {lang.name}
-                      </span>
-                    </span>
-                    <span className="text-[10px] font-bold uppercase text-electric/80">
-                      {lang.code}
-                    </span>
-                    {active && <Check className="w-3.5 h-3.5 text-electric shrink-0" />}
-                  </button>
-                );
-              })
-            )}
-          </div>
-        </div>
+        </>
       )}
     </div>
   );

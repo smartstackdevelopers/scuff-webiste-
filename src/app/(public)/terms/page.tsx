@@ -15,8 +15,8 @@ export default function TermsPage() {
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-200">
       <CinematicVideoHero
-        videoSrc="/videos/hero/03-car-drive.mp4"
-        posterSrc="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?q=80&w=2000&auto=format&fit=crop"
+        imageSrc="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?q=80&w=2000&auto=format&fit=crop"
+        imageAlt="Terms and conditions automotive customer agreement"
         badgeText="Standard Automotive Service Agreement"
         badgeIcon={<Scale className="w-3.5 h-3.5" />}
         badgeVariant="electric"

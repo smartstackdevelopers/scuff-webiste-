@@ -59,10 +59,10 @@ const en = {
   learnMore: "Learn Details",
   bookSlot: "Book Slot",
   viewPackages: "View Packages",
-  announcementBadge: "SPRING OFFER",
+  announcementBadge: "MOBILE SERVICE",
   announcementText:
-    "Complimentary interior decontamination with any 5-Year Ceramic Coating package.",
-  announcementMobile: "Complimentary interior clean with 5-Yr Ceramic",
+    "Professional mobile alloy wheel refurbishment & SMART repairs across Birmingham and the West Midlands.",
+  announcementMobile: "Mobile Wheel & SMART Repairs",
 
   pageAbout: "About Us",
   pageServices: "Services",

@@ -16,9 +16,9 @@ const TIER_QUICK_JUMP = [
 export function PricingHero() {
   return (
     <CinematicVideoHero
-      videoSrc="/videos/hero/02-wheel-fit.mp4"
-      posterSrc="https://images.unsplash.com/photo-1617788138017-80ad40651399?q=80&w=2000&auto=format&fit=crop"
-      badgeText="Transparent UK Detailing & Repair Rates"
+      imageSrc="https://images.unsplash.com/photo-1617788138017-80ad40651399?q=80&w=2000&auto=format&fit=crop"
+      imageAlt="Transparent pricing and quality alloy wheel refurbishment"
+      badgeText="Transparent UK Mobile Repair Rates"
       badgeIcon={<Sparkles className="w-3.5 h-3.5" />}
       badgeVariant="electric"
       breadcrumbs={[

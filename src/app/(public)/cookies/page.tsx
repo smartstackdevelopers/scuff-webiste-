@@ -14,8 +14,8 @@ export default function CookiesPage() {
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-200">
       <CinematicVideoHero
-        videoSrc="/videos/hero/03-car-drive.mp4"
-        posterSrc="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?q=80&w=2000&auto=format&fit=crop"
+        imageSrc="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?q=80&w=2000&auto=format&fit=crop"
+        imageAlt="Cookie policy and website preferences"
         badgeText="Digital Transparency & Session Security"
         badgeIcon={<Cookie className="w-3.5 h-3.5" />}
         badgeVariant="electric"

@@ -88,7 +88,7 @@ export function Navbar() {
               })}
             </nav>
 
-            <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
+            <div className="flex items-center gap-1 xs:gap-1.5 sm:gap-2.5 shrink-0">
               <a
                 href={siteConfig.contact.phoneTel}
                 className="hidden xl:inline-flex items-center gap-2 px-3 py-1.5 text-xs font-bold text-foreground hover:text-primary transition-colors bg-secondary/60 border border-border hover:border-primary/40 rounded-xl"
@@ -113,7 +113,7 @@ export function Navbar() {
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(true)}
-                className="lg:hidden flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-card border border-border/80 text-foreground hover:bg-secondary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric"
+                className="lg:hidden flex items-center justify-center w-8 h-8 xs:w-9 xs:h-9 sm:w-10 sm:h-10 rounded-xl bg-card border border-border/80 text-foreground hover:bg-secondary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric"
                 aria-label="Open mobile navigation menu"
               >
                 <Menu className="w-4 h-4 sm:w-5 sm:h-5" />

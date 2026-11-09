@@ -100,8 +100,8 @@ export default function FAQPage() {
     <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-200">
       {/* Cinematic Video Hero */}
       <CinematicVideoHero
-        videoSrc="/videos/hero/04-painting.mp4"
-        posterSrc="https://images.unsplash.com/photo-1507136566006-cfc505b114fc?q=80&w=2070&auto=format&fit=crop"
+        imageSrc="https://images.unsplash.com/photo-1507136566006-cfc505b114fc?q=80&w=2070&auto=format&fit=crop"
+        imageAlt="Automotive knowledge base and wheel repair guidance"
         badgeText="Master Knowledge Base & Direct Guidance"
         badgeIcon={<HelpCircle className="w-3.5 h-3.5" />}
         badgeVariant="electric"

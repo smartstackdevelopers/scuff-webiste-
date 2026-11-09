@@ -119,11 +119,11 @@ export function CinematicVideoHero({
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-full max-w-5xl h-64 bg-primary/15 blur-[120px] pointer-events-none z-[2]" />
 
       {/* Content Container */}
-      <Container className="relative z-10 py-10 sm:py-14 md:py-16">
+      <Container className="relative z-10 py-6 xs:py-8 sm:py-12 md:py-16">
         {align === "split" ? (
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
             {/* Left Column: Heading, Subtitle & CTAs */}
-            <div className="lg:col-span-7 space-y-4 sm:space-y-5 text-left">
+            <div className="lg:col-span-7 space-y-3.5 xs:space-y-4 sm:space-y-5 text-left">
               {/* Breadcrumbs */}
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
@@ -270,7 +270,7 @@ export function CinematicVideoHero({
           /* Center / Left Aligned Single Column */
           <div
             className={cn(
-              "max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mx-auto space-y-4 sm:space-y-5 md:space-y-6",
+              "max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mx-auto space-y-3 xs:space-y-4 sm:space-y-5 md:space-y-6",
               align === "center" ? "text-center" : "text-left"
             )}
           >
@@ -397,14 +397,14 @@ export function CinematicVideoHero({
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.25 }}
                 className={cn(
-                  "pt-4 flex flex-wrap gap-2.5 sm:gap-3",
+                  "pt-2 xs:pt-3 sm:pt-4 flex flex-wrap gap-2 sm:gap-3",
                   align === "center" ? "justify-center" : "justify-start"
                 )}
               >
                 {metrics.map((m, idx) => (
                   <div
                     key={idx}
-                    className="flex items-center gap-2 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-card/90 border border-border backdrop-blur-md text-xs sm:text-sm shadow-sm"
+                    className="flex items-center gap-1.5 xs:gap-2 px-2.5 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-card/90 border border-border backdrop-blur-md text-xs sm:text-sm shadow-sm"
                   >
                     {m.icon && <span className="text-primary">{m.icon}</span>}
                     <div className="text-left">
