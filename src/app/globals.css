@@ -1,0 +1,311 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Bebas Neue", Impact, Haettenschweiler, sans-serif;
+  --font-body: "Manrope", "Segoe UI", system-ui, sans-serif;
+}
+
+@layer base {
+  :root {
+    /* Base Surfaces - Light Theme */
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --card-subtle: 210 40% 96.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Brand Primary - Neon Green #48C84D */
+    --primary: 122 54% 53%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 122 54% 42%;
+
+    /* Secondary Surfaces & Borders */
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222 47% 11%;
+
+    /* Semantic Status Tokens */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 222 47% 11%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Form & Interaction Controls */
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 122 54% 53%;
+    --radius: 0.75rem;
+
+    /* Brand tokens */
+    --neon: 122 54% 53%;
+    --neon-soft: 123 100% 75%;
+    --metallic: 210 8% 72%;
+    --deep-black: 0 0% 2%;
+  }
+
+  .dark {
+    /* Base Surfaces - Dark Theme (Cinematic Luxury Workshop) */
+    --background: 220 20% 4%; /* #07090D */
+    --foreground: 210 40% 98%;
+    --card: 220 18% 9%; /* #121620 */
+    --card-foreground: 210 40% 98%;
+    --card-subtle: 220 16% 12%; /* #191E2A */
+    --popover: 220 18% 9%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Brand Primary - Refined Professional Green #48C84D */
+    --primary: 122 54% 53%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 122 54% 45%;
+
+    /* Secondary Surfaces & Borders */
+    --secondary: 220 16% 13%; /* #1B212D */
+    --secondary-foreground: 210 40% 98%;
+    --muted: 220 16% 13%;
+    --muted-foreground: 215 15% 65%;
+    --accent: 220 16% 13%;
+    --accent-foreground: 210 40% 98%;
+
+    /* Semantic Status Tokens */
+    --success: 142 70% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%; /* Warm amber #F59E0B */
+    --warning-foreground: 0 0% 100%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Form & Interaction Controls */
+    --border: 220 14% 16%; /* #222938 */
+    --input: 220 14% 16%;
+    --ring: 122 54% 53%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: light dark;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-electric/25 selection:text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    min-height: 100vh;
+  }
+
+  .font-urdu-support {
+    font-family: var(--font-body), "Noto Nastaliq Urdu", "Segoe UI", Tahoma,
+      sans-serif;
+    line-height: 1.7;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* Typography Hierarchy Utilities */
+@layer utilities {
+  .text-display {
+    @apply font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.08] uppercase;
+  }
+
+  .text-page-title {
+    @apply font-display text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight uppercase;
+  }
+
+  .text-section-title {
+    @apply font-display text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-snug;
+  }
+
+  .text-subheading {
+    @apply text-lg sm:text-xl font-medium text-muted-foreground leading-relaxed;
+  }
+
+  .text-body-lg {
+    @apply text-base sm:text-lg leading-relaxed text-muted-foreground;
+  }
+
+  .text-body {
+    @apply text-sm sm:text-base leading-normal text-muted-foreground;
+  }
+
+  .text-small {
+    @apply text-xs sm:text-sm leading-normal text-muted-foreground;
+  }
+
+  .text-caption {
+    @apply text-xs leading-normal text-muted-foreground;
+  }
+
+  .text-label {
+    @apply text-xs font-semibold uppercase tracking-wider text-muted-foreground;
+  }
+
+  /* Luxury Automotive Surfaces & Gradients */
+  .glass-card {
+    @apply bg-card/85 backdrop-blur-md border border-border/80 shadow-sm;
+  }
+
+  .glass-card-subtle {
+    @apply bg-card/50 backdrop-blur-sm border border-border/40;
+  }
+
+  .glass-navbar {
+    @apply bg-background/80 backdrop-blur-lg border-b border-border/70;
+  }
+
+  .glow-border {
+    position: relative;
+  }
+
+  .glow-border::after {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    background: linear-gradient(
+      135deg,
+      rgba(72, 200, 77, 0.45),
+      transparent 50%,
+      rgba(125, 255, 130, 0.25)
+    );
+    border-radius: inherit;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .text-gradient-electric {
+    background: linear-gradient(135deg, #48c84d 0%, #7dff82 55%, #36a33b 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-silver {
+    background: linear-gradient(180deg, #ffffff 0%, #b8bcc2 55%, #6b7280 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-neon {
+    background: linear-gradient(135deg, #7dff82 0%, #48c84d 50%, #b8bcc2 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .metallic-surface {
+    background: linear-gradient(
+      145deg,
+      rgba(232, 234, 237, 0.12) 0%,
+      rgba(184, 188, 194, 0.06) 40%,
+      rgba(0, 0, 0, 0.2) 100%
+    );
+    border: 1px solid rgba(184, 188, 194, 0.18);
+  }
+
+  .neon-glow {
+    box-shadow: 0 0 24px -4px rgba(72, 200, 77, 0.45);
+  }
+
+  .workshop-mesh {
+    background-image: radial-gradient(
+        at 12% 18%,
+        rgba(72, 200, 77, 0.14) 0px,
+        transparent 45%
+      ),
+      radial-gradient(at 88% 78%, rgba(125, 255, 130, 0.08) 0px, transparent 50%),
+      radial-gradient(at 50% 100%, rgba(23, 25, 27, 0.9) 0px, transparent 55%);
+  }
+
+  .perspective-1200 {
+    perspective: 1200px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .gpu-accelerate {
+    transform: translateZ(0);
+    will-change: transform, opacity;
+  }
+
+  /* Alternating Section Background Surfaces (Visual Depth Architecture) */
+  .section-surface-obsidian {
+    background-color: #07080a;
+  }
+
+  .section-surface-charcoal {
+    background-color: #0c0f15;
+  }
+
+  .section-surface-midnight {
+    background-color: #10141d;
+  }
+
+  .section-surface-slate {
+    background-color: #141924;
+  }
+
+  .card-surface-luxury {
+    background-color: rgba(21, 25, 34, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+  }
+
+  .card-surface-luxury:hover {
+    border-color: rgba(72, 200, 77, 0.4);
+    box-shadow: 0 10px 30px -10px rgba(72, 200, 77, 0.15);
+  }
+
+  .btn-amber-priority {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: #000000;
+    font-weight: 700;
+    box-shadow: 0 0 22px -3px rgba(245, 158, 11, 0.45);
+    transition: all 0.2s ease;
+  }
+
+  .btn-amber-priority:hover {
+    background: linear-gradient(135deg, #fbbf24 0%, #b45309 100%);
+    box-shadow: 0 0 28px -1px rgba(245, 158, 11, 0.6);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.25);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.5);
+}

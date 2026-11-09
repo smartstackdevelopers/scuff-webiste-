@@ -1,0 +1,7 @@
+export * from "./data/about-content";
+export * from "./components/about-hero";
+export * from "./components/story-section";
+export * from "./components/mission-vision";
+export * from "./components/why-choose-us";
+export * from "./components/our-process";
+export * from "./components/about-cta";
