@@ -248,7 +248,7 @@ export function CinematicVideoHero({
                     >
                       {m.icon && <span className="text-primary">{m.icon}</span>}
                       <div>
-                        <div className="text-sm font-bold text-foreground leading-none font-display uppercase tracking-wide">
+                        <div className="text-xs xs:text-sm font-bold text-foreground leading-tight font-display uppercase tracking-wide">
                           {m.value}
                         </div>
                         <div className="text-[10px] text-muted-foreground uppercase tracking-wider font-semibold">
@@ -408,7 +408,7 @@ export function CinematicVideoHero({
                   >
                     {m.icon && <span className="text-primary">{m.icon}</span>}
                     <div className="text-left">
-                      <div className="text-sm font-bold text-foreground leading-none font-display uppercase tracking-wide">
+                      <div className="text-xs xs:text-sm font-bold text-foreground leading-tight font-display uppercase tracking-wide">
                         {m.value}
                       </div>
                       <div className="text-[10px] text-muted-foreground uppercase tracking-wider font-semibold">

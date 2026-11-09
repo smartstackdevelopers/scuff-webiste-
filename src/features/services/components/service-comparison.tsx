@@ -160,21 +160,21 @@ export function ServiceComparison() {
               DETAILING_COMPARISON_SERVICES[4];
             return (
               <Card className="p-6 bg-card border-border/80 shadow-xl space-y-6">
-                <div className="flex items-center justify-between border-b border-border/60 pb-4">
-                  <div>
-                    <h3 className="text-xl font-bold uppercase text-foreground">
+                <div className="flex flex-col xs:flex-row xs:items-center justify-between gap-3 border-b border-border/60 pb-4">
+                  <div className="min-w-0">
+                    <h3 className="text-lg xs:text-xl font-bold uppercase text-foreground break-words leading-snug">
                       {activeService.title}
                     </h3>
                     <p className="text-xs text-muted-foreground mt-0.5">
                       {activeService.priceOnAssessment
-                        ? "Quote on assessment"
+                        ? "Free Quote on Assessment"
                         : `Starting from ${activeService.currency}${activeService.startingPrice}`}{" "}
                       • {activeService.duration}
                     </p>
                   </div>
                   <Link
                     href={`/booking?service=${activeService.slug}`}
-                    className={cn(buttonVariants({ size: "sm", variant: "glow" }))}
+                    className={cn(buttonVariants({ size: "sm", variant: "glow" }), "w-full xs:w-auto shrink-0 text-center")}
                   >
                     Book Now
                   </Link>

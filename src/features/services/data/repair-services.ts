@@ -17,7 +17,7 @@ export const REPAIR_SERVICES: Record<string, DetailedService> = {
     slug: "alloy-wheel-refurbishment",
     title: "Alloy Wheel Refurbishment",
     tagline: "Scuffed, scratched and kerb-damaged alloy wheel restoration across the West Midlands.",
-    badge: "Most Popular",
+    badge: "Wheel Specialist",
     category: "Wheel Repair",
     startingPrice: 0,
     currency: "£",

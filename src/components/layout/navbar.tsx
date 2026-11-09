@@ -40,7 +40,7 @@ export function Navbar() {
       >
         <Container>
           <div className="flex h-16 sm:h-20 items-center justify-between gap-2 sm:gap-4 min-w-0">
-            <div className="shrink min-w-0 max-w-[150px] xs:max-w-[190px] sm:max-w-none">
+            <div className="shrink-0 max-w-[125px] xs:max-w-[155px] sm:max-w-[210px] md:max-w-none flex items-center">
               <BrandLogo size="md" />
             </div>
 

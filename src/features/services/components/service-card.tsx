@@ -35,46 +35,50 @@ export function ServiceCard({ service, priority = false }: ServiceCardProps) {
         <div className="absolute inset-0 bg-gradient-to-t from-surface-card via-black/25 to-transparent" />
 
         {/* Badges Overlay */}
-        <div className="absolute top-4 left-4 right-4 flex items-center justify-between gap-2">
-          <Badge variant="outline" className="bg-card/90 backdrop-blur-md text-foreground border-border font-mono text-[11px] shadow-sm">
-            {service.badge}
-          </Badge>
+        <div className="absolute top-3 left-3 right-3 sm:top-4 sm:left-4 sm:right-4 flex items-center justify-between gap-2">
+          {service.badge && service.badge.toLowerCase() !== "most popular" ? (
+            <Badge variant="outline" className="bg-card/95 backdrop-blur-md text-foreground border-border font-mono text-[10px] sm:text-[11px] shadow-sm truncate max-w-[65%]">
+              {service.badge}
+            </Badge>
+          ) : (
+            <div />
+          )}
           {service.popular && (
-            <Badge variant="electric" className="shadow-md">
+            <Badge variant="electric" className="shadow-md shrink-0 text-[10px] sm:text-xs">
               Most Popular
             </Badge>
           )}
         </div>
 
         {/* Price & Duration overlay in bottom corners of image */}
-        <div className="absolute bottom-3 left-4 right-4 flex items-end justify-between text-white gap-2">
-          <div>
-            <span className="text-[11px] uppercase tracking-wider text-white/70 block">
+        <div className="absolute bottom-3 left-3 right-3 sm:left-4 sm:right-4 flex items-end justify-between text-white gap-2">
+          <div className="min-w-0">
+            <span className="text-[10px] sm:text-[11px] uppercase tracking-wider text-white/75 block font-medium">
               {service.priceOnAssessment ? "Pricing" : "Starting from"}
             </span>
-            <span className="text-2xl font-black tracking-tight text-white">
+            <span className="text-base xs:text-lg sm:text-xl md:text-2xl font-black tracking-tight text-white whitespace-nowrap block truncate">
               {service.priceOnAssessment
-                ? "Quote on assessment"
+                ? "Free Quote"
                 : `${service.currency}${service.startingPrice}`}
             </span>
           </div>
-          <div className="flex items-center gap-1.5 text-xs text-white/80 bg-black/50 backdrop-blur-sm px-2.5 py-1 rounded-md border border-white/10 shrink-0">
-            <Clock className="w-3.5 h-3.5 text-electric" />
-            <span>{service.duration}</span>
+          <div className="flex items-center gap-1 sm:gap-1.5 text-[10px] xs:text-[11px] sm:text-xs text-white/90 bg-black/60 backdrop-blur-md px-2 sm:px-2.5 py-1 rounded-lg border border-white/15 shrink-0">
+            <Clock className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-primary shrink-0" />
+            <span className="whitespace-nowrap">{service.duration}</span>
           </div>
         </div>
       </div>
 
       {/* Content Area */}
-      <CardContent className="p-6 flex-1 flex flex-col justify-between space-y-6">
-        <div className="space-y-4">
+      <CardContent className="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-5">
+        <div className="space-y-3.5">
           <div>
-            <h3 className="text-xl font-bold uppercase tracking-tight text-foreground group-hover:text-electric transition-colors">
+            <h3 className="text-lg sm:text-xl font-bold uppercase tracking-tight text-foreground group-hover:text-primary transition-colors break-words leading-snug">
               <Link href={`/services/${service.slug}`}>
                 {service.title}
               </Link>
             </h3>
-            <p className="text-xs text-muted-foreground mt-1 font-medium">
+            <p className="text-xs text-muted-foreground mt-1 font-medium leading-relaxed">
               {service.tagline}
             </p>
           </div>
@@ -96,8 +100,10 @@ export function ServiceCard({ service, priority = false }: ServiceCardProps) {
             <ul className="space-y-1.5 text-xs text-muted-foreground">
               {service.keyBenefits.slice(0, 3).map((benefit, idx) => (
                 <li key={idx} className="flex items-start gap-2">
-                  <Check className="w-3.5 h-3.5 text-electric mt-0.5 shrink-0" />
-                  <span className="line-clamp-1">{benefit.title}</span>
+                  <Check className="w-3.5 h-3.5 text-primary mt-0.5 shrink-0" />
+                  <span className="text-xs text-foreground/80 leading-snug break-words">
+                    {benefit.title}
+                  </span>
                 </li>
               ))}
             </ul>

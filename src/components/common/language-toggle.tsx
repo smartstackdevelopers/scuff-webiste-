@@ -93,22 +93,22 @@ export function LanguageToggle({
         aria-label={t("langToggle")}
         title={t("langToggle")}
         className={cn(
-          "inline-flex items-center gap-1.5 rounded-xl border transition-all duration-200 select-none",
+          "inline-flex items-center gap-1 sm:gap-1.5 rounded-xl border transition-all duration-200 select-none",
           "border-electric/35 bg-card hover:border-electric hover:bg-electric/10",
           "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric",
           open && "border-electric bg-electric/15 shadow-glow-sm",
-          variant === "icon" ? "w-9 h-9 justify-center px-0" : "h-9 px-2.5"
+          variant === "icon" ? "w-8 h-8 sm:w-9 sm:h-9 justify-center px-0" : "h-8 sm:h-9 px-2 sm:px-2.5"
         )}
       >
         <Globe className="w-3.5 h-3.5 text-electric shrink-0" />
         {variant !== "icon" && (
           <>
-            <span className="text-[11px] font-bold uppercase tracking-wide text-foreground">
+            <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wide text-foreground">
               {current.code}
             </span>
             <ChevronDown
               className={cn(
-                "w-3.5 h-3.5 text-electric transition-transform",
+                "w-3 h-3 sm:w-3.5 sm:h-3.5 text-electric transition-transform",
                 open && "rotate-180"
               )}
             />

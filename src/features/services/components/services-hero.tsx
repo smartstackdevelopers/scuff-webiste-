@@ -67,11 +67,11 @@ export function ServicesHero() {
             <Link
               key={pill.href}
               href={pill.href}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-card/90 hover:bg-primary/10 border border-border hover:border-primary/40 text-xs font-semibold text-foreground/80 hover:text-foreground transition-all backdrop-blur-md shadow-sm group"
+              className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-1.5 rounded-xl bg-card/90 hover:bg-primary/10 border border-border hover:border-primary/40 text-[11px] sm:text-xs font-semibold text-foreground/80 hover:text-foreground transition-all backdrop-blur-md shadow-sm group max-w-full"
             >
-              <Icon className="w-3.5 h-3.5 text-primary group-hover:scale-110 transition-transform" />
-              <span>{pill.label}</span>
-              <ArrowRight className="w-3 h-3 text-slate-500 group-hover:text-primary transition-colors" />
+              <Icon className="w-3.5 h-3.5 text-primary group-hover:scale-110 transition-transform shrink-0" />
+              <span className="truncate">{pill.label}</span>
+              <ArrowRight className="w-3 h-3 text-slate-500 group-hover:text-primary transition-colors shrink-0" />
             </Link>
           );
         })}
