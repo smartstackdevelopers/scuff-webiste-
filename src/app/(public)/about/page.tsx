@@ -4,8 +4,11 @@ import {
   AboutHero,
   StorySection,
   MissionVision,
+  AboutExpertise,
+  WorkshopShowcase,
   WhyChooseUs,
   OurProcess,
+  TrustCredibility,
   AboutCTA,
 } from "@/features/about";
 
@@ -23,12 +26,15 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-[#07080A]">
       <AboutHero />
       <StorySection />
       <MissionVision />
+      <AboutExpertise />
+      <WorkshopShowcase />
       <WhyChooseUs />
       <OurProcess />
+      <TrustCredibility />
       <AboutCTA />
     </div>
   );

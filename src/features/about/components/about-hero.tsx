@@ -2,17 +2,19 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Sparkles, ShieldCheck, Award, Wrench, CheckCircle2, ArrowRight } from "lucide-react";
+import { Sparkles, ShieldCheck, Award, CheckCircle2, ArrowRight, Calendar, Wrench } from "lucide-react";
 import { motion } from "framer-motion";
 import { CinematicVideoHero } from "@/components/common/cinematic-video-hero";
-import { Button } from "@/components/ui/button";
+import { ABOUT_CONTENT } from "../data/about-content";
 
 export function AboutHero() {
+  const { hero } = ABOUT_CONTENT;
+
   return (
     <CinematicVideoHero
-      videoSrc="/videos/hero/master.mp4"
-      posterSrc="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=2000&auto=format&fit=crop"
-      badgeText="Automotive Detailing & Restoration Heritage"
+      imageSrc={hero.image.url}
+      imageAlt={hero.image.alt}
+      badgeText={hero.badge}
       badgeIcon={<Sparkles className="w-3.5 h-3.5" />}
       badgeVariant="electric"
       breadcrumbs={[
@@ -25,46 +27,48 @@ export function AboutHero() {
           <span className="text-gradient-electric">CONVENTIONAL DETAILING.</span>
         </>
       }
-      subtitle="Founded on an obsession with microscopic paint perfection. From our climate-controlled studio cleanrooms to high-spec mobile workshop units, we bring Concours-level restoration to every vehicle across the UK."
+      subtitle={hero.description}
       align="split"
-      minHeightClass="min-h-[64vh] sm:min-h-[72vh]"
+      minHeightClass="min-h-[66vh] sm:min-h-[74vh]"
       primaryCta={{
         label: "Book Studio Bay",
         href: "/booking",
         variant: "amber",
+        icon: <Calendar className="w-4 h-4 mr-2" />,
       }}
       secondaryCta={{
-        label: "Our Working Process",
-        href: "/about#process",
+        label: "Explore Working Standards",
+        href: "#standards",
+        icon: <Wrench className="w-4 h-4 mr-2" />,
       }}
       metrics={[
-        { label: "Vehicles Restored", value: "5,200+", icon: <CheckCircle2 className="w-4 h-4" /> },
-        { label: "Colour Precision", value: "99.4%", icon: <Award className="w-4 h-4" /> },
-        { label: "Studio Guarantee", value: "10 Years", icon: <ShieldCheck className="w-4 h-4" /> },
+        { label: "Motor Trade Cover", value: "£5,000,000", icon: <ShieldCheck className="w-4 h-4" /> },
+        { label: "Paint Depth Audit", value: "100% Verified", icon: <CheckCircle2 className="w-4 h-4" /> },
+        { label: "Ceramic Warranty", value: "Up to 5 Years", icon: <Award className="w-4 h-4" /> },
       ]}
     >
-      {/* Right Column: Floating Luxury Craftsmanship Specs Card */}
+      {/* Right Column: Floating Technical Excellence Plate */}
       <motion.div
         initial={{ opacity: 0, x: 25 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, delay: 0.3 }}
-        className="relative rounded-2xl bg-surface-card/90 border border-white/[0.1] p-6 sm:p-8 backdrop-blur-xl shadow-luxury-dark space-y-6"
+        className="relative rounded-3xl bg-[#0C0F15]/95 border border-white/[0.12] p-6 sm:p-8 backdrop-blur-2xl shadow-luxury-dark space-y-6"
       >
         <div className="flex items-center justify-between pb-4 border-b border-white/[0.08]">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center text-primary">
+            <div className="w-11 h-11 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center text-primary shadow-glow-sm">
               <ShieldCheck className="w-5 h-5" />
             </div>
             <div>
-              <div className="text-xs uppercase tracking-wider text-primary font-bold">
+              <div className="text-[11px] uppercase tracking-wider text-primary font-bold">
                 Standards of Excellence
               </div>
               <div className="text-base font-bold text-white font-display uppercase tracking-tight">
-                Studio & Mobile Clean Bay
+                Studio Clean Bay & UK Mobile Units
               </div>
             </div>
           </div>
-          <span className="px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-[10px] font-bold text-emerald-400 uppercase tracking-widest">
+          <span className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-[10px] font-bold text-emerald-400 uppercase tracking-widest">
             Accredited
           </span>
         </div>
@@ -73,34 +77,34 @@ export function AboutHero() {
           <div className="flex items-start gap-2.5">
             <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
             <span>
-              <strong className="text-white">Cleanroom Class 100:</strong> Air-scrubbed, positive-pressure booth prevents microscopic dust during ceramic curing.
+              <strong className="text-white">Cleanroom Class 100 Bay:</strong> Air-scrubbed studio environment prevents micro-dust settling during ceramic coating curing.
             </span>
           </div>
           <div className="flex items-start gap-2.5">
             <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
             <span>
-              <strong className="text-white">Digital Spectrophotometer:</strong> OEM factory colour code reading down to 0.01% pigment balance.
+              <strong className="text-white">Ultrasonic Paint Thickness:</strong> Continuous digital measurement ensures safe multi-stage compounding without clearcoat danger.
             </span>
           </div>
           <div className="flex items-start gap-2.5">
             <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
             <span>
-              <strong className="text-white">Self-Sufficient Fleet:</strong> Mobile vans carry onboard pure de-ionised water, Honda generators, and pop-up detailing canopies.
+              <strong className="text-white">Self-Sufficient Mobile Fleet:</strong> Vans carry onboard Honda generators, 500L pure de-ionised water, and all-weather pop-up bay canopies.
             </span>
           </div>
           <div className="flex items-start gap-2.5">
             <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
             <span>
-              <strong className="text-white">IDA Certified Master Detailers:</strong> Over 12 years of specialized prestige vehicle handling.
+              <strong className="text-white">Accredited Master Detailers:</strong> Over a decade of specialized prestige, supercar, and classic vehicle preservation.
             </span>
           </div>
         </div>
 
-        <div className="pt-2 border-t border-white/[0.08] flex items-center justify-between text-xs text-slate-400">
+        <div className="pt-3 border-t border-white/[0.08] flex items-center justify-between text-xs text-slate-400">
           <span>UK Studio: Unit 4, Falcon Park</span>
-          <Link href="/contact" className="text-primary hover:underline font-semibold flex items-center gap-1">
-            <span>Studio Location</span>
-            <ArrowRight className="w-3.5 h-3.5" />
+          <Link href="/contact" className="text-primary hover:underline font-semibold flex items-center gap-1 group">
+            <span>Find Studio Bay</span>
+            <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
           </Link>
         </div>
       </motion.div>

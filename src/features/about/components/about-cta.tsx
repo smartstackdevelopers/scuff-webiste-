@@ -3,21 +3,21 @@
 import * as React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Calendar, ArrowRight, ShieldCheck } from "lucide-react";
+import { Calendar, ArrowRight, ShieldCheck, MessageSquare } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { ABOUT_CONTENT } from "@/features/about/data/about-content";
-import { BrandMascot } from "@/components/brand/mascot";
+import { siteConfig } from "@/config/site";
+import { ABOUT_CONTENT } from "../data/about-content";
 
 export function AboutCTA() {
   const { cta } = ABOUT_CONTENT;
 
   return (
-    <section className="py-20 md:py-24 relative overflow-hidden bg-[#07080A] border-t border-border/40">
+    <section className="py-20 md:py-28 relative overflow-hidden bg-[#07080A] border-t border-white/[0.08]">
       {/* Decorative gradient backdrops */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.04] to-transparent pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-72 bg-primary/10 blur-[130px] pointer-events-none -z-10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-72 bg-primary/10 blur-[140px] pointer-events-none -z-10" />
 
       <Container>
         <motion.div
@@ -25,15 +25,12 @@ export function AboutCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative rounded-3xl border border-white/[0.1] bg-surface-card p-8 sm:p-12 md:p-16 text-center max-w-5xl mx-auto shadow-2xl backdrop-blur-md overflow-hidden"
+          className="relative rounded-3xl border border-white/[0.12] bg-[#0C0F15] p-8 sm:p-12 md:p-16 text-center max-w-4xl mx-auto shadow-luxury-dark backdrop-blur-md overflow-hidden"
         >
           {/* Subtle grid pattern background */}
           <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none" />
-          <div className="absolute -right-4 bottom-0 hidden md:block opacity-90">
-            <BrandMascot size="md" parallax={false} />
-          </div>
 
-          <div className="relative z-10 space-y-6 md:pr-36">
+          <div className="relative z-10 space-y-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/15 border border-primary/30 text-primary text-xs font-semibold uppercase tracking-wider">
               <ShieldCheck className="w-4 h-4" />
               <span>Full Satisfaction Guarantee</span>
@@ -43,7 +40,7 @@ export function AboutCTA() {
               {cta.headline}
             </h2>
 
-            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
               {cta.subheadline}
             </p>
 
@@ -51,8 +48,8 @@ export function AboutCTA() {
               <Link
                 href={cta.primaryBtn.href}
                 className={cn(
-                  buttonVariants({ size: "lg", variant: "glow" }),
-                  "w-full sm:w-auto text-base"
+                  buttonVariants({ size: "lg", variant: "amber" }),
+                  "w-full sm:w-auto text-base shadow-glow-sm"
                 )}
               >
                 <Calendar className="w-4 h-4 mr-2" />
@@ -63,12 +60,27 @@ export function AboutCTA() {
                 href={cta.secondaryBtn.href}
                 className={cn(
                   buttonVariants({ size: "lg", variant: "outline" }),
-                  "w-full sm:w-auto text-base hover:border-electric hover:text-electric"
+                  "w-full sm:w-auto text-base border-white/[0.15] text-white hover:border-primary hover:text-primary"
                 )}
               >
                 {cta.secondaryBtn.text}
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Link>
+
+              <a
+                href={`https://wa.me/${siteConfig.contact.whatsAppPlaceholder.number}?text=${encodeURIComponent(
+                  "Hi You Scuff We Buff, I would like to consult with a technician about vehicle detailing / repair:"
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(
+                  buttonVariants({ size: "lg", variant: "glow" }),
+                  "w-full sm:w-auto text-base"
+                )}
+              >
+                <MessageSquare className="w-4 h-4 mr-2" />
+                WhatsApp Photo Quote
+              </a>
             </div>
           </div>
         </motion.div>
