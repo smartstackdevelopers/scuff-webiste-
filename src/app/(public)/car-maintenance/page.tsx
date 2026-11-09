@@ -161,7 +161,7 @@ export default function CarMaintenancePage() {
       {/* 2. Maintenance Services Catalog */}
       <section className="py-20 bg-[#0C0F15] border-b border-white/[0.08]">
         <Container>
-          <div className="text-center max-w-3xl mx-auto space-y-4 mb-14">
+          <div className="text-center max-w-4xl xl:max-w-5xl mx-auto space-y-4 mb-14">
             <Badge variant="electric" dot>
               <Sparkles className="w-3 h-3" />
               Specialist Workshop Services
@@ -246,7 +246,7 @@ export default function CarMaintenancePage() {
       {/* 3. Lease Return Penalty Comparison Table */}
       <section className="py-20 bg-[#07080A]">
         <Container>
-          <div className="text-center max-w-3xl mx-auto space-y-4 mb-14">
+          <div className="text-center max-w-4xl xl:max-w-5xl mx-auto space-y-4 mb-14">
             <Badge variant="electric" dot>
               Cost Transparency
             </Badge>
@@ -258,7 +258,7 @@ export default function CarMaintenancePage() {
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto overflow-hidden rounded-3xl border border-white/[0.1] bg-surface-card shadow-luxury-dark">
+          <div className="max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto overflow-hidden rounded-3xl border border-white/[0.1] bg-surface-card shadow-luxury-dark">
             <div className="grid grid-cols-12 bg-white/[0.04] p-4 text-xs font-bold uppercase tracking-wider text-slate-400 border-b border-white/[0.08]">
               <div className="col-span-5 sm:col-span-6">Cosmetic Defect / Issue</div>
               <div className="col-span-3 sm:col-span-2 text-right">Dealer Surcharge</div>

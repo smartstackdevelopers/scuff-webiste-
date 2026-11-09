@@ -17,14 +17,14 @@ export function ServiceBenefits({ service }: ServiceBenefitsProps) {
   return (
     <section className="py-16 md:py-24 bg-surface-tertiary border-t border-border/40 relative">
       <Container>
-        <div className="max-w-3xl mx-auto text-center mb-14 space-y-3">
+        <div className="max-w-4xl xl:max-w-5xl mx-auto text-center mb-14 space-y-3">
           <span className="text-xs uppercase tracking-widest font-bold text-primary">
             Key Advantages
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-white font-display">
             Why Choose {service.title}
           </h2>
-          <p className="text-muted-foreground text-sm sm:text-base max-w-xl mx-auto">
+          <p className="text-muted-foreground text-sm sm:text-base max-w-2xl xl:max-w-3xl mx-auto">
             Engineered procedures delivering visible transformation and measurable surface preservation.
           </p>
         </div>

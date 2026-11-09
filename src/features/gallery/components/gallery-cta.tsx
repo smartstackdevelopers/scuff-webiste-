@@ -19,20 +19,20 @@ export function GalleryCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative rounded-3xl border border-electric/40 bg-card/95 p-8 sm:p-12 md:p-14 text-center max-w-4xl mx-auto shadow-2xl backdrop-blur-md overflow-hidden"
+          className="relative rounded-3xl border border-electric/40 bg-card/95 p-8 sm:p-12 md:p-14 text-center max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto shadow-2xl backdrop-blur-md overflow-hidden"
         >
           <div className="relative z-10 space-y-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-electric/15 border border-electric/30 text-electric text-xs font-semibold uppercase tracking-wider">
               <ShieldCheck className="w-4 h-4" />
-              <span>Studio & Mobile UK Coverage</span>
+              <span>Mobile Alloy &amp; SMART Repairs &bull; West Midlands</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-foreground max-w-2xl mx-auto leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-foreground font-display max-w-3xl xl:max-w-4xl mx-auto leading-tight">
               Ready to See Your Vehicle In Our Gallery?
             </h2>
 
-            <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto leading-relaxed">
-              Whether your car needs swirl defect correction, ceramic liquid glass protection, or deep cabin sanitisation, trust our certified technicians to deliver perfection.
+            <p className="text-sm sm:text-base text-muted-foreground max-w-3xl xl:max-w-4xl mx-auto leading-relaxed">
+              Whether your car needs kerb damage refurbishment, diamond-cut face restoration, or localized SMART bumper blending, trust our family-run team to deliver showroom results.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">

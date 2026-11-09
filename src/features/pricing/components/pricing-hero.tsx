@@ -56,7 +56,7 @@ export function PricingHero() {
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.35 }}
-        className="pt-4 grid grid-cols-2 sm:grid-cols-4 gap-2.5 max-w-3xl mx-auto"
+        className="pt-4 grid grid-cols-2 sm:grid-cols-4 gap-2.5 max-w-4xl xl:max-w-5xl mx-auto"
       >
         {TIER_QUICK_JUMP.map((tier) => (
           <a

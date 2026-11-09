@@ -271,7 +271,7 @@ export function CinematicVideoHero({
           /* Center / Left Aligned Single Column */
           <div
             className={cn(
-              "max-w-4xl mx-auto space-y-6",
+              "max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto space-y-7",
               align === "center" ? "text-center" : "text-left"
             )}
           >
@@ -331,7 +331,7 @@ export function CinematicVideoHero({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-3xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-white font-display leading-[0.95]"
+              className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight text-white font-display leading-[0.98]"
             >
               {title}
             </motion.h1>
@@ -342,8 +342,8 @@ export function CinematicVideoHero({
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.15 }}
               className={cn(
-                "text-sm sm:text-base md:text-lg text-slate-300 leading-relaxed",
-                align === "center" ? "max-w-2xl mx-auto" : "max-w-2xl"
+                "text-sm sm:text-base md:text-lg lg:text-xl text-slate-300 leading-relaxed font-normal",
+                align === "center" ? "max-w-3xl xl:max-w-4xl mx-auto" : "max-w-3xl xl:max-w-4xl"
               )}
             >
               {subtitle}

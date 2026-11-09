@@ -21,14 +21,14 @@ export function ServiceRelated({ service }: ServiceRelatedProps) {
   return (
     <section className="py-16 md:py-24 bg-background border-t border-border/40 relative">
       <Container>
-        <div className="max-w-3xl mx-auto text-center mb-12 space-y-3">
+        <div className="max-w-4xl xl:max-w-5xl mx-auto text-center mb-12 space-y-3">
           <span className="text-xs uppercase tracking-widest font-bold text-electric">
             Complementary Care
           </span>
           <h2 className="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight text-foreground">
             Other Services You May Need
           </h2>
-          <p className="text-muted-foreground text-sm max-w-lg mx-auto">
+          <p className="text-muted-foreground text-sm max-w-2xl xl:max-w-3xl mx-auto">
             Enhance your vehicle preservation by pairing this treatment with our specialized detailing solutions.
           </p>
         </div>

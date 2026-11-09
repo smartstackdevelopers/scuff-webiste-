@@ -31,14 +31,14 @@ export function WhyChooseUs() {
   return (
     <section className="py-20 md:py-28 relative overflow-hidden bg-[#07080A] border-t border-white/[0.08]">
       <Container>
-        <div className="max-w-3xl mx-auto text-center mb-16 space-y-3">
+        <div className="max-w-4xl xl:max-w-5xl mx-auto text-center mb-16 space-y-3">
           <Badge variant="electric" dot>
             The You Scuff We Buff Distinction
           </Badge>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-white font-display">
             Why Customers Trust Us
           </h2>
-          <p className="text-slate-400 text-sm sm:text-base max-w-xl mx-auto">
+          <p className="text-slate-400 text-sm sm:text-base max-w-2xl xl:max-w-3xl mx-auto">
             From our laboratory chemistry formulations to our digital handover sign-off, we hold every vehicle to an uncompromising standard.
           </p>
         </div>

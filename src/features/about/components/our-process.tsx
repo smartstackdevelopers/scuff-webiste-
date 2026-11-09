@@ -21,14 +21,14 @@ export function OurProcess() {
   return (
     <section id="process" className="py-20 md:py-28 bg-[#0C0F15] border-t border-white/[0.08] relative">
       <Container>
-        <div className="max-w-3xl mx-auto text-center mb-16 space-y-3">
+        <div className="max-w-4xl xl:max-w-5xl mx-auto text-center mb-16 space-y-3">
           <Badge variant="electric" dot>
             Methodical Precision Protocol
           </Badge>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-white font-display">
             Our 4-Step Detailing Process
           </h2>
-          <p className="text-slate-400 text-sm sm:text-base max-w-xl mx-auto">
+          <p className="text-slate-400 text-sm sm:text-base max-w-2xl xl:max-w-3xl mx-auto">
             A repeatable, scientific workflow engineered to eliminate defects, restore showroom gloss, and bond long-term protection.
           </p>
         </div>

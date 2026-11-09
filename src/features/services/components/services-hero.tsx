@@ -59,7 +59,7 @@ export function ServicesHero() {
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.35 }}
-        className="pt-4 flex flex-wrap justify-center gap-2 max-w-4xl mx-auto"
+        className="pt-4 flex flex-wrap justify-center gap-2.5 max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto"
       >
         {SERVICE_QUICK_PILLS.map((pill) => {
           const Icon = pill.icon;

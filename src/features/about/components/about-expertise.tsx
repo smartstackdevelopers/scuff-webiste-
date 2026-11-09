@@ -17,14 +17,14 @@ export function AboutExpertise() {
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-full max-w-5xl h-80 bg-primary/5 blur-[140px] pointer-events-none -z-10" />
 
       <Container>
-        <div className="max-w-3xl mx-auto text-center mb-16 space-y-3">
+        <div className="max-w-4xl xl:max-w-5xl mx-auto text-center mb-16 space-y-3">
           <Badge variant="electric" dot>
             Technical Disciplines & Core Capabilities
           </Badge>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-white font-display">
             Our Restoration Expertise
           </h2>
-          <p className="text-slate-400 text-sm sm:text-base max-w-xl mx-auto">
+          <p className="text-slate-400 text-sm sm:text-base max-w-2xl xl:max-w-3xl mx-auto">
             Engineered procedures, laboratory-grade chemistry, and certified master workmanship across four specialized automotive fields.
           </p>
         </div>

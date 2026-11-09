@@ -28,7 +28,7 @@ export function ServiceIncluded({ service }: ServiceIncludedProps) {
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto space-y-6">
+        <div className="max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto space-y-6">
           {service.whatsIncluded.map((group, phaseIdx) => (
             <motion.div
               key={phaseIdx}

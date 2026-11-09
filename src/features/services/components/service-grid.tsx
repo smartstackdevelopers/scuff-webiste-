@@ -10,14 +10,14 @@ export function ServiceGrid() {
   return (
     <section id="packages" className="py-20 md:py-28 bg-surface-secondary border-t border-border/40 relative">
       <Container>
-        <div className="max-w-3xl mx-auto text-center mb-16 space-y-3">
+        <div className="max-w-4xl xl:max-w-5xl mx-auto text-center mb-16 space-y-3">
           <span className="text-xs uppercase tracking-widest font-bold text-primary">
             Precision Care Solutions
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-white font-display">
             Our Detailing Services
           </h2>
-          <p className="text-muted-foreground text-sm sm:text-base max-w-xl mx-auto">
+          <p className="text-muted-foreground text-sm sm:text-base max-w-3xl mx-auto leading-relaxed">
             Engineered treatments designed for every condition—from daily commuters needing sanitisation to exotic sports cars requiring multi-stage correction.
           </p>
         </div>

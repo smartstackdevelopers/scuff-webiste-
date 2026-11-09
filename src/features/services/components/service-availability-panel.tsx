@@ -20,7 +20,7 @@ export function ServiceAvailabilityPanel({ service }: ServiceAvailabilityPanelPr
   return (
     <section className="py-14 md:py-20 border-t border-border/40 bg-surface-secondary">
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1560px] mx-auto">
           <Card className="p-6 sm:p-8 bg-surface-card border-white/[0.08] space-y-5">
             <div className="flex flex-wrap items-center gap-2">
               <ServiceAvailabilityBadge service={service} />

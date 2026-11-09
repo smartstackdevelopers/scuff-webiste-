@@ -74,7 +74,7 @@ export function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-full max-w-4xl h-80 bg-primary/10 blur-[130px] pointer-events-none -z-10" />
 
       <Container className="relative z-10 py-16 md:py-24">
-        <div className="max-w-4xl mx-auto space-y-6">
+        <div className="max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto space-y-6">
           {/* Breadcrumbs */}
           <div className="flex">
             <Breadcrumb>
@@ -152,7 +152,7 @@ export function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-sm sm:text-base md:text-lg text-slate-300 max-w-3xl leading-relaxed"
+            className="text-sm sm:text-base md:text-lg text-slate-300 max-w-4xl leading-relaxed"
           >
             {service.longDescription}
           </motion.p>

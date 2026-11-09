@@ -33,7 +33,7 @@ export function ServiceFAQs({ service }: ServiceFAQsProps) {
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto space-y-4">
+        <div className="max-w-4xl xl:max-w-5xl mx-auto space-y-4">
           {service.faqs.map((faq, index) => {
             const isOpen = openIndex === index;
 

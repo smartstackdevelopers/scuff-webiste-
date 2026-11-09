@@ -184,7 +184,7 @@ export default function CarPaintingPage() {
       {/* 2. Painting Services Grid */}
       <section className="py-20 bg-[#0C0F15] border-b border-white/[0.08]">
         <Container>
-          <div className="text-center max-w-3xl mx-auto space-y-4 mb-14">
+          <div className="text-center max-w-4xl xl:max-w-5xl mx-auto space-y-4 mb-14">
             <Badge variant="electric" dot>
               <Sparkles className="w-3 h-3" />
               Specialist Painting Treatments
@@ -269,7 +269,7 @@ export default function CarPaintingPage() {
       {/* 3. 4-Step Painting Workflow */}
       <section className="py-20 bg-[#07080A]">
         <Container>
-          <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
+          <div className="text-center max-w-4xl xl:max-w-5xl mx-auto space-y-4 mb-16">
             <Badge variant="electric" dot>
               Technical Process
             </Badge>

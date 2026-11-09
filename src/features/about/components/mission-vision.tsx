@@ -27,7 +27,7 @@ export function MissionVision() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1560px] mx-auto">
           {/* Commitment to Quality Card */}
           <motion.div
             initial={{ opacity: 0, y: 25 }}

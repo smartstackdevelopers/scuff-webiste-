@@ -41,7 +41,7 @@ export default function TermsPage() {
       />
 
       <div className="py-16 sm:py-24 space-y-12 bg-[#0C0F15]">
-        <Container className="max-w-4xl">
+        <Container className="max-w-5xl xl:max-w-6xl">
           <div className="space-y-8 text-sm text-slate-300 leading-relaxed bg-surface-card p-6 sm:p-10 rounded-3xl border border-white/[0.08] shadow-luxury-dark">
             <section className="space-y-3">
               <h2 className="text-xl font-bold text-white font-display uppercase tracking-wider">1. Vehicle Pre-Inspection Protocol</h2>

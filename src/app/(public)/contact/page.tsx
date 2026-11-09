@@ -87,7 +87,7 @@ export default function ContactPage() {
       <div className="py-16 sm:py-24 space-y-16 bg-[#0C0F15]">
         <Container>
           {/* 2-Column Grid: Form & Business Details */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1560px] mx-auto">
             {/* Left Column: Interactive Form */}
             <div className="lg:col-span-7 bg-surface-card border border-white/[0.08] rounded-3xl p-6 sm:p-8 shadow-luxury-dark relative overflow-hidden">
               {submitted ? (

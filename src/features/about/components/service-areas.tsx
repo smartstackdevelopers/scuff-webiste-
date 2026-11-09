@@ -33,7 +33,7 @@ export function ServiceAreasSection() {
         </div>
 
         {/* 9 Regions Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1560px] mx-auto">
           {serviceAreas.map((area, index) => (
             <motion.div
               key={area.name}
@@ -65,7 +65,7 @@ export function ServiceAreasSection() {
         </div>
 
         {/* Banner callout */}
-        <div className="mt-12 p-6 sm:p-8 rounded-3xl bg-[#07080A]/80 border border-primary/20 backdrop-blur-md max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 shadow-glow-sm">
+        <div className="mt-12 p-6 sm:p-8 rounded-3xl bg-[#07080A]/80 border border-primary/20 backdrop-blur-md max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 shadow-glow-sm">
           <div className="space-y-1 text-center sm:text-left">
             <h4 className="text-base sm:text-lg font-bold text-white font-display uppercase tracking-tight">
               Don&apos;t See Your Exact Postcode?

@@ -136,7 +136,7 @@ export default function FAQPage() {
         ]}
       >
         {/* Search Input Box */}
-        <div className="pt-4 max-w-lg mx-auto relative">
+        <div className="pt-4 max-w-xl xl:max-w-2xl mx-auto relative">
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
           <Input
             placeholder="Search questions (e.g. ceramic coating, rain, scratch)..."
@@ -174,7 +174,7 @@ export default function FAQPage() {
           </div>
 
           {/* Accordion List */}
-          <div className="max-w-3xl mx-auto space-y-4">
+          <div className="max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mx-auto space-y-4">
             {filteredFaqs.length === 0 ? (
               <div className="py-12 text-center text-muted-foreground bg-surface-card rounded-2xl border border-white/[0.08] p-8">
                 <HelpCircle className="w-8 h-8 text-muted-foreground mx-auto mb-2 opacity-50" />
@@ -223,7 +223,7 @@ export default function FAQPage() {
           </div>
 
           {/* Bottom Help Banner */}
-          <div className="max-w-3xl mx-auto pt-8">
+          <div className="max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mx-auto pt-8">
             <div className="p-6 rounded-3xl bg-surface-card border border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
               <div>
                 <h4 className="text-sm font-bold text-white font-display uppercase tracking-wider">Have a bespoke vehicle enquiry?</h4>

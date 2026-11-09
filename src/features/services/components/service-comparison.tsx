@@ -20,14 +20,14 @@ export function ServiceComparison() {
   return (
     <section className="py-20 md:py-28 bg-muted/20 border-t border-border/40 relative">
       <Container>
-        <div className="max-w-3xl mx-auto text-center mb-16 space-y-3">
+        <div className="max-w-4xl xl:max-w-5xl mx-auto text-center mb-16 space-y-3">
           <Badge variant="electric" dot>
             Package Comparison Matrix
           </Badge>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-foreground">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-foreground font-display">
             Compare Detailing Tiers
           </h2>
-          <p className="text-muted-foreground text-sm sm:text-base max-w-xl mx-auto">
+          <p className="text-muted-foreground text-sm sm:text-base max-w-3xl mx-auto leading-relaxed">
             Not sure which package fits your car? Compare our complete scope of work across exterior, correction, protection, and cabin care.
           </p>
         </div>

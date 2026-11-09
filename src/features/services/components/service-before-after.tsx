@@ -47,7 +47,7 @@ export function ServiceBeforeAfterViewer({ service }: ServiceBeforeAfterViewerPr
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="max-w-4xl mx-auto"
+          className="max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto"
         >
           <Card className="overflow-hidden border-white/[0.08] shadow-sm bg-surface-card p-2 sm:p-3">
             {/* Interactive Image Splitter Container */}
